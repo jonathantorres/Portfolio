@@ -38,10 +38,30 @@
             <a class="jonathan" href="#" alt="Jonathan Torres">Jonathan <span class="johnred">Torres</span></a>
             <nav>
                 <ul id="main_nav">
-                    <li><a href="welcome">Home</a></li>
-                    <li><a href="portfolio">Portfolio</a></li>
-                    <li><a href="contact">Contact</a></li>
-                    <li><a href="resume">Resume</a></li>
+                    <li class="selected">
+                        <a href="welcome">Home</a>
+                        <div class="marker">
+                            <div class="prog"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="portfolio">Portfolio</a>
+                        <div class="marker">
+                            <div class="prog"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="contact">Contact</a>
+                        <div class="marker">
+                            <div class="prog"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="resume">Resume</a>
+                        <div class="marker">
+                            <div class="prog"></div>
+                        </div>
+                    </li>
                 </ul>
             </nav>
             <a href="#" class="arrow">

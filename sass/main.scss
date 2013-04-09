@@ -114,6 +114,22 @@ a:hover { text-decoration: underline; }
 					@include transition (color 1s ease-out);
 					&:hover { color: #FFF; @include transition (color 1s ease-out); }
 				}
+
+				&.selected, &:hover {
+					.marker { display: block; }
+				}
+
+				.marker {
+					display: none;
+					height: 3px;
+					background: #303030;
+					
+					.prog {
+						width: 15%;
+						height: inherit;
+						background: $johnRed;
+					}
+				}
 			}
 		}
 	}
@@ -262,7 +278,9 @@ a:hover { text-decoration: underline; }
 	@include box-sizing(border-box);
 }
 
-// Welcome
+/**
+ * Welcome
+ */
 #welcome {
 	display: block;
 	font-family: $quicksandFont;
@@ -275,22 +293,30 @@ a:hover { text-decoration: underline; }
 	}
 }
 
-// Portfolio
+/**
+ * Portfolio
+ */
 #portfolio {
 	display: none;
 }
 
-// Contact
+/**
+ * Contact
+ */
 #contact {
 	display: none;
 }
 
-// Resume
+/**
+ * Resume
+ */
 #resume {
 	display: none;
 }
 
-// Footer
+/**
+ * Footer
+ */
 #pagefooter {
 	display: block;
 	position: fixed;
