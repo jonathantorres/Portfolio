@@ -1,0 +1,21 @@
+{
+  "name": "jonathantorres",
+  "version": "1.0.0",
+  "description": "Jonathan Torres Porfolio",
+  "main": "Gruntfile.js",
+  "repository": "",
+  "keywords": [
+    "portfolio",
+    "js",
+    "html5"
+  ],
+  "author": "Jonathan Torres",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-sass": "~0.3.0",
+    "grunt-contrib-concat": "~0.1.3",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-jshint": "~0.3.0",
+    "grunt-contrib-watch": "~0.3.1"
+  }
+}

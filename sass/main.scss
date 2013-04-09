@@ -1,0 +1,334 @@
+@import "bourbon/bourbon";
+@import "boilerplate.scss";
+
+
+/* ==========================================================================
+   Author - Jonathan Torres
+   ========================================================================== */
+
+/**
+ * Font sizes
+ */
+$size10px: 0.5em;
+$size11px: 0.6em;
+$size12px: 0.7em;
+$size14px: 0.8em;
+$size16px: 1em;
+$size18px: 1.2em;
+$size20px: 1.4em;
+$size22px: 1.6em;
+$size24px: 1.8em;
+$size26px: 2em;
+$size28px: 2.2em;
+$size30px: 2.4em;
+$size32px: 2.6em;
+$size34px: 2.8em;
+$size36px: 3em;
+$size38px: 3.2em;
+$size40px: 3.4em;
+$size42px: 3.6em;
+$size44px: 3.8em;
+$size46px: 4em;
+
+$johnRed: #e3030c;
+$lightGray: #dbdbdb;
+$quicksandFont: "Quicksand", Arial, san-serif;
+$helveticaFont: Helvetica, Arial, san-serif;
+
+/**
+ * Global Styles
+ */
+body { font-family: $quicksandFont; background: url(../img/page_bg.jpg) repeat; }
+h1, h2, h3, h4, h5, p, ul, ol { margin: 0px; padding: 0px; }
+h1, h2, h3, h4, h5 { font-weight: normal; color: $lightGray; }
+h1 { font-size: $size40px; }
+h2 { font-size: $size34px; }
+h3 { font-size: $size28px; }
+h4 { font-size: $size24px; }
+h5 { font-size: $size18px; }
+a:link, a:active, a:visited { color: #666; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/**
+ * Useful classes
+ */
+.johnred { color: $johnRed; }
+.title { font-size: $size36px; }
+.johnsquared { 
+	color: #000; 
+	text-decoration: none; 
+	background-color: $johnRed; 
+	@include transition (color 0.5s ease-out);
+}
+.johnsquared:hover { color: #FFF; @include transition (color 0.5s ease-out); }
+
+@mixin circle($width, $height, $bgcolor) {
+	width: $width;
+	height: $height;
+	border-radius: 50%;
+	background-color: $bgcolor;
+}
+
+/**
+ * Top Header
+ */
+#topheader {
+	display: block;
+	position: fixed;
+	top: -80px;
+	width: 100%;
+	height: 40px;
+	padding: 0px 20px;
+	border-bottom: solid 1px #333;
+	z-index: 9999;
+	background-color: #000;
+	@include box-sizing(border-box);
+
+	a, a:link, a:active, a:visited {
+		font-family: $quicksandFont; 
+		font-weight: normal;
+		text-decoration: none;
+	}
+
+	a.jonathan, a.jonathan:link, a.jonathan:active, a.jonathan:visited {
+		text-transform: uppercase;
+		color: #c8c8c8;
+		font-size: $size22px;
+	}
+
+	nav {
+		float: right;
+
+		#main_nav {
+			margin-top: 10px;
+
+			li {
+				float: left;
+				margin-left: 20px;
+				font-size: $size14px;
+
+				a, a:active, a:visited, a:link {
+					text-decoration: none;
+					text-transform: uppercase;
+					color: #c8c8c8;
+					@include transition (color 1s ease-out);
+					&:hover { color: #FFF; @include transition (color 1s ease-out); }
+				}
+			}
+		}
+	}
+
+	.arrow {
+		display: block;
+		position: absolute;
+		width: 78px;
+		height: 35px;
+		top: 39px;
+		left: 46%;
+		border-left: solid 1px #333;
+		border-right: solid 1px #333;
+		border-bottom: solid 1px #333;
+		background: #000;
+
+		img {
+			display: block;
+			position: absolute;
+			top: 9px;
+			left: 23px;
+			@include transform-origin(center center);
+		}
+	}
+
+	#header_content {
+		width: 100%;
+		height: 260px;
+		position: relative;
+		border: solid 1px #333;
+		margin-top: 8px;
+		padding: 14px 0 14px 14px;
+		overflow: hidden;
+		@include transform-origin(center center);
+		@include transform(scale(0));
+		@include box-sizing(border-box);
+		background: #000;
+
+		.header_arrow {
+			display: block;
+			position: absolute;
+			top: 88px;
+			width: 36px;
+			height: 78px;
+			z-index: 9999;
+		}
+
+		.left_arrow {
+			left: -37px;
+			// left: 0px;
+			border-top: solid 1px #333;
+			border-right: solid 1px #333;
+			border-bottom: solid 1px #333;
+			background: #000 url(../img/header_left_arrow.png) no-repeat center center;
+		}
+
+		.right_arrow {
+			right: -37px;
+			// right: 0px;
+			border-top: solid 1px #333;
+			border-left: solid 1px #333;
+			border-bottom: solid 1px #333;
+			background: #000 url(../img/header_right_arrow.png) no-repeat center center;
+		}
+
+		ul.boxes {
+			position: relative;
+			left: 0px;
+			list-style: none;
+			overflow: hidden;
+			z-index: 9998;
+
+			li.box {
+				float: left;
+				position: relative;
+				width: 504px;
+				height: 228px;
+				margin-right: 50px;
+				padding: 37px 20px;
+				border: solid 1px #333;
+				@include box-sizing(border-box);
+
+				img {
+					display: block;
+					float: left;
+					margin-right: 15px;
+					border: solid 1px #333;
+				}
+
+				p {
+					color: #CCC;
+					font-family: $helveticaFont;
+					font-size: $size14px;
+					margin-top: 20px;
+				}
+
+				&.about_me {
+
+				}
+
+				&.tweet {
+					p { font-size: $size20px; }
+				}
+
+				&.instagram_img {
+					padding: 12px 20px;
+					p { margin-top: 70px; }
+				}
+
+				.box_title {
+					display: block;
+					position: absolute;
+					bottom: 5px;
+					right: 10px;
+					color: #333;
+					font-size: $size18px;
+					font-family: $quicksandFont;
+				}
+
+				&:last-child { .line { display: none; } }
+
+				.line {
+					display: block;
+					position: absolute;
+					top: 115px;
+					left: 503px;
+					width: 50px;
+					height: 1px;
+					border-bottom: solid 1px #333;
+				}
+			}
+		}
+	}
+}
+
+// Content Area
+#content {
+	position: absolute;
+	display: block;
+	top: 40px;
+	bottom: 30px;
+	width: 100%;
+	color: #FFF;
+	padding: 45px 20px;
+	z-index: 9997;
+	@include box-sizing(border-box);
+}
+
+// Welcome
+#welcome {
+	display: block;
+	font-family: $quicksandFont;
+
+	h1, h3 { font-weight: normal; }
+	h1 { font-size: $size40px; line-height: 1.2; }
+	h3 { 
+		font-size: $size22px;
+		&.first { padding-top: 20px; }
+	}
+}
+
+// Portfolio
+#portfolio {
+	display: none;
+}
+
+// Contact
+#contact {
+	display: none;
+}
+
+// Resume
+#resume {
+	display: none;
+}
+
+// Footer
+#pagefooter {
+	display: block;
+	position: fixed;
+	bottom: -30px;
+	width: 100%;
+	height: 30px;
+	color: #666;
+	padding: 5px 20px;
+	border-top: solid 1px #333;
+	z-index: 9998;
+	background-color: #000;
+	@include box-sizing(border-box);
+
+	p {
+		float: left;
+		margin-top: 2px;
+		font-family: $helveticaFont;
+		font-size: $size12px;
+	}
+
+	.social_icons {
+		float: right;
+		margin-top: -4px;
+
+		li {
+			float: left;
+			margin-left: 10px;
+			list-style: none;
+
+			a, a:active, a:visited, a:link { 
+				opacity: 0.2;
+				@include transition (opacity 0.5s ease-out);
+				&:hover { opacity: 0.8; @include transition (opacity 0.5s ease-out); }
+			}
+		}
+	}
+}
+
+
+@import "helpers.scss";
+
