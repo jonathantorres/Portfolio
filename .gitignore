@@ -1,0 +1,8 @@
+# Weird Files
+.DS_Store
+
+# Weird Folders
+.sass-cache/
+
+# Node Modules
+node_modules/
