@@ -19,7 +19,7 @@
 
 		header = new Header();
 		header.init($topHeader);
-	}
+	};
 
 	/**
 	 * jQuery address functionallity
@@ -58,7 +58,7 @@
 			var path = $(this).attr("href");
 			$.address.value(path);
 		});
-	}
+	};
 
 	/**
 	 * fadeout any section that is currently being shown. Show the requested one.
@@ -66,7 +66,7 @@
 	var switchSection = function(section) {
 		var $viewedSection = $(".viewedSection");
 
-		if ($viewedSection.length != 0) {
+		if ($viewedSection.length !== 0) {
 			$viewedSection.fadeOut("slow", function() {
 				$viewedSection.removeClass("viewedSection");
 				loadSection(section);
@@ -82,7 +82,7 @@
 				loadSection(section);
 			}, 500);
 		}
-	}
+	};
 
 	/**
 	 * Call the requested section
@@ -111,7 +111,7 @@
 				resume.init();
 				break;
 		}
-	}
+	};
 
 	window.Site = Site;
 

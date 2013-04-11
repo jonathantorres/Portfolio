@@ -8,8 +8,8 @@
 
 	Contact.prototype.init = function() {
 		$contact = $("#contact");
-	  	$contact.addClass("viewedSection");
-	}
+		$contact.addClass("viewedSection");
+	};
 
 	window.Contact = Contact;
 	

@@ -8,8 +8,8 @@
 
 	Portfolio.prototype.init = function() {
 		$portfolio = $("#portfolio");
-	  	$portfolio.addClass("viewedSection");
-	}
+		$portfolio.addClass("viewedSection");
+	};
 
 	window.Portfolio = Portfolio;
 

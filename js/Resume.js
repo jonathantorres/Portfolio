@@ -9,7 +9,7 @@
 	Resume.prototype.init = function() {
 		$resume = $("#resume");
 		$resume.addClass("viewedSection");
-	}
+	};
 
 	window.Resume = Resume;
 	

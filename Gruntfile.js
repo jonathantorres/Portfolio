@@ -45,7 +45,24 @@ module.exports = function(grunt) {
         eqnull: true,
         browser: true,
         globals: {
-          jQuery: true
+          // jQuery
+          $: true,
+          jQuery: true,
+
+          // greensock
+          TweenMax: true,
+          TimelineMax: true,
+          Expo: true,
+          Power1: true,
+          Sine: true,
+
+          // site
+          Header: true,
+          Contact: true,
+          Welcome: true,
+          Portfolio: true,
+          Resume: true,
+          Site: true
         }
       },
       gruntfile: {
