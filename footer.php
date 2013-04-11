@@ -3,9 +3,9 @@
         <footer id="pagefooter">
             <p>&copy; 2013 | Jonathan Torres | Designed by: <a href="http://www.juancarlosangustia.com/" target="_blank">JCa.García</a> and Developed by: Jonathan Torres</p>
             <ul class="social_icons">
-                <li><a href="#"><img src="img/twitter_icon.png" alt="Social Icon"></a></li>
-                <li><a href="#"><img src="img/fb_icon.png" alt="Social Icon"></a></li>
-                <li><a href="#"><img src="img/in_icon.png" alt="Social Icon"></a></li>
+                <li><a href="https://www.twitter.com/torres_jonathan" target="_blank"><img src="img/twitter_icon.png" alt="Social Icon"></a></li>
+                <li><a href="https://www.facebook.com/jonathantorres41" target="_blank"><img src="img/fb_icon.png" alt="Social Icon"></a></li>
+                <li><a href="http://www.linkedin.com/in/torresjonathan" target="_blank"><img src="img/in_icon.png" alt="Social Icon"></a></li>
             </ul>
         </footer><!-- footer -->
 
