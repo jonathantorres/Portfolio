@@ -48,6 +48,7 @@ module.exports = function(grunt) {
           // jQuery
           $: true,
           jQuery: true,
+          console: true,
 
           // greensock
           TweenMax: true,
