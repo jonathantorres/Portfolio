@@ -14,11 +14,13 @@
 
 		TweenMax.to($topHeader, 0.5, { top : "0px", ease : Power1.easeOut } );
 		TweenMax.to($pageFooter, 0.5, { bottom : "0px", ease : Power1.easeOut } );
-	
-		addressListeners();
+
+		switchSection("welcome");
 
 		header = new Header();
 		header.init($topHeader);
+	
+		addressListeners();
 	};
 
 	/**

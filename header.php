@@ -34,6 +34,11 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
+        <!-- Preloader -->
+        <div class="preload_bg">
+            <h3 class="load_text">Loading...</h3>
+        </div>
+
         <header id="topheader">
             <a class="jonathan" href="#" alt="Jonathan Torres">Jonathan <span class="johnred">Torres</span></a>
             <nav>
