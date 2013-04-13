@@ -15,11 +15,10 @@
 		TweenMax.to($topHeader, 0.5, { top : "0px", ease : Power1.easeOut } );
 		TweenMax.to($pageFooter, 0.5, { bottom : "0px", ease : Power1.easeOut } );
 
-		switchSection("welcome");
-
 		header = new Header();
 		header.init($topHeader);
-	
+		
+		switchSection("welcome");
 		addressListeners();
 	};
 
@@ -55,6 +54,9 @@
 			}
 		});
 
+		/**
+		 * Click on main nav items
+		 */
 		$("#main_nav a").on("click", function(e) {
 			e.preventDefault();
 			var path = $(this).attr("href");
@@ -95,22 +97,22 @@
 		switch (section) {
 			case "welcome" :
 				var welcome = new Welcome();
-				welcome.init();
+				//welcome.init();
 				break;
 
 			case "portfolio" :
 				var portfolio = new Portfolio();
-				portfolio.init();
+				//portfolio.init();
 				break;
 
 			case "contact" :
 				var contact = new Contact();
-				contact.init();
+				//contact.init();
 				break;
 
 			case "resume" :
 				var resume = new Resume();
-				resume.init();
+				//resume.init();
 				break;
 		}
 	};

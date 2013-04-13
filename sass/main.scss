@@ -41,7 +41,7 @@ $helveticaFont: Helvetica, Arial, san-serif;
 body { font-family: $quicksandFont; background: url(../img/page_bg.jpg) repeat; }
 h1, h2, h3, h4, h5, p, ul, ol { margin: 0px; padding: 0px; }
 h1, h2, h3, h4, h5 { font-weight: normal; color: $lightGray; }
-h1 { font-size: $size40px; }
+h1 { font-size: $size38px; }
 h2 { font-size: $size34px; }
 h3 { font-size: $size28px; }
 h4 { font-size: $size24px; }
@@ -283,7 +283,9 @@ a:hover { text-decoration: underline; }
 	}
 }
 
-// Content Area
+/**
+ * Content Area
+ */
 #content {
 	position: absolute;
 	display: block;
@@ -301,13 +303,25 @@ a:hover { text-decoration: underline; }
  */
 #welcome {
 	display: block;
+	width: 900px;
+	margin: 154px auto auto auto;
 	font-family: $quicksandFont;
 
-	h1, h3 { font-weight: normal; }
-	h1 { font-size: $size40px; line-height: 1.2; }
-	h3 { 
-		font-size: $size22px;
-		&.first { padding-top: 20px; }
+	.circle {
+		display: block;
+		float: left;
+		margin: 0px 30px 0px 0px;
+		@include circle(200px, 200px, #161616);
+		@include box-shadow(0px 0px 400px 40px rgba(150, 150, 150, 0.08));
+
+		.inside {
+			@include circle(167px, 167px, #303030);
+			overflow: hidden;
+			border: solid 4px #303030;
+			margin: 13px 0px 0px 12px;
+
+			img { display: block; margin: 0px 0px 0px -42px; }
+		}
 	}
 }
 

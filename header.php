@@ -38,9 +38,12 @@
         <div class="preload_bg">
             <h3 class="load_text">Loading...</h3>
         </div>
-
+        
+        <!-- Site Header -->
         <header id="topheader">
             <a class="jonathan" href="#" alt="Jonathan Torres">Jonathan <span class="johnred">Torres</span></a>
+
+            <!-- Site Navigation -->
             <nav>
                 <ul id="main_nav">
                     <li class="selected">
@@ -72,7 +75,8 @@
             <a href="#" class="arrow">
                 <img src="img/arrow_down.png">
             </a>
-
+            
+            <!-- The sliding header -->
             <div id="header_content">
                 <a href="#" class="header_arrow left_arrow"></a>
                 <a href="#" class="header_arrow right_arrow"></a>
