@@ -22,6 +22,7 @@
         <script src="js/Welcome.js"></script>
         <script src="js/Header.js"></script>
         <script src="js/Site.js"></script>
+        <script src="js/Preloader.js"></script>
         <script src="js/main.js"></script>
 
         <!-- <script src="js/jonathantorres.min.js"></script> -->

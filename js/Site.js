@@ -18,7 +18,7 @@
 		header = new Header();
 		header.init($topHeader);
 		
-		switchSection("welcome");
+		//switchSection("welcome");
 		addressListeners();
 	};
 
@@ -27,6 +27,8 @@
 	 */
 	var addressListeners = function() {
 		$.address.change(function(e) {
+			console.log(e.value);
+			
 			switch (e.value) {
 				case "/" :
 					$.address.value("/welcome");
@@ -97,22 +99,22 @@
 		switch (section) {
 			case "welcome" :
 				var welcome = new Welcome();
-				//welcome.init();
+				welcome.init();
 				break;
 
 			case "portfolio" :
 				var portfolio = new Portfolio();
-				//portfolio.init();
+				portfolio.init();
 				break;
 
 			case "contact" :
 				var contact = new Contact();
-				//contact.init();
+				contact.init();
 				break;
 
 			case "resume" :
 				var resume = new Resume();
-				//resume.init();
+				resume.init();
 				break;
 		}
 	};

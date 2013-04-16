@@ -14,6 +14,7 @@
 		$welcome = $("#welcome");
 		$welcome.addClass("viewedSection");
 
+		/*
 		// Hello... 
 		$hello = $("h1").first();
 		spanText($hello);
@@ -53,6 +54,7 @@
 		timeline.from($whomAmI.find("span.johnred"), 0.6, { opacity : 0, ease : Expo.easeOut }, "-=0.2");
 		timeline.staggerFrom($availability.find("span.a"), 0.3, { opacity : 0, ease : Expo.easeOut }, 0.01, "-=0.8");
 		timeline.from($availability.find("span.johnred"), 0.6, { opacity : 0, ease : Sine.easeOut }, "-=0.2");
+		*/
 	};
 
 	/**
