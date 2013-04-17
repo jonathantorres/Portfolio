@@ -32,12 +32,23 @@
 			hasher.setHash(path);
 		});
 
+		// mouse enter on main nav items
+		$mainNavigation.find("a").on("mouseenter", function(e) {
+			var $prog = $(this).next().find(".prog");
+			TweenMax.to($prog, 0.5, { width : "100%", ease : Expo.easeOut } );
+		});
+
+		// mouse leave on main nav items
+		$mainNavigation.find("a").on("mouseleave", function(e) {
+			var $prog = $(this).next().find(".prog");
+			TweenMax.to($prog, 0.5, { width : "15%", ease : Expo.easeOut } );
+		});
+
 		// Click on logo. Same as "Home" click
 		$logo.on("click", function(e) {
 			e.preventDefault();
 			$mainNavigation.find("a").first().click();
 		});
-		
 	};
 
 	var cacheSelectors = function() {
@@ -49,6 +60,21 @@
 	};
 
 	/**
+	 * Add "selected" class to requested nav item
+	 */
+	var updateNavigation = function(section) {
+		$mainNavigation.find("li").removeClass("selected");
+
+		$mainNavigation.find("a").each(function() {
+			var path = $(this).attr("href");
+
+			if (path === section) {
+				$(this).parent().addClass("selected");
+			}
+		});
+	};
+
+	/**
 	 * Handle page deep links
 	 */
 	var handleHasher = function(newHash, oldHash) {
@@ -56,18 +82,22 @@
 			case "" :
 			case "welcome" :
 				switchSection("welcome");
+				updateNavigation("welcome");
 				break;
 
 			case "portfolio" : 
 				switchSection("portfolio");
+				updateNavigation("portfolio");
 				break;
 
 			case "contact" : 
 				switchSection("contact");
+				updateNavigation("contact");
 				break;
 
 			case "resume" : 
 				switchSection("resume");
+				updateNavigation("resume");
 				break;
 		}
 	};

@@ -46,7 +46,7 @@
             <!-- Site Navigation -->
             <nav>
                 <ul id="main_nav">
-                    <li class="selected">
+                    <li>
                         <a href="welcome">Home</a>
                         <div class="marker">
                             <div class="prog"></div>
