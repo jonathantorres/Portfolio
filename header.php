@@ -41,7 +41,7 @@
         
         <!-- Site Header -->
         <header id="topheader">
-            <a class="jonathan" href="#" alt="Jonathan Torres">Jonathan <span class="johnred">Torres</span></a>
+            <a id="logo" class="jonathan" href="welcome" alt="Jonathan Torres">Jonathan <span class="johnred">Torres</span></a>
 
             <!-- Site Navigation -->
             <nav>

@@ -2,72 +2,79 @@
 
 	var $content,
 		$topHeader,
+		$logo,
+		$mainNavigation,
 		$pageFooter,
 		header;
 
 	function Site() {}
 
 	Site.prototype.init = function() {
-		$content = $("#content");
-		$topHeader = $("#topheader");
-		$pageFooter = $("#pagefooter");
+		cacheSelectors();
 
+		// set up Hasher
+		hasher.changed.add(handleHasher);
+		hasher.initialized.add(handleHasher);
+		hasher.init();
+
+		// Animate in header and footer
 		TweenMax.to($topHeader, 0.5, { top : "0px", ease : Power1.easeOut } );
 		TweenMax.to($pageFooter, 0.5, { bottom : "0px", ease : Power1.easeOut } );
 
+		// Start the header
 		header = new Header();
 		header.init($topHeader);
-		
-		//switchSection("welcome");
-		addressListeners();
-	};
 
-	/**
-	 * jQuery address functionallity
-	 */
-	var addressListeners = function() {
-		$.address.change(function(e) {
-			console.log(e.value);
-			
-			switch (e.value) {
-				case "/" :
-					$.address.value("/welcome");
-					break;
-
-				case "/welcome" :
-					switchSection("welcome");
-					break;
-
-				case "/portfolio" :
-					switchSection("portfolio");
-					break;
-
-				case "/contact" :
-					switchSection("contact");
-					break;
-
-				case "/resume" :
-					switchSection("resume");
-					break;
-
-				default :
-					$.address.value("/welcome");
-					break;
-			}
-		});
-
-		/**
-		 * Click on main nav items
-		 */
-		$("#main_nav a").on("click", function(e) {
+		// Click on main nav items
+		$mainNavigation.find("a").on("click", function(e) {
 			e.preventDefault();
 			var path = $(this).attr("href");
-			$.address.value(path);
+			hasher.setHash(path);
 		});
+
+		// Click on logo. Same as "Home" click
+		$logo.on("click", function(e) {
+			e.preventDefault();
+			$mainNavigation.find("a").first().click();
+		});
+		
+	};
+
+	var cacheSelectors = function() {
+		$content = $("#content");
+		$topHeader = $("#topheader");
+		$logo = $("#logo");
+		$mainNavigation = $("#main_nav");
+		$pageFooter = $("#pagefooter");
 	};
 
 	/**
-	 * fadeout any section that is currently being shown. Show the requested one.
+	 * Handle page deep links
+	 */
+	var handleHasher = function(newHash, oldHash) {
+		switch(newHash) {
+			case "" :
+			case "welcome" :
+				switchSection("welcome");
+				break;
+
+			case "portfolio" : 
+				switchSection("portfolio");
+				break;
+
+			case "contact" : 
+				switchSection("contact");
+				break;
+
+			case "resume" : 
+				switchSection("resume");
+				break;
+		}
+	};
+
+	/**
+	 * Fadeout any section that is currently being shown. 
+	 * Show the requested one.
 	 */
 	var switchSection = function(section) {
 		var $viewedSection = $(".viewedSection");
@@ -86,7 +93,7 @@
 		else {
 			setTimeout(function() {
 				loadSection(section);
-			}, 500);
+			}, 400);
 		}
 	};
 
