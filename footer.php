@@ -14,6 +14,8 @@
         <script src="libs/jquery-migrate-1.1.1.min.js"></script>
         <script src="libs/plugins.js"></script>
         <script src="libs/greensock/TweenMax.min.js"></script>
+        <script src="libs/signals.min.js"></script>
+        <script src="libs/hasher.min.js"></script>
 
         <script src="js/Resume.js"></script>
         <script src="js/Portfolio.js"></script>
