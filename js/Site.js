@@ -33,13 +33,13 @@
 		});
 
 		// mouse enter on main nav items
-		$mainNavigation.find("a").on("mouseenter", function(e) {
+		$mainNavigation.find("a").on("mouseenter", function() {
 			var $prog = $(this).next().find(".prog");
 			TweenMax.to($prog, 0.5, { width : "100%", ease : Expo.easeOut } );
 		});
 
 		// mouse leave on main nav items
-		$mainNavigation.find("a").on("mouseleave", function(e) {
+		$mainNavigation.find("a").on("mouseleave", function() {
 			var $prog = $(this).next().find(".prog");
 			TweenMax.to($prog, 0.5, { width : "15%", ease : Expo.easeOut } );
 		});
@@ -77,7 +77,7 @@
 	/**
 	 * Handle page deep links
 	 */
-	var handleHasher = function(newHash, oldHash) {
+	var handleHasher = function(newHash) {
 		switch(newHash) {
 			case "" :
 			case "welcome" :

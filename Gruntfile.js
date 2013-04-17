@@ -63,7 +63,9 @@ module.exports = function(grunt) {
           Welcome: true,
           Portfolio: true,
           Resume: true,
-          Site: true
+          Site: true,
+          Preloader: true,
+          hasher: true
         }
       },
       gruntfile: {
