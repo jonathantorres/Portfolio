@@ -1,11 +1,9 @@
 (function(window) {
 
 	var $welcome,
-		$hello,
 		$myName,
 		$myPortfolio,
 		$whomAmI,
-		$availability,
 		timeline;
 
 	function Welcome() { }
@@ -14,47 +12,32 @@
 		$welcome = $("#welcome");
 		$welcome.addClass("viewedSection");
 
-		/*
-		// Hello... 
-		$hello = $("h1").first();
-		spanText($hello);
-
 		// My name is...
-		$myName = $("h1").eq(1);
+		$myName = $welcome.find("h2").first();
 		var $mynameChild = $myName.children().remove();
 		spanText($myName);
 		$myName.append($mynameChild);
 
 		// And this is my... 
-		$myPortfolio = $("h1").eq(2);
+		$myPortfolio = $welcome.find("h2").eq(1);
 		var $myPortfolioChild = $myPortfolio.children().remove();
 		spanText($myPortfolio);
 		$myPortfolio.append($myPortfolioChild);
 
 		// Im a... 
-		$whomAmI = $("h3").first();
+		$whomAmI = $welcome.find("h3");
 		var $whomAmIChild = $whomAmI.children().remove();
 		spanText($whomAmI);
 		$whomAmI.append($whomAmIChild);
 
-		// Availability...
-		$availability = $("h3").eq(1);
-		var $availabilityChild = $availability.children().remove();
-		spanText($availability);
-		$availability.append($availabilityChild);
-
 		// animations
 		timeline = new TimelineMax();
-		timeline.staggerFrom($hello.find("span.a"), 0.3, { opacity : 0, ease : Expo.easeOut }, 0.05);
-		timeline.staggerFrom($myName.find("span.a"), 0.3, { opacity : 0, ease : Expo.easeOut }, 0.05, "-=0.4");
-		timeline.from($myName.find("span.johnred"), 0.6, { opacity : 0, ease : Expo.easeOut }, "-=0.2");
+		timeline.staggerFrom($myName.find("span.a"), 0.3, { opacity : 0, ease : Expo.easeOut }, 0.05);
+		timeline.from($myName.find("span.johnred"), 0.8, { opacity : 0, ease : Expo.easeOut }, "-=0.2");
 		timeline.staggerFrom($myPortfolio.find("span.a"), 0.3, { opacity : 0, ease : Expo.easeOut }, 0.05, "-=0.8");
-		timeline.from($myPortfolio.find("span.johnred"), 0.6, { opacity : 0, ease : Expo.easeOut }, "-=0.2");
+		timeline.from($myPortfolio.find("span.johnred"), 0.8, { opacity : 0, ease : Expo.easeOut }, "-=0.2");
 		timeline.staggerFrom($whomAmI.find("span.a"), 0.3, { opacity : 0, ease : Expo.easeOut }, 0.03, "-=0.8");
-		timeline.from($whomAmI.find("span.johnred"), 0.6, { opacity : 0, ease : Expo.easeOut }, "-=0.2");
-		timeline.staggerFrom($availability.find("span.a"), 0.3, { opacity : 0, ease : Expo.easeOut }, 0.01, "-=0.8");
-		timeline.from($availability.find("span.johnred"), 0.6, { opacity : 0, ease : Sine.easeOut }, "-=0.2");
-		*/
+		timeline.from($whomAmI.find("a.johnsquared"), 0.8, { opacity : 0, ease : Expo.easeOut }, "-=0.2");
 	};
 
 	/**

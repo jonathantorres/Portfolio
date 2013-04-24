@@ -41,11 +41,11 @@ $helveticaFont: Helvetica, Arial, san-serif;
 body { font-family: $quicksandFont; background: url(../img/page_bg.jpg) repeat; }
 h1, h2, h3, h4, h5, p, ul, ol { margin: 0px; padding: 0px; }
 h1, h2, h3, h4, h5 { font-weight: normal; color: $lightGray; }
-h1 { font-size: $size38px; }
-h2 { font-size: $size34px; }
-h3 { font-size: $size28px; }
-h4 { font-size: $size24px; }
-h5 { font-size: $size18px; }
+h1 { font-size: $size34px; }
+h2 { font-size: $size30px; }
+h3 { font-size: $size24px; }
+h4 { font-size: $size22px; }
+h5 { font-size: $size16px; }
 a:link, a:active, a:visited { color: #666; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
@@ -293,7 +293,7 @@ a:hover { text-decoration: underline; }
 	bottom: 30px;
 	width: 100%;
 	color: #FFF;
-	padding: 45px 20px;
+	// padding: 45px 20px;
 	z-index: 9997;
 	@include box-sizing(border-box);
 }
@@ -303,8 +303,13 @@ a:hover { text-decoration: underline; }
  */
 #welcome {
 	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
 	width: 900px;
-	margin: 154px auto auto auto;
+	height: 200px;
+	margin-top: -(200px / 2);
+	margin-left: -(900px / 2);
 	font-family: $quicksandFont;
 
 	.circle {
@@ -323,6 +328,10 @@ a:hover { text-decoration: underline; }
 			img { display: block; margin: 0px 0px 0px -42px; }
 		}
 	}
+	
+	a:link, a:active, a:visited { color: #000; @include transition (color 0.5s ease-out); }
+	a:hover { text-decoration: none; color: #FFF; @include transition (color 0.5s ease-out); }
+	.in_the_top { margin-top: 20px; }
 }
 
 /**
