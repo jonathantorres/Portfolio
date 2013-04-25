@@ -5,7 +5,7 @@
 		$logo,
 		$mainNavigation,
 		$pageFooter,
-		header;
+		social;
 
 	function Site() {}
 
@@ -21,9 +21,9 @@
 		TweenMax.to($topHeader, 0.5, { top : "0px", ease : Power1.easeOut } );
 		TweenMax.to($pageFooter, 0.5, { bottom : "0px", ease : Power1.easeOut } );
 
-		// Start the header
-		header = new Header();
-		header.init($topHeader);
+		// Start the Social widget
+		social = new Social();
+		social.init();
 
 		// Click on main nav items
 		$mainNavigation.find("a").on("click", function(e) {

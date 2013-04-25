@@ -58,7 +58,7 @@ module.exports = function(grunt) {
           Sine: true,
 
           // site
-          Header: true,
+          Social: true,
           Contact: true,
           Welcome: true,
           Portfolio: true,

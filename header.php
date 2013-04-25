@@ -72,46 +72,18 @@
                     </li>
                 </ul>
             </nav>
-            <a href="#" class="arrow">
-                <img src="img/arrow_down.png">
-            </a>
-            
-            <!-- The sliding header -->
-            <div id="header_content">
-                <a href="#" class="header_arrow left_arrow"></a>
-                <a href="#" class="header_arrow right_arrow"></a>
-                <ul class="boxes">
-                    <li class="box about_me">
-                        <span class="box_title">About me</span>
-                        <img src="img/me.jpg">
-                        <p>Hi, I’m a 25 year old Web Designer based in Carolina, Puerto Rico. I have 2 years of experience in the Web Design field and still growing. Apart from spending my days in front of the computer I also enjoy watching TV series, play video games and listen to Heavy Metal music.</p>
-                        <span class="line"></span>
-                    </li>
-                    <li class="box instagram_img">
-                        <span class="box_title">Photo</span>
-                        <img src="img/instagram_img.jpg">
-                        <p>With the amazing @otep_shamaya @otepofficial Thanks for one of the best nights ever! \m/</p>
-                        <span class="line"></span>
-                    </li>
-                    <li class="box tweet">
-                        <span class="box_title">Tweet</span>
-                        <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. #8ReasonsWhyImOnTwitter</p>
-                        <span class="line"></span>
-                    </li>
-                    <li class="box instagram_img">
-                        <span class="box_title">Photo</span>
-                        <img src="img/instagram_img.jpg">
-                        <p>With the amazing @otep_shamaya @otepofficial Thanks for one of the best nights ever! \m/</p>
-                        <span class="line"></span>
-                    </li>
-                    <li class="box tweet">
-                        <span class="box_title">Tweet</span>
-                        <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. #8ReasonsWhyImOnTwitter</p>
-                        <span class="line"></span>
-                    </li>
-                </ul>
-            </div><!-- #header_content -->
-
         </header><!-- #topheader -->
+        
+        <!-- Opening Arrow -->
+        <a href="#" id="open_arrow">
+            <img src="img/header_arrow.png">
+        </a>
+        
+        <!-- Social Slide -->
+        <div id="social">
+            <a href="#" class="social_arrow left_arrow"></a>
+            <a href="#" class="social_arrow right_arrow"></a>
+            <a href="#" class="social_close">X</a>
+        </div>
 
         <div id="content">

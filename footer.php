@@ -21,7 +21,7 @@
         <script src="js/Portfolio.js"></script>
         <script src="js/Contact.js"></script>
         <script src="js/Welcome.js"></script>
-        <script src="js/Header.js"></script>
+        <script src="js/Social.js"></script>
         <script src="js/Site.js"></script>
         <script src="js/Preloader.js"></script>
         <script src="js/main.js"></script>
