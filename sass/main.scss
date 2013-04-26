@@ -38,7 +38,7 @@ $helveticaFont: Helvetica, Arial, san-serif;
 /**
  * Global Styles
  */
-body { font-family: $quicksandFont; background: url(../img/page_bg.jpg) repeat; }
+body { overflow: hidden; font-family: $quicksandFont; background: url(../img/page_bg.jpg) repeat; }
 h1, h2, h3, h4, h5, p, ul, ol { margin: 0px; padding: 0px; }
 h1, h2, h3, h4, h5 { font-weight: normal; color: $lightGray; }
 h1 { font-size: $size34px; }
@@ -154,43 +154,105 @@ a:hover { text-decoration: underline; }
 }
 
 /**
- * Arrow for social content
- */
-#open_arrow {
-	display: block;
-	position: absolute;
-	width: 44px;
-	height: 46px;
-	top: 48%;
-	right: 0px;
-	z-index: 9998;
-	background: #181818;
-
-	&:hover { background: #212121; }
-
-	img {
-		display: block;
-		position: absolute;
-		top: 10px;
-		left: 14px;
-		@include transform-origin(center center);
-	}
-}
-
-/**
  * Social content
  */
 #social {
 	display: block;
 	position: absolute;
-	top: 33%; //do a JS fix on init();
-	left: 0px;
+	top: 32%; //do a JS fix on init();
+	// left: 106px;
 	width: 100%;
-	height: 315px;
+	height: 320px;
 	border: solid 1px #000;
 	z-index: 9998;
 	@include box-sizing(border-box);
 	background: #000 url(../img/social_bg.jpg) repeat;
+
+	#open_arrow {
+		display: block;
+		position: absolute;
+		width: 44px;
+		height: 46px;
+		top: 46%;
+		left: -44px;
+		background: #181818;
+		@include transition (background 0.5s ease-out);
+
+		&:hover { background: #212121; @include transition (background 0.5s ease-out); }
+
+		img {
+			display: block;
+			position: absolute;
+			top: 10px;
+			left: 14px;
+			@include transform-origin(center center);
+		}
+	}
+
+	h1 {
+		float: left;
+		text-transform: uppercase;
+		font-size: $size32px;
+		width: 260px;
+		padding: 10px 0px 0px 30px;
+	}
+
+	.social_close {
+		display: block;
+		position: absolute;
+		top: -3px;
+		right: 18px;
+		font-size: $size28px;
+		color: #747474;
+		@include transition (color 0.5s ease-out);
+
+		&:hover { text-decoration: none; color: #e9e6e6; @include transition (color 0.5s ease-out); }
+	}
+
+	.social_arrow {
+		display: block;
+		position: relative;
+		float: left;
+		width: 45px;
+		height: 45px;
+		border-radius: 4px;
+		margin: 16px 10px 0px 0px;
+		background: #111;
+		@include transition (background 0.5s ease-out);
+
+		&:hover { background: #c6060d; @include transition (background 0.5s ease-out); }
+
+		img {
+			display: block;
+			position: absolute;
+			top: 12px;
+			left: 16px;
+		}
+	}
+
+	.social_feed {
+		display: block;
+		position: relative;
+		width: 3000px;
+		list-style: none;
+		top: 0px;
+		left: 0px;
+
+		li {
+			float: left;
+			width: 375px;
+			height: 160px;
+			margin: 0px 0px 0px 30px;
+
+			h3 {
+				font-size: $size18px;
+			}
+
+			p {
+				color: #c8c8c8;
+			}
+		}
+	}
 }
 
 /**

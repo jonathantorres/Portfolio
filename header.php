@@ -74,16 +74,47 @@
             </nav>
         </header><!-- #topheader -->
         
-        <!-- Opening Arrow -->
-        <a href="#" id="open_arrow">
-            <img src="img/header_arrow.png">
-        </a>
-        
         <!-- Social Slide -->
         <div id="social">
-            <a href="#" class="social_arrow left_arrow"></a>
-            <a href="#" class="social_arrow right_arrow"></a>
-            <a href="#" class="social_close">X</a>
+            <!-- Opening Arrow -->
+            <a href="#" id="open_arrow">
+                <img src="img/header_arrow.png">
+            </a>
+
+            <a href="#" class="social_close">x</a>
+            
+            <div class="title_area clearfix">
+                <h1>Social Me</h1>
+                <a href="#" class="social_arrow left_arrow"><img src="img/social_left_arrow.png"></a>
+                <a href="#" class="social_arrow right_arrow"><img src="img/social_right_arrow.png"></a>
+            </div>
+
+            <ul class="social_feed">
+                <li class="twitter">
+                    <h3>Twitter</h3>
+                    <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. #8ReasonsWhyImOnTwitter</p>
+                </li>
+                <li class="twitter">
+                    <h3>Twitter</h3>
+                    <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. #8ReasonsWhyImOnTwitter</p>
+                </li>
+                <li class="twitter">
+                    <h3>Twitter</h3>
+                    <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. #8ReasonsWhyImOnTwitter</p>
+                </li>
+                <li class="twitter">
+                    <h3>Twitter</h3>
+                    <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. #8ReasonsWhyImOnTwitter</p>
+                </li>
+                <li class="twitter">
+                    <h3>Twitter</h3>
+                    <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. #8ReasonsWhyImOnTwitter</p>
+                </li>
+                <li class="twitter">
+                    <h3>Twitter</h3>
+                    <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. #8ReasonsWhyImOnTwitter</p>
+                </li>
+            </ul>
         </div>
 
         <div id="content">
