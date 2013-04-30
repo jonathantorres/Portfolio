@@ -17,7 +17,7 @@ module.exports = function(grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['js/*.js'],
+        src: ['js/ComingSoon.js', 'js/main.js'],
         dest: 'js/<%= pkg.name %>.js'
       }
     },
@@ -28,6 +28,16 @@ module.exports = function(grunt) {
       dist: {
         src: '<%= concat.dist.dest %>',
         dest: 'js/<%= pkg.name %>.min.js'
+      }
+    },
+    sass: {
+      dist: {
+        options: {
+          style: 'compressed'
+        },
+        files: {
+          'css/main.css' : 'sass/main.scss'
+        }
       }
     },
     jshint: {
@@ -44,60 +54,25 @@ module.exports = function(grunt) {
         boss: true,
         eqnull: true,
         browser: true,
+        force: true,
         globals: {
-          // jQuery
-          $: true,
           jQuery: true,
-          console: true,
-
-          // greensock
-          TweenMax: true,
-          TimelineMax: true,
-          Expo: true,
-          Power1: true,
-          Sine: true,
-
-          // site
-          Social: true,
-          Contact: true,
-          Welcome: true,
-          Portfolio: true,
-          Resume: true,
-          Site: true,
-          Preloader: true,
-          hasher: true
+          $: true,
+          TimelineMax: true
         }
       },
       gruntfile: {
         src: 'Gruntfile.js'
       },
+      lint_code: {
+        src: ['js/main.js', 'js/ComingSoon.js']
+      },
       lib_test: {
         src: ['lib/**/*.js', 'test/**/*.js']
-      },
-      debug: {
-        src: 'js/*.js'
       }
     },
     qunit: {
       files: ['test/**/*.html']
-    },
-    sass: {
-      dev: {
-        options: {
-          style: 'expanded'
-        },
-        files: {
-          'css/main.css' : 'sass/main.scss'
-        }
-      },
-      deploy: {
-        options: {
-          style: 'compressed'
-        },
-        files: {
-          'css/main.css' : 'sass/main.scss'
-        }
-      }
     },
     watch: {
       gruntfile: {
@@ -109,12 +84,12 @@ module.exports = function(grunt) {
         tasks: ['jshint:lib_test', 'qunit']
       },
       sass: {
-        files: 'sass/main.scss',
-        tasks: 'sass:dev'
+        files: ['sass/main.scss'],
+        tasks: ['sass']
       },
       jshint: {
-        files: 'js/*.js',
-        tasks: 'jshint:debug'
+        files: ['js/main.js', 'js/ComingSoon.js'],
+        tasks: ['jshint']
       }
     }
   });
@@ -122,14 +97,15 @@ module.exports = function(grunt) {
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  //grunt.loadNpmTasks('grunt-contrib-nodeunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'sass:dev']);
-
-  // Deployment task
-  grunt.registerTask('deploy', ['jshint', 'sass:deploy', 'concat', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'sass']);
+  
+  // Deployment task.
+  grunt.registerTask('deploy', ['concat', 'uglify', 'sass']);
 
 };

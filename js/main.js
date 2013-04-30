@@ -1,7 +1,5 @@
-/**
- * Start!
- */
-$(window).on("load", function() {
-	var preloader = new Preloader();
-	preloader.init();
+$(document).ready(function() {
+	var soon = new ComingSoon();
+	soon.init();
 });
+

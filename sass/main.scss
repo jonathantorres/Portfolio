@@ -1,7 +1,6 @@
 @import "bourbon/bourbon";
 @import "boilerplate.scss";
 
-
 /* ==========================================================================
    Author - Jonathan Torres
    ========================================================================== */
@@ -38,16 +37,14 @@ $helveticaFont: Helvetica, Arial, san-serif;
 /**
  * Global Styles
  */
-body { overflow: hidden; font-family: $quicksandFont; background: url(../img/page_bg.jpg) repeat; }
+body { font-family: $quicksandFont; background: url(../img/page_bg.jpg) repeat; }
 h1, h2, h3, h4, h5, p, ul, ol { margin: 0px; padding: 0px; }
 h1, h2, h3, h4, h5 { font-weight: normal; color: $lightGray; }
-h1 { font-size: $size34px; }
-h2 { font-size: $size30px; }
-h3 { font-size: $size24px; }
-h4 { font-size: $size22px; }
-h5 { font-size: $size16px; }
-a:link, a:active, a:visited { color: #666; text-decoration: none; }
-a:hover { text-decoration: underline; }
+h1 { font-size: $size40px; }
+h2 { font-size: $size34px; }
+h3 { font-size: $size28px; }
+h4 { font-size: $size24px; }
+h5 { font-size: $size18px; }
 
 /**
  * Useful classes
@@ -70,82 +67,83 @@ a:hover { text-decoration: underline; }
 }
 
 /**
- * Preloader
+ * Coming Soon!
  */
-.preload_bg {
+#soon {
 	display: block;
 	position: absolute;
-	top: 0px;
-	left: 0px;
 	width: 100%;
 	height: 100%;
-	z-index: 9999;
-	background: #161616;
+	margin: auto;
 
-	.load_text {
-		
-	}
-}
+	.myinfo {
+		position: absolute;
+		top: 45%;
+		left: 50%;
+		width: 900px;
+		height: 200px;
+		margin-top: -100px;
+		margin-left: -450px;
 
-/**
- * Top Header
- */
-#topheader {
-	display: block;
-	position: fixed;
-	top: -80px;
-	width: 100%;
-	height: 40px;
-	padding: 0px 20px;
-	border-bottom: solid 1px #333;
-	z-index: 9998;
-	background-color: rgba(0, 0, 0, 0.6);
-	@include box-sizing(border-box);
+		.circle {
+			display: block;
+			float: left;
+			opacity: 0;
+			margin: 0px 30px 0px 0px;
+			@include circle(200px, 200px, #161616);
+			@include box-shadow(0px 0px 400px 40px rgba(150, 150, 150, 0.08));
 
-	a, a:link, a:active, a:visited {
-		font-family: $quicksandFont; 
-		font-weight: normal;
-		text-decoration: none;
-	}
+			.inside {
+				@include circle(167px, 167px, #303030);
+				overflow: hidden;
+				border: solid 4px #303030;
+				margin: 13px 0px 0px 12px;
 
-	a.jonathan, a.jonathan:link, a.jonathan:active, a.jonathan:visited {
-		text-transform: uppercase;
-		color: #c8c8c8;
-		font-size: $size22px;
+				img { display: block; margin: 0px 0px 0px -42px; }
+			}
+		}
 	}
 
-	nav {
-		float: right;
+	.reachme {
+		position: absolute;
+		bottom: 60px;
+		left: 50%;
+		width: 660px;
+		height: 60px;
+		margin-left: -330px;
 
-		#main_nav {
-			margin-top: 10px;
+		.find_me {
+			position: relative;
+			margin: 10px 0px 0px 60px;
 
-			li {
-				float: left;
-				margin-left: 20px;
-				font-size: $size14px;
+			.reach_icons {
+				display: block;
+				list-style: none;
+				position: absolute;
+				top: 0px;
+				left: 339px;
+				width: 200px;
 
-				a, a:active, a:visited, a:link {
-					text-decoration: none;
-					text-transform: uppercase;
-					color: #c8c8c8;
-					@include transition (color 1s ease-out);
-					&:hover { color: #FFF; @include transition (color 1s ease-out); }
-				}
+				li {
+					a:link, a:active, a:visited {
+						display: block;
+						float: left;
+						width: 39px;
+						height: 38px;
+						margin-left: 10px;
+						@include transition (background 0.5s ease-in-out);
 
-				&.selected, &:hover {
-					.marker { display: block; }
-				}
+						&.fb { background: transparent url(../img/soon_fb_icon.png) no-repeat; }
+						&.twitter { background: transparent url(../img/soon_twitter_icon.png) no-repeat; }
+						&.in { background: transparent url(../img/soon_in_icon.png) no-repeat; }
+						&.github { background: transparent url(../img/soon_git_icon.png) no-repeat; }
 
-				.marker {
-					display: none;
-					height: 3px;
-					background: #303030;
-					
-					.prog {
-						width: 15%;
-						height: inherit;
-						background: $johnRed;
+						&.fb:hover { background: transparent url(../img/soon_fb_icon_hover.png) no-repeat; }
+						&.twitter:hover { background: transparent url(../img/soon_twitter_icon_hover.png) no-repeat; }
+						&.in:hover { background: transparent url(../img/soon_in_icon_hover.png) no-repeat; }
+						&.github:hover { background: transparent url(../img/soon_git_icon_hover.png) no-repeat; }
+
+						&:hover { @include transition (background 0.5s ease-in-out); }
 					}
 				}
 			}
@@ -153,221 +151,4 @@ a:hover { text-decoration: underline; }
 	}
 }
 
-/**
- * Social content
- */
-#social {
-	display: block;
-	position: absolute;
-	top: 32%; //do a JS fix on init();
-	// left: 106px;
-	width: 100%;
-	height: 320px;
-	border: solid 1px #000;
-	z-index: 9998;
-	@include box-sizing(border-box);
-	background: #000 url(../img/social_bg.jpg) repeat;
-
-	#open_arrow {
-		display: block;
-		position: absolute;
-		width: 44px;
-		height: 46px;
-		top: 46%;
-		left: -44px;
-		background: #181818;
-		@include transition (background 0.5s ease-out);
-
-		&:hover { background: #212121; @include transition (background 0.5s ease-out); }
-
-		img {
-			display: block;
-			position: absolute;
-			top: 10px;
-			left: 14px;
-			@include transform-origin(center center);
-		}
-	}
-
-	h1 {
-		float: left;
-		text-transform: uppercase;
-		font-size: $size32px;
-		width: 260px;
-		padding: 10px 0px 0px 30px;
-	}
-
-	.social_close {
-		display: block;
-		position: absolute;
-		top: -3px;
-		right: 18px;
-		font-size: $size28px;
-		color: #747474;
-		@include transition (color 0.5s ease-out);
-
-		&:hover { text-decoration: none; color: #e9e6e6; @include transition (color 0.5s ease-out); }
-	}
-
-	.social_arrow {
-		display: block;
-		position: relative;
-		float: left;
-		width: 45px;
-		height: 45px;
-		border-radius: 4px;
-		margin: 16px 10px 0px 0px;
-		background: #111;
-		@include transition (background 0.5s ease-out);
-
-		&:hover { background: #c6060d; @include transition (background 0.5s ease-out); }
-
-		img {
-			display: block;
-			position: absolute;
-			top: 12px;
-			left: 16px;
-		}
-	}
-
-	.social_feed {
-		display: block;
-		position: relative;
-		width: 3000px;
-		list-style: none;
-		top: 0px;
-		left: 0px;
-
-		li {
-			float: left;
-			width: 375px;
-			height: 160px;
-			margin: 0px 0px 0px 30px;
-
-			h3 {
-				font-size: $size18px;
-			}
-
-			p {
-				color: #c8c8c8;
-			}
-		}
-	}
-}
-
-/**
- * Content Area
- */
-#content {
-	position: absolute;
-	display: block;
-	top: 40px;
-	bottom: 30px;
-	width: 100%;
-	color: #FFF;
-	// padding: 45px 20px;
-	z-index: 9997;
-	@include box-sizing(border-box);
-}
-
-/**
- * Welcome
- */
-#welcome {
-	display: none;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 900px;
-	height: 200px;
-	margin-top: -(200px / 2);
-	margin-left: -(900px / 2);
-	font-family: $quicksandFont;
-
-	.circle {
-		display: block;
-		float: left;
-		margin: 0px 30px 0px 0px;
-		@include circle(200px, 200px, #161616);
-		@include box-shadow(0px 0px 400px 40px rgba(150, 150, 150, 0.08));
-
-		.inside {
-			@include circle(167px, 167px, #303030);
-			overflow: hidden;
-			border: solid 4px #303030;
-			margin: 13px 0px 0px 12px;
-
-			img { display: block; margin: 0px 0px 0px -42px; }
-		}
-	}
-	
-	a:link, a:active, a:visited { color: #000; @include transition (color 0.5s ease-out); }
-	a:hover { text-decoration: none; color: #FFF; @include transition (color 0.5s ease-out); }
-	.in_the_top { margin-top: 20px; }
-}
-
-/**
- * Portfolio
- */
-#portfolio {
-	display: none;
-}
-
-/**
- * Contact
- */
-#contact {
-	display: none;
-}
-
-/**
- * Resume
- */
-#resume {
-	display: none;
-}
-
-/**
- * Footer
- */
-#pagefooter {
-	display: block;
-	position: fixed;
-	bottom: -30px;
-	width: 100%;
-	height: 30px;
-	color: #666;
-	padding: 5px 20px;
-	border-top: solid 1px #333;
-	z-index: 9998;
-	background-color: #000;
-	@include box-sizing(border-box);
-
-	p {
-		float: left;
-		margin-top: 2px;
-		font-family: $helveticaFont;
-		font-size: $size12px;
-	}
-
-	.social_icons {
-		float: right;
-		margin-top: -4px;
-
-		li {
-			float: left;
-			margin-left: 10px;
-			list-style: none;
-
-			a, a:active, a:visited, a:link { 
-				opacity: 0.2;
-				@include transition (opacity 0.5s ease-out);
-				&:hover { opacity: 0.8; @include transition (opacity 0.5s ease-out); }
-			}
-		}
-	}
-}
-
-
 @import "helpers.scss";
-
