@@ -88,33 +88,43 @@
                 <a href="#" class="social_arrow left_arrow"><img src="img/social_left_arrow.png"></a>
                 <a href="#" class="social_arrow right_arrow"><img src="img/social_right_arrow.png"></a>
             </div>
-
-            <ul class="social_feed">
-                <li class="twitter">
-                    <h3>Twitter</h3>
-                    <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. #8ReasonsWhyImOnTwitter</p>
-                </li>
-                <li class="twitter">
-                    <h3>Twitter</h3>
-                    <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. #8ReasonsWhyImOnTwitter</p>
-                </li>
-                <li class="twitter">
-                    <h3>Twitter</h3>
-                    <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. #8ReasonsWhyImOnTwitter</p>
-                </li>
-                <li class="twitter">
-                    <h3>Twitter</h3>
-                    <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. #8ReasonsWhyImOnTwitter</p>
-                </li>
-                <li class="twitter">
-                    <h3>Twitter</h3>
-                    <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. #8ReasonsWhyImOnTwitter</p>
-                </li>
-                <li class="twitter">
-                    <h3>Twitter</h3>
-                    <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. #8ReasonsWhyImOnTwitter</p>
-                </li>
-            </ul>
+            
+            <div class="feed_wrapper">
+                <ul class="social_feed clearfix">
+                    <li class="twitter">
+                        <h3>Twitter</h3>
+                        <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. <span class="johnred">#8ReasonsWhyImOnTwitter</span></p>
+                    </li>
+                    <li class="instagram">
+                        <a href="#" class="circle">
+                            <div class="circle inside">
+                                <div class="hover">
+                                    <img src="img/instagram_hover_icon.png" alt="Instagram">
+                                </div>
+                                <img src="img/thats_me.jpg" alt="me">
+                            </div>
+                        </a>
+                        <h3>Instagram</h3>
+                        <p>The time goes on and on. <span class="johnred">#Time</span> <span class="johnred">#Shoes</span> <span class="johnred">#Again</span></p>
+                    </li>
+                    <li class="twitter">
+                        <h3>Twitter</h3>
+                        <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. <span class="johnred">#8ReasonsWhyImOnTwitter</span></p>
+                    </li>
+                    <li class="twitter">
+                        <h3>Twitter</h3>
+                        <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. <span class="johnred">#8ReasonsWhyImOnTwitter</span></p>
+                    </li>
+                    <li class="twitter">
+                        <h3>Twitter</h3>
+                        <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. <span class="johnred">#8ReasonsWhyImOnTwitter</span></p>
+                    </li>
+                    <li class="twitter">
+                        <h3>Twitter</h3>
+                        <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. <span class="johnred">#8ReasonsWhyImOnTwitter</span></p>
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <div id="content">

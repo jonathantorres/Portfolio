@@ -229,27 +229,83 @@ a:hover { text-decoration: underline; }
 			left: 16px;
 		}
 	}
-
-	.social_feed {
-		display: block;
+	
+	.feed_wrapper {
+		overflow: hidden;
 		position: relative;
-		width: 3000px;
-		list-style: none;
-		top: 0px;
+		top: 23px;
 		left: 0px;
+		margin: 0px 0px 0px 30px;
 
-		li {
-			float: left;
-			width: 375px;
-			height: 160px;
-			margin: 0px 0px 0px 30px;
+		.social_feed {
+			display: block;
+			position: relative;
+			top: 15px;
+			left: 0px;
+			width: 3000px;
+			list-style: none;
 
-			h3 {
-				font-size: $size18px;
-			}
+			li {
+				float: left;
+				height: 160px;
+				padding: 0px 0px 0px 45px;
+				border-right: solid 1px #000;
+				border-left: solid 1px #272727;
+				
+				&:first-child { border-left: none; padding: 0px 0px 0px 0px; }
+				&.twitter { width: 400px; }
+				&.instagram { width: 500px; }
 
-			p {
-				color: #c8c8c8;
+				h3 {
+					color: #c8c8c8;
+					font-size: $size20px;
+					font-weight: bold;
+					margin: 0px 0px 6px 0px;
+				}
+
+				p {
+					color: #b2b2b2;
+					font-size: $size18px;
+				}
+
+				.circle {
+					display: block;
+					float: left;
+					margin: -23px 30px 0px 0px;
+					@include circle(175px, 175px, #161616);
+
+					&:hover {
+						.inside {
+							.hover { display: block; }
+						}
+					}
+
+					.inside {
+						position: relative;
+						@include circle(150px, 150px, #303030);
+						overflow: hidden;
+						border: solid 4px #303030;
+						margin: 9px 0px 0px 8px;
+
+						img { display: block; margin: -9px 0px 0px -57px; }
+
+						.hover {
+							display: none;
+							position: absolute;
+							top: 0px;
+							left: 0px;
+							width: 150px;
+							height: 150px;
+							background: rgba(198, 6, 13, 0.75);
+
+							img {
+								position: absolute;
+								top: 60px;
+								left: 108px;
+							}
+						}
+					}
+				}
 			}
 		}
 	}
