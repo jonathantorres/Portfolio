@@ -240,7 +240,6 @@ a:hover { text-decoration: underline; }
 		position: relative;
 		top: 23px;
 		left: 0px;
-		margin: 0px 0px 0px 30px;
 
 		.social_feed {
 			display: block;
@@ -252,14 +251,14 @@ a:hover { text-decoration: underline; }
 
 			li {
 				float: left;
+				width: 500px;
 				height: 160px;
-				padding: 0px 0px 0px 45px;
+				padding: 0px 0px 0px 30px;
 				border-right: solid 1px #000;
 				border-left: solid 1px #272727;
+				@include box-sizing(border-box);
 				
-				&:first-child { border-left: none; padding: 0px 0px 0px 0px; }
-				&.twitter { width: 400px; }
-				&.instagram { width: 500px; }
+				&:first-child { border-left: none; }
 
 				h3 {
 					color: #c8c8c8;
