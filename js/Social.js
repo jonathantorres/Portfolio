@@ -10,6 +10,7 @@
 		$content;
 
 	var isOpen = false,
+		singleItemWidth = 533,
 		itemsWidth = 0;
 
 	function Social() { }
@@ -25,9 +26,7 @@
 		$leftArrow.on("click", leftArrowClicked);
 
 		$socialFeed.find("li").each(function() {
-			itemsWidth += $(this).innerWidth() + 45;
-
-			console.log($(this).innerWidth());
+			itemsWidth += $(this).innerWidth() + 3;
 		});
 
 		$socialFeed.css({ width : itemsWidth, left : 0 });
@@ -40,11 +39,9 @@
 			return false;
 		}
 
-		console.log(-parseInt($socialFeed.css("width"), 10) + 500);
-
 		// Move items to the left
-		if (parseInt($socialFeed.css("left"), 10) > -parseInt($socialFeed.css("width"), 10) + 506) {
-			TweenMax.to($socialFeed, 0.5, { left : "-=501", ease : Expo.easeOut } );
+		if (parseInt($socialFeed.css("left"), 10) > -parseInt($socialFeed.css("width"), 10) + singleItemWidth) {
+			TweenMax.to($socialFeed, 0.5, { left : "-=" + singleItemWidth, ease : Expo.easeOut } );
 		}
 
 		// animate back to the beginning
@@ -62,12 +59,12 @@
 
 		// Animate to the right
 		if (parseInt($socialFeed.css("left"), 10) < 0) {
-			TweenMax.to($socialFeed, 0.5, { left : "+=501", ease : Expo.easeOut } );
+			TweenMax.to($socialFeed, 0.5, { left : "+=" + singleItemWidth, ease : Expo.easeOut } );
 		}
 
 		// animate back to the end
 		else {
-			TweenMax.to($socialFeed, 0.8, { left : -parseInt($socialFeed.css("width"), 10) + 501, ease : Expo.easeOut } );
+			TweenMax.to($socialFeed, 0.8, { left : -parseInt($socialFeed.css("width"), 10) + singleItemWidth, ease : Expo.easeOut } );
 		}
 	};
 

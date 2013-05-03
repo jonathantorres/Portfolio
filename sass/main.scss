@@ -256,9 +256,9 @@ a:hover { text-decoration: underline; }
 				padding: 0px 0px 0px 30px;
 				border-right: solid 1px #000;
 				border-left: solid 1px #272727;
-				@include box-sizing(border-box);
 				
 				&:first-child { border-left: none; }
+				&:last-child { border-right: none; }
 
 				h3 {
 					color: #c8c8c8;
