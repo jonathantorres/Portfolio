@@ -7,7 +7,9 @@
 		$leftArrow,
 		$rightArrow,
 		$socialFeed,
-		$content;
+		$header,
+		$content,
+		$footer;
 
 	var isOpen = false,
 		singleItemWidth = 533,
@@ -20,7 +22,10 @@
 
 		$openArrow.on("click", openArrowClicked);
 		$socialClose.on("click", socialCloseClicked);
+
+		$header.on("click", contentClicked);
 		$content.on("click", contentClicked);
+		$footer.on("click", contentClicked);
 
 		$rightArrow.on("click", rightArrowClicked);
 		$leftArrow.on("click", leftArrowClicked);
@@ -32,6 +37,9 @@
 		$socialFeed.css({ width : itemsWidth, left : 0 });
 	};
 
+	/**
+	 * Click on Arrows
+	 */
 	var rightArrowClicked = function(e) {
 		e.preventDefault();
 
@@ -84,11 +92,7 @@
 	 */
 	var contentClicked = function(e) {
 		e.preventDefault();
-		
-		if (isOpen) {
-			closeSocial();
-			isOpen = false;
-		}
+		socialCloseClicked(e);
 	};
 
 	var openArrowClicked = function(e) {
@@ -120,7 +124,9 @@
 		$leftArrow = $(".left_arrow");
 		$rightArrow = $(".right_arrow");
 		$socialFeed = $(".social_feed");
+		$header = $("#topheader");
 		$content = $("#content");
+		$footer = $("#pagefooter");
 	};
 
 	window.Social = Social;
