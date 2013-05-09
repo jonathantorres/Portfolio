@@ -88,6 +88,27 @@ a:hover { text-decoration: underline; }
 	&:focus, &::selection { outline: none; background: #111; }
 }
 
+.social_arrow {
+	display: block;
+	position: relative;
+	float: left;
+	width: 45px;
+	height: 45px;
+	border-radius: 4px;
+	margin: 16px 10px 0px 0px;
+	background: #111;
+	@include transition (background 0.5s ease-out);
+
+	&:hover { background: #c6060d; @include transition (background 0.5s ease-out); }
+
+	img {
+		display: block;
+		position: absolute;
+		top: 12px;
+		left: 16px;
+	}
+}
+
 /**
  * Preloader
  */
@@ -231,27 +252,6 @@ a:hover { text-decoration: underline; }
 		@include transition (color 0.5s ease-out);
 
 		&:hover { text-decoration: none; color: #e9e6e6; @include transition (color 0.5s ease-out); }
-	}
-
-	.social_arrow {
-		display: block;
-		position: relative;
-		float: left;
-		width: 45px;
-		height: 45px;
-		border-radius: 4px;
-		margin: 16px 10px 0px 0px;
-		background: #111;
-		@include transition (background 0.5s ease-out);
-
-		&:hover { background: #c6060d; @include transition (background 0.5s ease-out); }
-
-		img {
-			display: block;
-			position: absolute;
-			top: 12px;
-			left: 16px;
-		}
 	}
 	
 	.feed_wrapper {
@@ -475,6 +475,63 @@ a:hover { text-decoration: underline; }
  */
 #resume {
 	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 1000px;
+	height: 575px;
+	margin-top: -(575px / 2);
+	margin-left: -(1000px / 2);
+	font-family: $quicksandFont;
+
+	.social_arrow {
+		position: absolute;
+		float: none;
+		bottom: 0px;
+		margin: 0px;
+
+		&.up_arrow { left: 48%; }
+		&.down_arrow { left: 53%; }
+
+		img {
+			top: 14px;
+			left: 10px;
+		}
+	}
+
+	#overview {
+		position: absolute;
+		width: 800px;
+		height: 300px;
+		top: 50%;
+		left: 50%;
+		margin-top: -(300px / 2);
+		margin-left: -(800px / 2);
+
+		.circle {
+			display: block;
+			float: left;
+			margin: 20px 30px 0px 0px;
+			@include circle(200px, 200px, #161616);
+			@include box-shadow(0px 0px 400px 40px rgba(150, 150, 150, 0.04));
+
+			.inside {
+				@include circle(167px, 167px, #303030);
+				overflow: hidden;
+				border: solid 4px #303030;
+				margin: 13px 0px 0px 12px;
+
+				img { display: block; margin: 0px 0px 0px -42px; }
+			}
+		}
+
+		p {
+			color: #c8c8c8;
+			margin-bottom: 15px;
+			font-weight: 100;
+			font-size: 1.2em;
+		}
+	}
 }
 
 /**
