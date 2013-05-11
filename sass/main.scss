@@ -484,6 +484,12 @@ a:hover { text-decoration: underline; }
 	margin-left: -(1000px / 2);
 	font-family: $quicksandFont;
 
+	p {
+		color: #c8c8c8;
+		font-weight: 100;
+		font-size: 1.2em;
+	}
+
 	.social_arrow {
 		position: absolute;
 		float: none;
@@ -500,6 +506,7 @@ a:hover { text-decoration: underline; }
 	}
 
 	#overview {
+		display: none;
 		position: absolute;
 		width: 800px;
 		height: 300px;
@@ -525,11 +532,64 @@ a:hover { text-decoration: underline; }
 			}
 		}
 
-		p {
-			color: #c8c8c8;
-			margin-bottom: 15px;
-			font-weight: 100;
-			font-size: 1.2em;
+		p { margin-bottom: 15px; }
+	}
+
+	#specialties {
+		display: block;
+		position: absolute;
+		width: 900px;
+		height: 500px;
+		top: 50%;
+		left: 50%;
+		margin-top: -(500px / 2);
+		margin-left: -(900px / 2);
+
+		.title, p { text-align: center; }
+
+		.circle {
+			display: block;
+			float: left;
+			margin: 0px;
+			@include circle(110px, 110px, #161616);
+
+			.subcircle {
+				// add gradient background!
+				@include circle(96px, 96px, #313131);
+				margin: 7px 0px 0px 7px;
+
+				.progress_circle {
+					position: relative;
+					width: 0px;
+					height: 0px;
+					border-right: 48px solid transparent;
+					border-top: 48px solid #f16529;
+					border-left: 48px solid #f16529;
+					border-bottom: 48px solid #f16529;
+					border-top-left-radius: 48px;
+					border-top-right-radius: 48px;
+					border-bottom-left-radius: 48px;
+					border-bottom-right-radius: 48px;
+
+					.front_circle {
+						position: absolute;
+						top: -39px;
+						left: -39px;
+						@include circle(71px, 71px, #161616);
+						border: solid 4px #393939;
+						margin: 0px 0px 0px 0px;
+
+						.skill {
+							color: #636363;
+							width: 72px;
+							font-size: 1em;
+							text-align: center;
+							text-transform: uppercase;
+							margin-top: 23px;
+						}
+					}
+				}
+			}
 		}
 	}
 }
