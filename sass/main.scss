@@ -554,39 +554,34 @@ a:hover { text-decoration: underline; }
 			@include circle(110px, 110px, #161616);
 
 			.subcircle {
+				position: relative;
 				// add gradient background!
 				@include circle(96px, 96px, #313131);
 				margin: 7px 0px 0px 7px;
 
 				.progress_circle {
-					position: relative;
-					width: 0px;
-					height: 0px;
-					border-right: 48px solid transparent;
-					border-top: 48px solid #f16529;
-					border-left: 48px solid #f16529;
-					border-bottom: 48px solid #f16529;
-					border-top-left-radius: 48px;
-					border-top-right-radius: 48px;
-					border-bottom-left-radius: 48px;
-					border-bottom-right-radius: 48px;
+					position: absolute;
+					top: 0px;
+					left: 0px;
+					@include circle(96px, 96px, #f16529);
+					clip: rect(0px, 70px, 100px, 0px);
+				}
 
-					.front_circle {
-						position: absolute;
-						top: -39px;
-						left: -39px;
-						@include circle(71px, 71px, #161616);
-						border: solid 4px #393939;
-						margin: 0px 0px 0px 0px;
+				.front_circle {
+					position: absolute;
+					top: 9px;
+					left: 8px;
+					@include circle(71px, 71px, #161616);
+					border: solid 4px #393939;
+					margin: 0px 0px 0px 0px;
 
-						.skill {
-							color: #636363;
-							width: 72px;
-							font-size: 1em;
-							text-align: center;
-							text-transform: uppercase;
-							margin-top: 23px;
-						}
+					.skill {
+						color: #636363;
+						width: 72px;
+						font-size: 1em;
+						text-align: center;
+						text-transform: uppercase;
+						margin-top: 23px;
 					}
 				}
 			}

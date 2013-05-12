@@ -17,10 +17,9 @@
 		<div id="skills_container">
 			<div class="circle">
 				<div class="subcircle">
-					<div class="progress_circle">
-						<div class="front_circle">
-							<p class="skill">HTML5</p>
-						</div>
+					<div class="progress_circle"></div>
+					<div class="front_circle">
+						<p class="skill">HTML5</p>
 					</div>
 				</div>
 			</div><!-- .circle -->
