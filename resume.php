@@ -24,7 +24,7 @@
 				</div>
 			</div><!-- .circle -->
 		</div>
-    </div>
+    </div><!-- #specialties -->
 
     <a href="#" class="social_arrow up_arrow"><img src="img/social_up_arrow.png"></a>
     <a href="#" class="social_arrow down_arrow"><img src="img/social_down_arrow.png"></a>
