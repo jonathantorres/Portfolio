@@ -547,10 +547,28 @@ a:hover { text-decoration: underline; }
 
 		.title, p { text-align: center; }
 
+		h3 {
+			color: #c8c8c8;
+			text-align: center;
+			font-weight: 100;
+			font-size: 1.7em;
+			margin: 15px 0px 30px 0px;
+		}
+
+		.skills_row1 {
+			padding: 0px 0px 0px 136px;
+			height: 125px;
+		}
+
+		.skills_row2 { 
+			height: 125px;
+			padding: 0px 0px 0px 204px;
+		}
+
 		.circle {
 			display: block;
 			float: left;
-			margin: 0px;
+			margin: 0px 30px 0px 0px;
 			@include circle(110px, 110px, #161616);
 
 			.subcircle {
@@ -563,8 +581,8 @@ a:hover { text-decoration: underline; }
 					position: absolute;
 					top: 0px;
 					left: 0px;
-					@include circle(96px, 96px, #f16529);
-					clip: rect(0px, 70px, 100px, 0px);
+					width: 96px;
+					height: 96px;
 				}
 
 				.front_circle {

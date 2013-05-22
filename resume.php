@@ -13,17 +13,93 @@
 
     <div id="specialties">
     	<h1 class="title">Specialties</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-		<div id="skills_container">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+		<h3>Languages - Technologies</h3>
+		<div class="skills_row1">
 			<div class="circle">
 				<div class="subcircle">
-					<div class="progress_circle"></div>
+					<div id="html5_circle" class="progress_circle"></div>
 					<div class="front_circle">
 						<p class="skill">HTML5</p>
 					</div>
 				</div>
 			</div><!-- .circle -->
-		</div>
+
+			<div class="circle">
+				<div class="subcircle">
+					<div id="css3_circle" class="progress_circle"></div>
+					<div class="front_circle">
+						<p class="skill">CSS3</p>
+					</div>
+				</div>
+			</div><!-- .circle -->
+
+			<div class="circle">
+				<div class="subcircle">
+					<div id="js_circle" class="progress_circle"></div>
+					<div class="front_circle">
+						<p class="skill">JS</p>
+					</div>
+				</div>
+			</div><!-- .circle -->
+
+			<div class="circle">
+				<div class="subcircle">
+					<div id="as3_circle" class="progress_circle"></div>
+					<div class="front_circle">
+						<p class="skill">AS3</p>
+					</div>
+				</div>
+			</div><!-- .circle -->
+
+			<div class="circle">
+				<div class="subcircle">
+					<div id="fl_circle" class="progress_circle"></div>
+					<div class="front_circle">
+						<p class="skill">Fl</p>
+					</div>
+				</div>
+			</div><!-- .circle -->
+		</div><!-- .skills_row1 -->
+
+		<div class="skills_row2">
+			<div class="circle">
+				<div class="subcircle">
+					<div id="php_circle" class="progress_circle"></div>
+					<div class="front_circle">
+						<p class="skill">PHP</p>
+					</div>
+				</div>
+			</div><!-- .circle -->
+
+			<div class="circle">
+				<div class="subcircle">
+					<div id="mysql_circle" class="progress_circle"></div>
+					<div class="front_circle">
+						<p class="skill">MySQL</p>
+					</div>
+				</div>
+			</div><!-- .circle -->
+
+			<div class="circle">
+				<div class="subcircle">
+					<div id="ps_circle" class="progress_circle"></div>
+					<div class="front_circle">
+						<p class="skill">PS</p>
+					</div>
+				</div>
+			</div><!-- .circle -->
+
+			<div class="circle">
+				<div class="subcircle">
+					<div id="ae_circle" class="progress_circle"></div>
+					<div class="front_circle">
+						<p class="skill">AE</p>
+					</div>
+				</div>
+			</div><!-- .circle -->
+		</div><!-- .skills_row2 -->
+
     </div><!-- #specialties -->
 
     <a href="#" class="social_arrow up_arrow"><img src="img/social_up_arrow.png"></a>
