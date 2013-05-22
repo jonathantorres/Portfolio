@@ -56,6 +56,7 @@ module.exports = function(grunt) {
           Expo: true,
           Power1: true,
           Sine: true,
+          Raphael: true,
 
           // site
           Social: true,
