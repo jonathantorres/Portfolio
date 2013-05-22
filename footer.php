@@ -17,6 +17,7 @@
         <script src="libs/greensock/TweenMax.min.js"></script>
         <script src="libs/signals.min.js"></script>
         <script src="libs/hasher.min.js"></script>
+        <script src="libs/raphael-min.js"></script>
 
         <script src="js/Resume.js"></script>
         <script src="js/Portfolio.js"></script>
