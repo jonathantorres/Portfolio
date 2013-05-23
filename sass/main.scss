@@ -536,7 +536,7 @@ a:hover { text-decoration: underline; }
 	}
 
 	#specialties {
-		display: block;
+		display: none;
 		position: absolute;
 		width: 900px;
 		height: 500px;
@@ -602,6 +602,57 @@ a:hover { text-decoration: underline; }
 						margin-top: 23px;
 					}
 				}
+			}
+		}
+	}
+
+	#experience {
+		display: block;
+		position: absolute;
+		width: 900px;
+		height: 500px;
+		top: 50%;
+		left: 50%;
+		margin-top: -(500px / 2);
+		margin-left: -(900px / 2);
+
+		.title, p { text-align: center; }
+
+		.past_job {
+			float: left;
+			width: 280px;
+			height: 280px;
+			margin: 50px 0px 0px 120px;
+
+			h4 {
+				font-size: $size20px;
+				text-align: center;
+			}
+
+			.position {
+				font-size: $size16px;
+				color: #ff000a;
+			}
+
+			.timeframe {
+				font-size: $size16px
+			}
+		}
+
+		.circle {
+			display: block;
+			float: left;
+			margin: 0px 30px 15px 50px;
+			@include circle(170px, 170px, #161616);
+			@include box-shadow(0px 0px 400px 40px rgba(150, 150, 150, 0.04));
+
+			.inside {
+				@include circle(140px, 140px, #303030);
+				overflow: hidden;
+				border: solid 4px #303030;
+				margin: 11px 0px 0px 10px;
+
+				img { display: block; margin: -6px 0px 0px -6px; }
 			}
 		}
 	}

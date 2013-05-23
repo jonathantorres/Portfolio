@@ -99,8 +99,34 @@
 				</div>
 			</div><!-- .circle -->
 		</div><!-- .skills_row2 -->
-
     </div><!-- #specialties -->
+
+    <div id="experience">
+    	<h1 class="title">Experience</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+		<div class="past_job">
+			<div class="circle">
+				<div class="circle inside">
+					<img src="img/nobox_logo.jpg" alt="Nobox">
+				</div>
+			</div><!-- .circle -->
+			<h4>Nobox Marketing Group</h4>
+			<p class="position">Flash Developer</p>
+			<p class="timeframe">May 2011 – Present</p>
+		</div>
+		
+		<div class="past_job">
+			<div class="circle">
+				<div class="circle inside">
+					<img src="img/rubali_logo.jpg" alt="Rubali">
+				</div>
+			</div>
+			<h4>Rubali Professionals</h4>
+			<p class="position">Flash & Web Developer</p>
+			<p class="timeframe">October 2009 – May 2010</p>
+		</div>
+		
+    </div><!-- #experience -->
 
     <a href="#" class="social_arrow up_arrow"><img src="img/social_up_arrow.png"></a>
     <a href="#" class="social_arrow down_arrow"><img src="img/social_down_arrow.png"></a>
