@@ -18,58 +18,58 @@
 		hasher.init();
 
 		// Animate in header and footer
-		TweenMax.to($topHeader, 0.5, { top : "0px", ease : Power1.easeOut } );
-		TweenMax.to($pageFooter, 0.5, { bottom : "0px", ease : Power1.easeOut } );
+		TweenMax.to($topHeader, 0.5, { top : '0px', ease : Power1.easeOut } );
+		TweenMax.to($pageFooter, 0.5, { bottom : '0px', ease : Power1.easeOut } );
 
 		// Start the Social widget
 		social = new Social();
 		social.init();
 
 		// Click on main nav items
-		$mainNavigation.find("a").on("click", function(e) {
+		$mainNavigation.find('a').on('click', function(e) {
 			e.preventDefault();
-			var path = $(this).attr("href");
+			var path = $(this).attr('href');
 			hasher.setHash(path);
 		});
 
 		// mouse enter on main nav items
-		$mainNavigation.find("a").on("mouseenter", function() {
-			var $prog = $(this).next().find(".prog");
-			TweenMax.to($prog, 0.5, { width : "100%", ease : Expo.easeOut } );
+		$mainNavigation.find('a').on('mouseenter', function() {
+			var $prog = $(this).next().find('.prog');
+			TweenMax.to($prog, 0.5, { width : '100%', ease : Expo.easeOut } );
 		});
 
 		// mouse leave on main nav items
-		$mainNavigation.find("a").on("mouseleave", function() {
-			var $prog = $(this).next().find(".prog");
-			TweenMax.to($prog, 0.5, { width : "15%", ease : Expo.easeOut } );
+		$mainNavigation.find('a').on('mouseleave', function() {
+			var $prog = $(this).next().find('.prog');
+			TweenMax.to($prog, 0.5, { width : '15%', ease : Expo.easeOut } );
 		});
 
 		// Click on logo. Same as "Home" click
-		$logo.on("click", function(e) {
+		$logo.on('click', function(e) {
 			e.preventDefault();
-			$mainNavigation.find("a").first().click();
+			$mainNavigation.find('a').first().click();
 		});
 	};
 
 	var cacheSelectors = function() {
-		$content = $("#content");
-		$topHeader = $("#topheader");
-		$logo = $("#logo");
-		$mainNavigation = $("#main_nav");
-		$pageFooter = $("#pagefooter");
+		$content = $('#content');
+		$topHeader = $('#topheader');
+		$logo = $('#logo');
+		$mainNavigation = $('#main_nav');
+		$pageFooter = $('#pagefooter');
 	};
 
 	/**
 	 * Add "selected" class to requested nav item
 	 */
 	var updateNavigation = function(section) {
-		$mainNavigation.find("li").removeClass("selected");
+		$mainNavigation.find('li').removeClass('selected');
 
-		$mainNavigation.find("a").each(function() {
-			var path = $(this).attr("href");
+		$mainNavigation.find('a').each(function() {
+			var path = $(this).attr('href');
 
 			if (path === section) {
-				$(this).parent().addClass("selected");
+				$(this).parent().addClass('selected');
 			}
 		});
 	};
@@ -79,25 +79,25 @@
 	 */
 	var handleHasher = function(newHash) {
 		switch(newHash) {
-			case "" :
-			case "welcome" :
-				switchSection("welcome");
-				updateNavigation("welcome");
+			case '' :
+			case 'welcome' :
+				switchSection('welcome');
+				updateNavigation('welcome');
 				break;
 
-			case "portfolio" : 
-				switchSection("portfolio");
-				updateNavigation("portfolio");
+			case 'portfolio' : 
+				switchSection('portfolio');
+				updateNavigation('portfolio');
 				break;
 
-			case "contact" : 
-				switchSection("contact");
-				updateNavigation("contact");
+			case 'contact' : 
+				switchSection('contact');
+				updateNavigation('contact');
 				break;
 
-			case "resume" : 
-				switchSection("resume");
-				updateNavigation("resume");
+			case 'resume' : 
+				switchSection('resume');
+				updateNavigation('resume');
 				break;
 		}
 	};
@@ -107,11 +107,11 @@
 	 * Show the requested one.
 	 */
 	var switchSection = function(section) {
-		var $viewedSection = $(".viewedSection");
+		var $viewedSection = $('.viewedSection');
 
 		if ($viewedSection.length !== 0) {
-			$viewedSection.fadeOut("slow", function() {
-				$viewedSection.removeClass("viewedSection");
+			$viewedSection.fadeOut('slow', function() {
+				$viewedSection.removeClass('viewedSection');
 				loadSection(section);
 			});
 		} 
@@ -131,25 +131,25 @@
 	 * Call the requested section
 	 */
 	var loadSection = function(section) {
-		$content.find("#" + section).show();
+		$content.find('#' + section).show();
 
 		switch (section) {
-			case "welcome" :
+			case 'welcome' :
 				var welcome = new Welcome();
 				welcome.init();
 				break;
 
-			case "portfolio" :
+			case 'portfolio' :
 				var portfolio = new Portfolio();
 				portfolio.init();
 				break;
 
-			case "contact" :
+			case 'contact' :
 				var contact = new Contact();
 				contact.init();
 				break;
 
-			case "resume" :
+			case 'resume' :
 				var resume = new Resume();
 				resume.init();
 				break;

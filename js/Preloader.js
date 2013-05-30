@@ -14,8 +14,8 @@
 	};
 
 	var cacheSelectors = function() {
-		$preloadText = $(".load_text");
-		$preloadBg = $(".preload_bg");
+		$preloadText = $('.load_text');
+		$preloadBg = $('.preload_bg');
 	};
 
 	/**

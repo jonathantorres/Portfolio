@@ -10,42 +10,44 @@
 
 	Contact.prototype.init = function() {
 		cacheSelectors();
-		$contact.addClass("viewedSection");
+		$contact.addClass('viewedSection');
+		console.log('start to validate!');
 
 		/**
 		 * Validate/Submit Form
 		 */
 		$contactForm.validate({
 			rules : {
-				username: "required",
+				username: 'required',
 				email: { required : true, email : true },
-				message: "required"
+				message: 'required'
 			},
 
 			messages : {
-				username: "",
-				email: "",
-				message: ""
+				username: '',
+				email: '',
+				message: ''
 			},
 
 			submitHandler : function(form) {
-				var username = $("#username").val(),
-					useremail = $("#email").val(),
-					usermessage = $("#message").val();
+				var username = $('#username').val(),
+					useremail = $('#email').val(),
+					usermessage = $('#message').val();
 
 				console.log(form);
+				console.log('submit!');
 
 				$.ajax({
-					type : "POST",
-					url : "php/submit_contact_form.php",
+					type : 'POST',
+					url : 'php/submit_contact_form.php',
 					data : { un : username, ue : useremail, um : usermessage }, 
-					success : function() {				
-						$contactForm.fadeOut("normal", function() {
+					success : function() {
+						$contactForm.fadeOut('normal', function() {
 							$success.fadeIn();
 						});
 					},
 					error : function() {
-						console.log("error!");
+						console.log('error!');
 					}
 				});
 			}
@@ -56,11 +58,11 @@
 	 * Selectors
 	 */
 	var cacheSelectors = function() {
-		$contact = $("#contact");
-		$title = $(".title");
-		$summary = $(".summary");
-		$contactForm = $("#contact_form");
-		$success = $(".success");
+		$contact = $('#contact');
+		$title = $('.title');
+		$summary = $('.summary');
+		$contactForm = $('#contact_form');
+		$success = $('.success');
 	};
 
 	window.Contact = Contact;

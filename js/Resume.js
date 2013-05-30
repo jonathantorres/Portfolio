@@ -27,7 +27,7 @@
 
 	Resume.prototype.init = function() {
 		cacheSelectors();
-		$resume.addClass("viewedSection");
+		$resume.addClass('viewedSection');
 
 		setAllCircles();
 
@@ -79,7 +79,12 @@
 	 * Selectors
 	 */
 	var cacheSelectors = function() {
-		$resume = $("#resume");
+		$resume = $('#resume');
+		$overview = $('#overview');
+		$specialties = $('#specialties');
+		$experience = $('#experience');
+		$up_arrow = $('.up_arrow');
+		$down_arrow = $('.down_arrow');
 	};
 
 	window.Resume = Resume;
