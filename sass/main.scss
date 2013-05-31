@@ -59,7 +59,7 @@ a:hover { text-decoration: underline; }
 	text-transform: uppercase;
 	color: #c8c8c8;
 }
-.johnsquared { 
+.johnsquared {
 	color: #000; 
 	text-decoration: none; 
 	background-color: $johnRed; 
@@ -420,42 +420,58 @@ a:hover { text-decoration: underline; }
 		overflow: hidden;
 		margin: 40px 0px 0px 41px;
 
-		input[type="text"] {
-			float: left;
-			width: 240px;
-			height: 0px;
-			padding: 20px;
-			margin: 0px 0px 30px 30px;
-			color: #555;
-			border: solid 1px #1e1e1e;
-			font-family: $quicksandFont;
-			box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.4) inset;
-			background: #000 url(../img/text_fields_bg.jpg) repeat;
+		ul {
+			list-style: none;
+			overflow: hidden;
 
-			&:focus, &::selection { background: #000 url(../img/text_fields_bg.jpg) repeat; outline: solid 1px #393939; }
-			&.error { border: solid 1px $johnRed; }
-		}
+			label { display: none; }
 
-		input[type="submit"] {
-			float: right;
-			margin: 20px 85px 0px 0px;
-		}
+			li {
+				overflow: hidden;
 
-		textarea {
-			display: block;
-			width: 552px;
-			height: 100px;
-			padding: 20px;
-			margin: 0px 0px 0px 30px;
-			color: #555;
-			border: solid 1px #1e1e1e;
-			font-family: $quicksandFont;
-			resize: none;
-			box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.4) inset;
-			background: #000 url(../img/text_fields_bg.jpg) repeat;
+				&.text_input {
+					float: left;
+					margin: 0px 0px 30px 30px;
+				}
 
-			&:focus, &::selection { background: #000 url(../img/text_fields_bg.jpg) repeat; outline: solid 1px #393939; }
-			&.error { border: solid 1px $johnRed; }
+				&.text_area { clear: both; }
+
+				input[type="text"] {
+					width: 240px;
+					height: 42px;
+					padding: 0px 20px;
+					color: #555;
+					border: solid 1px #1e1e1e;
+					font-family: $quicksandFont;
+					box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.4) inset;
+					background: #000 url(../img/text_fields_bg.jpg) repeat;
+
+					&:focus, &::selection { background: #000 url(../img/text_fields_bg.jpg) repeat; outline: solid 1px #393939; }
+					&.error { border: solid 1px $johnRed; }
+				}
+
+				input[type="submit"] {
+					float: right;
+					margin: 20px 85px 0px 0px;
+				}
+
+				textarea {
+					display: block;
+					width: 552px;
+					height: 100px;
+					padding: 20px;
+					margin: 0px 0px 0px 30px;
+					color: #555;
+					border: solid 1px #1e1e1e;
+					font-family: $quicksandFont;
+					resize: none;
+					box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.4) inset;
+					background: #000 url(../img/text_fields_bg.jpg) repeat;
+
+					&:focus, &::selection { background: #000 url(../img/text_fields_bg.jpg) repeat; outline: solid 1px #393939; }
+					&.error { border: solid 1px $johnRed; }
+				}
+			}
 		}
 	}
 
@@ -506,7 +522,7 @@ a:hover { text-decoration: underline; }
 	}
 
 	#overview {
-		display: none;
+		display: block;
 		position: absolute;
 		width: 800px;
 		height: 300px;
@@ -607,7 +623,7 @@ a:hover { text-decoration: underline; }
 	}
 
 	#experience {
-		display: block;
+		display: none;
 		position: absolute;
 		width: 900px;
 		height: 500px;
