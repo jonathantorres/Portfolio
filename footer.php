@@ -13,7 +13,6 @@
         <script>window.jQuery || document.write('<script src="libs/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="libs/jquery-migrate-1.1.1.min.js"></script>
         <script src="libs/plugins.js"></script>
-        <script src="libs/jquery.validate.min.js"></script>
         <script src="libs/greensock/TweenMax.min.js"></script>
         <script src="libs/signals.min.js"></script>
         <script src="libs/hasher.min.js"></script>

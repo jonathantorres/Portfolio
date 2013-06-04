@@ -417,6 +417,7 @@ a:hover { text-decoration: underline; }
 	}
 
 	#contact_form {
+		display: block;
 		overflow: hidden;
 		margin: 40px 0px 0px 41px;
 
@@ -436,7 +437,7 @@ a:hover { text-decoration: underline; }
 
 				&.text_area { clear: both; }
 
-				input[type="text"] {
+				input[type="text"], input[type="email"] {
 					width: 240px;
 					height: 42px;
 					padding: 0px 20px;
@@ -471,15 +472,28 @@ a:hover { text-decoration: underline; }
 					&:focus, &::selection { background: #000 url(../img/text_fields_bg.jpg) repeat; outline: solid 1px #393939; }
 					&.error { border: solid 1px $johnRed; }
 				}
+
+				.error_feedback {
+					float: left;
+					color: $johnRed;
+					margin: 28px 0px 0px 31px;
+				}
 			}
 		}
 	}
 
 	#success {
 		display: none;
+		width: 700px;
+		margin: 80px 0px 0px 41px;
+
+		p {
+			font-size: $size26px;
+		}
 
 		#ok {
 			float: left;
+			margin: 21px 0px 0px 323px;
 
 			&:hover { text-decoration: none; }
 		}

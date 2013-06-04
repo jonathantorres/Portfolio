@@ -9,13 +9,14 @@
             </li>
             <li class="text_input">
                 <label for="email">E-MAIL</label>
-                <input type="text" id="email" name="email" placeholder="E-MAIL">
+                <input type="email" id="email" name="email" placeholder="E-MAIL">
             </li>
             <li class="text_area">
                 <label for="message">MESSAGE</label>
                 <textarea id="message" name="message" placeholder="MESSAGE"></textarea>
             </li>
             <li>
+                <p class="error_feedback"></p>
                 <input type="submit" class="button" id="send" name="send" value="SEND">
             </li>
         </ul>
