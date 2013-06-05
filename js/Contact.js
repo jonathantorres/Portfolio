@@ -3,7 +3,8 @@
 	var $contact,
 		$title,
 		$summary,
-		$success;
+		$success,
+		timeline;
 
 	var $contactForm,
 		$usernameField,
@@ -19,7 +20,23 @@
 		cacheSelectors();
 		$contact.addClass('viewedSection');
 
+		// display form by default
+		$contactForm.css( { 'display' : 'block'} );
+		$success.css( { 'display' : 'none'} );
+
+		// remove any error classes
+		$errorFeedback.text('');
+		$usernameField.removeClass('error');
+		$emailField.removeClass('error');
+		$messageField.removeClass('error');
+
 		resetValues();
+
+		// animate!
+		timeline = new TimelineMax();
+		timeline.from($title, 1, { opacity : 0, ease : Expo.easeOut });
+		timeline.from($summary, 1, { opacity : 0, marginLeft : '-60px', ease : Expo.easeOut }, '-=0.8');
+		timeline.from($contactForm, 1, { opacity : 0, ease : Expo.easeOut }, '-=0.8');
 
 		$usernameField.on('blur', function() {
 			validateField($(this), false);
