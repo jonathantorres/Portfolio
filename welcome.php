@@ -7,5 +7,5 @@
 
     <h2 class="in_the_top">My name is JONATHAN <span class="johnred">TORRES.</span></h2>
     <h2>And this is my <span class="johnred">Portfolio.</span></h2>
-    <h3>I’m a Flash Developer <a href="http://www.nobox.com" target="_blank" class="johnsquared">@Nobox.</a></h3>
+    <h3>I’m a Developer <a href="http://www.nobox.com" target="_blank" class="johnsquared">@Nobox.</a></h3>
 </section>
