@@ -9,8 +9,17 @@
 	function Welcome() { }
 
 	Welcome.prototype.init = function() {
-		$welcome = $('#welcome');
+		cacheSelectors();
 		$welcome.addClass('viewedSection');
+
+		// Link fix, anchors doesn't seem to work if animated? Need to find a workaroud
+		$('h3').on('click', function(e) {
+			var target = e.target;
+			
+			if (target.id === 'work_link') {
+				window.open(target.dataset.url, '_blank');
+			}
+		});
 
 		// My name is...
 		$myName = $welcome.find('h2').first();
@@ -37,7 +46,7 @@
 		timeline.staggerFrom($myPortfolio.find('span.a'), 0.3, { opacity : 0, ease : Expo.easeOut }, 0.05, '-=0.8');
 		timeline.from($myPortfolio.find('span.johnred'), 0.8, { opacity : 0, ease : Expo.easeOut }, '-=0.2');
 		timeline.staggerFrom($whomAmI.find('span.a'), 0.3, { opacity : 0, ease : Expo.easeOut }, 0.03, '-=0.8');
-		timeline.from($whomAmI.find('a.johnsquared'), 0.8, { opacity : 0, ease : Expo.easeOut }, '-=0.2');
+		timeline.from($whomAmI.find('span.johnsquared'), 0.8, { opacity : 0, ease : Expo.easeOut }, '-=0.2');
 	};
 
 	/**
@@ -53,6 +62,13 @@
 		}
 
 		$element.empty().append(markup);
+	};
+
+	/**
+	 * Selectors
+	 */
+	var cacheSelectors = function() {
+		$welcome = $('#welcome');
 	};
 
 	window.Welcome = Welcome;

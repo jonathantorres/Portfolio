@@ -363,6 +363,8 @@ a:hover { text-decoration: underline; }
 	margin-left: -(900px / 2);
 	font-family: $quicksandFont;
 
+	#work_link { cursor: pointer; }
+
 	.circle {
 		display: block;
 		float: left;

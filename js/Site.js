@@ -12,6 +12,11 @@
 	Site.prototype.init = function() {
 		cacheSelectors();
 
+		// need to FIX THIS!
+		$('a[href^="http"]').on('click', function() {
+			window.open($(this).attr('href'), '_blank');
+		});
+
 		// set up Hasher
 		hasher.changed.add(handleHasher);
 		hasher.initialized.add(handleHasher);
