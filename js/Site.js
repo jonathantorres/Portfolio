@@ -56,14 +56,6 @@
 		});
 	};
 
-	var cacheSelectors = function() {
-		$content = $('#content');
-		$topHeader = $('#topheader');
-		$logo = $('#logo');
-		$mainNavigation = $('#main_nav');
-		$pageFooter = $('#pagefooter');
-	};
-
 	/**
 	 * Add "selected" class to requested nav item
 	 */
@@ -159,6 +151,17 @@
 				resume.init();
 				break;
 		}
+	};
+
+	/**
+	 * Selectors
+	 */
+	var cacheSelectors = function() {
+		$content = $('#content');
+		$topHeader = $('#topheader');
+		$logo = $('#logo');
+		$mainNavigation = $('#main_nav');
+		$pageFooter = $('#pagefooter');
 	};
 
 	window.Site = Site;
