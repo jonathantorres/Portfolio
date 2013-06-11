@@ -59,6 +59,7 @@ module.exports = function(grunt) {
           Raphael: true,
 
           // site
+          Utils: true,
           Social: true,
           Contact: true,
           Welcome: true,

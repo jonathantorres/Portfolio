@@ -18,6 +18,7 @@
         <script src="libs/hasher.min.js"></script>
         <script src="libs/raphael-min.js"></script>
 
+        <script src="js/Utils.js"></script>
         <script src="js/Resume.js"></script>
         <script src="js/Portfolio.js"></script>
         <script src="js/Contact.js"></script>
