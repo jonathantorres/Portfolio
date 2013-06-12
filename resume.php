@@ -6,9 +6,9 @@
 			</div>
 		</div><!-- .circle -->
 
-		<h1 class="title">Resume</h1>
-		<p>Obtain a position in the interactive world to expand all my skills, create excellent work and grow professionally in the industry.</p>
-		<p>2 years of experience on Flash & ActionScript 3.0. Web Design & Development.</p>
+		<h1 class="title">Overview</h1>
+		<p>Developer that enjoys creating interactive experiences and animation.</p>
+		<p>4 years of experience working on web technologies such as HTML, CSS, ActionScript 3.0, JavaScript, PHP and MySQL.</p>
     </div><!-- #overview -->
 
     <div id="specialties">
@@ -104,18 +104,18 @@
     <div id="experience">
     	<h1 class="title">Experience</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-		<div class="past_job">
+		<div class="past_job past_experience1">
 			<div class="circle">
 				<div class="circle inside">
 					<img src="img/nobox_logo.jpg" alt="Nobox">
 				</div>
 			</div><!-- .circle -->
 			<h4>Nobox Marketing Group</h4>
-			<p class="position">Flash Developer</p>
+			<p class="position">Developer</p>
 			<p class="timeframe">May 2011 – Present</p>
 		</div>
 		
-		<div class="past_job">
+		<div class="past_job past_experience2">
 			<div class="circle">
 				<div class="circle inside">
 					<img src="img/rubali_logo.jpg" alt="Rubali">
@@ -125,7 +125,6 @@
 			<p class="position">Flash & Web Developer</p>
 			<p class="timeframe">October 2009 – May 2010</p>
 		</div>
-		
     </div><!-- #experience -->
 
     <a href="#" class="social_arrow up_arrow"><img src="img/social_up_arrow.png"></a>
