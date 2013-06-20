@@ -26,7 +26,7 @@
 		$skillsRow2,
 		width = 96,
 		height = 96,
-		speed = 0.8,
+		speed = 0.6,
 		centerX = width * 0.5,
 		doublePI = Math.PI * 2,
         halfPI = Math.PI / 2,
@@ -52,13 +52,16 @@
 
 		sections = [$overview, $specialties, $experience];
 
-		initOverview();
-
 		$up_arrow.on('click', upArrowClicked);
 		$down_arrow.on('click', downArrowClicked);
 
-		// setAllCircles();
-		// TweenMax.ticker.addEventListener('tick', ticked);
+		for (var i = 0; i < sections.length; i++) {
+			var $section = sections[i];
+			$section.removeClass('current_view');
+			$section.hide();
+		}
+
+		initOverview();
 	};
 
 	/**
@@ -86,7 +89,7 @@
 					$prevSection = sections[i - 1];
 				}
 			}
-		};
+		}
 
 		$currentSection.removeClass('current_view');
 
@@ -96,6 +99,22 @@
 
 		TweenMax.to($currentSection, 1, { top : '150%', opacity : 0, ease : Expo.easeOut } );
 		TweenMax.to($prevSection, 1, { top : '50%', opacity : 1, ease : Expo.easeOut } );
+
+		switch ($prevSection.attr('id')) {
+			case 'overview' :
+				startOverview(true);
+				resetCircles();
+			break;
+
+			case 'specialties' :
+				startSpecialties(true);
+			break;
+
+			case 'experience' :
+				startExperience(true);
+				resetCircles();
+			break;
+		}
 	};
 
 	var downArrowClicked = function(e) {
@@ -119,7 +138,7 @@
 					$nextSection = sections[i + 1];
 				}
 			}
-		};
+		}
 
 		$currentSection.removeClass('current_view');
 
@@ -129,10 +148,34 @@
 
 		TweenMax.to($currentSection, 1, { top : '-50%', opacity : 0, ease : Expo.easeOut } );
 		TweenMax.to($nextSection, 1, { top : '50%', opacity : 1, ease : Expo.easeOut } );
+
+		switch ($nextSection.attr('id')) {
+			case 'overview' :
+				startOverview(false);
+				resetCircles();
+			break;
+
+			case 'specialties' :
+				startSpecialties(false);
+			break;
+
+			case 'experience' :
+				startExperience(false);
+				resetCircles();
+			break;
+		}
 	};
 
+	/**
+	 * Init the overview area (the first time)
+	 */
 	var initOverview = function() {
 		$overview.addClass('current_view');
+		$overview.show();
+		$overview.css( { opacity : 1, top : '50%' } );
+
+		// Reset the specialties circles fills each time you visit!
+		resetCircles();
 
 		// Developer that...
 		var $developerThat = $overview.find('p').first();
@@ -148,10 +191,80 @@
 
 		// animation
 		var timeline = new TimelineMax();
-		timeline.from($johnCircle, 1, { opacity : 0, ease : Expo.easeOut });
+		timeline.from($johnCircle, 1, { opacity : 0, ease : Expo.easeOut } );
 		timeline.from($overviewTitle, 1, { opacity : 0, left: '-60px', ease : Expo.easeOut }, '-=0.8');
 		timeline.staggerFrom($developerThat.find('span.a'), 0.3, { opacity : 0, ease : Expo.easeOut }, 0.02, '-=0.8');
 		timeline.staggerFrom($yearsOfExp.find('span.a'), 0.3, { opacity : 0, ease : Expo.easeOut }, 0.02, '-=0.8');
+	};
+
+	/**
+	 * Each time you go to the overview
+	 */
+	var startOverview = function(fromTop) {
+		if (fromTop) {
+			TweenMax.from($overviewTitle, 2, { top : '-40px', ease : Expo.easeOut } );
+			TweenMax.from($johnCircle, 2, { marginTop : '-60px', ease : Expo.easeOut } );
+			TweenMax.from($overview.find('p').first(), 2, { marginTop : '-60px', ease : Expo.easeOut } );
+			TweenMax.from($overview.find('p').eq(1), 2, { marginTop : '-80px', ease : Expo.easeOut } );
+		} else {
+			TweenMax.from($overviewTitle, 2, { top : '40px', ease : Expo.easeOut } );
+			TweenMax.from($johnCircle, 2, { marginTop : '60px', ease : Expo.easeOut } );
+			TweenMax.from($overview.find('p').first(), 2, { marginTop : '60px', ease : Expo.easeOut } );
+			TweenMax.from($overview.find('p').eq(1), 2, { marginTop : '80px', ease : Expo.easeOut } );
+		}
+	};
+
+	/**
+	 * Each time you go to the specialties
+	 */
+	var startSpecialties = function(fromTop) {
+		setAllCircles();
+		TweenMax.ticker.addEventListener('tick', ticked);
+
+		if (fromTop) {
+			TweenMax.from($specialtiesTitle, 2, { top : '-50px', ease : Expo.easeOut } );
+			TweenMax.from($specialties.find('.special_slogan'), 2, { top : '-70px', ease : Expo.easeOut } );
+			TweenMax.from($specialties.find('h3').first(), 2, { top : '-100px', ease : Expo.easeOut } );
+			TweenMax.staggerFrom($specialties.find('.circle'), 2, { marginTop : '-50px', ease : Expo.easeOut }, 0.05);
+		} else {
+			TweenMax.from($specialtiesTitle, 2, { top : '50px', ease : Expo.easeOut } );
+			TweenMax.from($specialties.find('.special_slogan'), 2, { top : '70px', ease : Expo.easeOut } );
+			TweenMax.from($specialties.find('h3').first(), 2, { top : '100px', ease : Expo.easeOut } );
+			TweenMax.staggerFrom($specialties.find('.circle'), 2, { marginTop : '50px', ease : Expo.easeOut }, 0.05);
+		}
+	};
+
+	/**
+	 * Each time you go to the experience
+	 */
+	var startExperience = function(fromTop) {
+		if (fromTop) {
+			TweenMax.from($experienceTitle, 2, { top : '-50px', ease : Expo.easeOut } );
+			TweenMax.from($experience.find('p').first(), 2, { top : '-70px', ease : Expo.easeOut } );
+
+			TweenMax.from($pastExperience1.find('.circle').first(), 2, { top : '-40px', ease : Expo.easeOut } );
+			TweenMax.from($pastExperience1.find('h4'), 2, { top : '-30px', ease : Expo.easeOut } );
+			TweenMax.from($pastExperience1.find('.position'), 2, { top : '-30px', ease : Expo.easeOut } );
+			TweenMax.from($pastExperience1.find('.timeframe'), 2, { top : '-40px', ease : Expo.easeOut } );
+
+			TweenMax.from($pastExperience2.find('.circle').first(), 2, { top : '-50px', ease : Expo.easeOut } );
+			TweenMax.from($pastExperience2.find('h4'), 2, { top : '-40px', ease : Expo.easeOut } );
+			TweenMax.from($pastExperience2.find('.position'), 2, { top : '-30px', ease : Expo.easeOut } );
+			TweenMax.from($pastExperience2.find('.timeframe'), 2, { top : '-30px', ease : Expo.easeOut } );
+		} else {
+			TweenMax.from($experienceTitle, 2, { top : '50px', ease : Expo.easeOut } );
+			TweenMax.from($experience.find('p').first(), 2, { top : '70px', ease : Expo.easeOut } );
+
+			TweenMax.from($pastExperience1.find('.circle').first(), 2, { top : '40px', ease : Expo.easeOut } );
+			TweenMax.from($pastExperience1.find('h4'), 2, { top : '30px', ease : Expo.easeOut } );
+			TweenMax.from($pastExperience1.find('.position'), 2, { top : '30px', ease : Expo.easeOut } );
+			TweenMax.from($pastExperience1.find('.timeframe'), 2, { top : '40px', ease : Expo.easeOut } );
+
+			TweenMax.from($pastExperience2.find('.circle').first(), 2, { top : '50px', ease : Expo.easeOut } );
+			TweenMax.from($pastExperience2.find('h4'), 2, { top : '40px', ease : Expo.easeOut } );
+			TweenMax.from($pastExperience2.find('.position'), 2, { top : '30px', ease : Expo.easeOut } );
+			TweenMax.from($pastExperience2.find('.timeframe'), 2, { top : '30px', ease : Expo.easeOut } );
+		}
 	};
 
 	/**
@@ -163,12 +276,28 @@
 			var paper = new Raphael(circle.id, width, height);
 			circle.paper = paper;
 		}
-
-		console.log('All circles set!');
 	};
 
 	/**
-	 * Animate each circle.
+	 * Reset circle fills back to the beginning
+	 */
+	var resetCircles = function() {
+		TweenMax.ticker.removeEventListener('tick', ticked);
+
+		for (var i = 0; i < circles.length; i++) {
+			var circle = circles[i];
+
+			if (circle.paper) {
+				circle.paper.remove();
+				circle.paper = null;
+			}
+
+			circle.startPercent = 0;
+		}
+	};
+
+	/**
+	 * Animate each circle fill.
 	 */
 	var ticked = function() {
 		for (var i = 0; i < circles.length; i++) {

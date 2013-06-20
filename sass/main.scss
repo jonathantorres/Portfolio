@@ -537,6 +537,8 @@ a:hover { text-decoration: underline; }
 		}
 	}
 
+	.title { position: relative; }
+
 	#overview {
 		display: block;
 		position: absolute;
@@ -550,7 +552,7 @@ a:hover { text-decoration: underline; }
 		.circle {
 			display: block;
 			float: left;
-			margin: 20px 30px 0px 0px;
+			margin: 20px 30px 40px 0px;
 			@include circle(200px, 200px, #161616);
 			@include box-shadow(0px 0px 400px 40px rgba(150, 150, 150, 0.04));
 
@@ -563,8 +565,6 @@ a:hover { text-decoration: underline; }
 				img { display: block; margin: 0px 0px 0px -42px; }
 			}
 		}
-
-		.title { position: relative; }
 
 		p { margin-bottom: 15px; }
 	}
@@ -580,8 +580,10 @@ a:hover { text-decoration: underline; }
 		margin-left: -(900px / 2);
 
 		.title, p { text-align: center; }
+		.special_slogan { position: relative; }
 
 		h3 {
+			position: relative;
 			color: #c8c8c8;
 			text-align: center;
 			font-weight: 100;
@@ -651,6 +653,7 @@ a:hover { text-decoration: underline; }
 		margin-left: -(900px / 2);
 
 		.title, p { text-align: center; }
+		.experience_slogan { position: relative; }
 
 		.past_job {
 			float: left;
@@ -659,22 +662,26 @@ a:hover { text-decoration: underline; }
 			margin: 50px 0px 0px 120px;
 
 			h4 {
+				position: relative;
 				font-size: $size20px;
 				text-align: center;
 			}
 
 			.position {
+				position: relative;
 				font-size: $size16px;
 				color: #ff000a;
 			}
 
 			.timeframe {
+				position: relative;
 				font-size: $size16px
 			}
 		}
 
 		.circle {
 			display: block;
+			position: relative;
 			float: left;
 			margin: 0px 30px 15px 50px;
 			@include circle(170px, 170px, #161616);

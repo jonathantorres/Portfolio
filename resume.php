@@ -13,7 +13,7 @@
 
     <div id="specialties">
     	<h1 class="title">Specialties</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+		<p class="special_slogan">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
 		<h3>Languages - Technologies</h3>
 		<div class="skills_row1">
 			<div class="circle">
@@ -103,7 +103,7 @@
 
     <div id="experience">
     	<h1 class="title">Experience</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+		<p class="experience_slogan">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
 		<div class="past_job past_experience1">
 			<div class="circle">
 				<div class="circle inside">
