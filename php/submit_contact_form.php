@@ -7,17 +7,17 @@
 	$message = htmlentities($_POST['um']);
 
 	// html body
-	$body = '<h3>Mensaje de: ' . $username . '</h3>';
-	$body .= 'Nombre: ' . $username;
+	$body = '<h3>Message from: ' . $username . '</h3>';
+	$body .= 'Name: ' . $username;
 	$body .= '<br>Email: ' . $email;
-	$body .= '<br>Mensaje: ' . $message;
+	$body .= '<br>Message: ' . $message;
 	$body .= '<br><br><br>www.jonathantorres.com';
 
 	// alt text body
-	$alt = 'Mensaje de: ' . $username . '\n\n';
-	$alt .= 'Nombre: ' . $username;
+	$alt = 'Message from: ' . $username . '\n\n';
+	$alt .= 'Name: ' . $username;
 	$alt .= '\nEmail: ' . $email;
-	$alt .= '\nMensaje: ' . $message;
+	$alt .= '\nMessage: ' . $message;
 	$alt .= '\n\n\nwww.jonathantorres.com';
 
 	// send email
@@ -28,7 +28,7 @@
 	$mail->AddReplyTo($email, $username);
 
 	$mail->IsHTML(true);
-	$mail->Subject = 'Mensaje de: ' . $username;
+	$mail->Subject = 'Message from: ' . $username;
 	$mail->MsgHTML($body);
 	$mail->AltBody = $alt;
 	$mail->Send();
