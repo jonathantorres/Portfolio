@@ -35,6 +35,18 @@
      */ 
     $all_media = array_merge($tweets, $instagrams->data);
     shuffle($all_media);
+
+    /**
+     * Wrap @mentions and #hastags in a <span>
+     * Find urls and wraps them in a <a>
+     */ 
+    function format_text($text) {
+        $text = preg_replace('#@([\\d\\w]+)#', '<span class="johnred">$0</span>', $text); // @mentions
+        $text = preg_replace('/#([\\d\\w]+)/', '<span class="johnred">$0</span>', $text); // #hashtags
+        $text = preg_replace('!(http)(s)?:\/\/[a-zA-Z0-9.?&_/]+!', '<a href="$0" target="blank">$0</a>', $text); // urls
+
+        return $text;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -142,12 +154,12 @@
                                     </div>
                                 </a>
                                 <h3>Instagram</h3>
-                                <p><?php echo $media->caption->text; ?></p>
+                                <p><?php echo format_text($media->caption->text); ?></p>
                             </li>
                         <?php else : // Twitter posts ?>
                             <li class="twitter">
                                 <h3>Twitter</h3>
-                                <p><?php echo $media->text; ?></p>
+                                <p><?php echo format_text($media->text); ?></p>
                             </li>
                         <?php endif; ?>
                     <?php endforeach; ?>
