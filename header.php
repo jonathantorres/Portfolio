@@ -1,3 +1,42 @@
+<?php
+
+    /**
+     * Get my tweets
+     */ 
+    session_start();
+    require_once('php/twitteroauth/twitteroauth.php');
+
+    $consumer_key = 'XzzTFFfulENqQdH2yPk8Ug';
+    $consumer_secret = 'INF7QvSkdLYUPW46H9TMqYOs1KDxaZqJl3kTxMmW7s';
+    $access_token = '75446347-wgf1ns8OnWm8mrus8cQoMp5s3KCf1f3HiPsQ14n0I';
+    $access_token_secret = 'xkkZZLthB1ZMFMVht3rrBdEK3iLdi7E7e3QcWJC1Lrc';
+
+    $connection = new TwitterOAuth($consumer_key, $consumer_secret, $access_token, $access_token_secret);
+    $tweets = $connection->get('https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=torres_jonathan&count=30&include_rts=false&exclude_replies=true');
+
+    /**
+     * Get instagram feed
+     */ 
+    require_once('php/instagram.class.php');
+
+    $client_id = '83d59a4dc78042ce8594c0109cdeee74';
+    $client_secret = 'fb0adb4b9257404aaebb6840753f19a6';
+    $website_url = 'http://www.jonathantorres.com';
+    $redirect_uri = 'http://www.jonathantorres.com';
+    $my_user_id = '22367569';
+    $my_access_token = '22367569.83d59a4.1a21de84119a44d089fcf75317faa2f9';
+
+    $instagram = new Instagram(array('apiKey' => $client_id, 'apiSecret' => $client_secret, 'apiCallback' => $redirect_uri));
+    $instagram->setAccessToken($my_access_token);
+    $instagrams = $instagram->getUserMedia('self', 30);
+
+    /**
+     * Merge and Shuffle Twitter/Instagram data.
+     */ 
+    $all_media = array_merge($tweets, $instagrams->data);
+    shuffle($all_media);
+?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -91,7 +130,28 @@
             
             <div class="feed_wrapper">
                 <ul class="social_feed clearfix">
-                    <li class="twitter">
+                    <?php foreach ($all_media as $media) : ?>
+                        <?php if ($media->type) : // Instagram posts ?>
+                            <li class="instagram">
+                                <a href="<?php echo $media->link; ?>" target="_blank" class="circle">
+                                    <div class="circle inside">
+                                        <div class="hover">
+                                            <img src="img/instagram_hover_icon.png" alt="Instagram">
+                                        </div>
+                                        <img src="<?php echo $media->images->thumbnail->url; ?>" alt="Instagram Image">
+                                    </div>
+                                </a>
+                                <h3>Instagram</h3>
+                                <p><?php echo $media->caption->text; ?></p>
+                            </li>
+                        <?php else : // Twitter posts ?>
+                            <li class="twitter">
+                                <h3>Twitter</h3>
+                                <p><?php echo $media->text; ?></p>
+                            </li>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                    <!-- <li class="twitter">
                         <h3>Twitter</h3>
                         <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. <span class="johnred">#8ReasonsWhyImOnTwitter</span></p>
                     </li>
@@ -106,23 +166,7 @@
                         </a>
                         <h3>Instagram</h3>
                         <p>The time goes on and on. <span class="johnred">#Time</span> <span class="johnred">#Shoes</span> <span class="johnred">#Again</span></p>
-                    </li>
-                    <li class="twitter">
-                        <h3>Twitter</h3>
-                        <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. <span class="johnred">#8ReasonsWhyImOnTwitter</span></p>
-                    </li>
-                    <li class="twitter">
-                        <h3>Twitter</h3>
-                        <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. <span class="johnred">#8ReasonsWhyImOnTwitter</span></p>
-                    </li>
-                    <li class="twitter">
-                        <h3>Twitter</h3>
-                        <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. <span class="johnred">#8ReasonsWhyImOnTwitter</span></p>
-                    </li>
-                    <li class="twitter">
-                        <h3>Twitter</h3>
-                        <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. <span class="johnred">#8ReasonsWhyImOnTwitter</span></p>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>

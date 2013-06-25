@@ -287,6 +287,7 @@ a:hover { text-decoration: underline; }
 				}
 
 				p {
+					width: 480px;
 					color: #b2b2b2;
 					font-size: $size18px;
 				}
@@ -310,7 +311,7 @@ a:hover { text-decoration: underline; }
 						border: solid 4px #303030;
 						margin: 9px 0px 0px 8px;
 
-						img { display: block; margin: -9px 0px 0px -57px; }
+						img { display: block; margin: 0px; }
 
 						.hover {
 							display: none;
@@ -323,8 +324,8 @@ a:hover { text-decoration: underline; }
 
 							img {
 								position: absolute;
-								top: 60px;
-								left: 108px;
+								top: 54px;
+								left: 52px;
 							}
 						}
 					}
