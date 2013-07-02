@@ -12,7 +12,7 @@
 		$footer;
 
 	var isOpen = false,
-		singleItemWidth = 533,
+		singleItemWidth = 532,
 		itemsWidth = 0;
 
 	function Social() { }
@@ -48,7 +48,7 @@
 		}
 
 		// Move items to the left
-		if (parseInt($socialFeed.css('left'), 10) > -parseInt($socialFeed.css('width'), 10) + singleItemWidth) {
+		if (parseInt($socialFeed.css('left'), 10) > -parseInt($socialFeed.css('width'), 10) + singleItemWidth + 40) {
 			TweenMax.to($socialFeed, 0.5, { left : '-=' + singleItemWidth, ease : Expo.easeOut } );
 		}
 
@@ -72,7 +72,7 @@
 
 		// animate back to the end
 		else {
-			TweenMax.to($socialFeed, 0.8, { left : -parseInt($socialFeed.css('width'), 10) + singleItemWidth, ease : Expo.easeOut } );
+			TweenMax.to($socialFeed, 0.8, { left : -parseInt($socialFeed.css('width'), 10) + singleItemWidth + 38, ease : Expo.easeOut } );
 		}
 	};
 
