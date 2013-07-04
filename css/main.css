@@ -91,6 +91,7 @@ textarea {
  * Global Styles
  */
 body {
+  overflow: hidden;
   font-family: "Quicksand", Arial, san-serif;
   background: url(../img/page_bg.jpg) repeat;
 }
@@ -106,23 +107,23 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  font-size: 3.4em;
-}
-
-h2 {
   font-size: 2.8em;
 }
 
-h3 {
-  font-size: 2.2em;
+h2 {
+  font-size: 2.4em;
 }
 
-h4 {
+h3 {
   font-size: 1.8em;
 }
 
+h4 {
+  font-size: 1.6em;
+}
+
 h5 {
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 a:link, a:active, a:visited {
@@ -143,6 +144,9 @@ a:hover {
 
 .title {
   font-size: 3em;
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #c8c8c8;
 }
 
 .johnsquared {
@@ -165,6 +169,77 @@ a:hover {
   transition: color 0.5s ease-out;
 }
 
+.button {
+  display: block;
+  padding: 10px 15px;
+  color: #555;
+  font-family: "Quicksand", Arial, san-serif;
+  border-radius: 4px;
+  border: solid 1px #111111;
+  background: #111;
+  -webkit-transition: background 0.5s ease-out;
+  -moz-transition: background 0.5s ease-out;
+  -ms-transition: background 0.5s ease-out;
+  -o-transition: background 0.5s ease-out;
+  transition: background 0.5s ease-out;
+}
+.button:hover {
+  background: #181818;
+  -webkit-transition: background 0.5s ease-out;
+  -moz-transition: background 0.5s ease-out;
+  -ms-transition: background 0.5s ease-out;
+  -o-transition: background 0.5s ease-out;
+  transition: background 0.5s ease-out;
+}
+.button:focus, .button::selection {
+  outline: none;
+  background: #111;
+}
+
+.social_arrow {
+  display: block;
+  position: relative;
+  float: left;
+  width: 45px;
+  height: 45px;
+  border-radius: 4px;
+  margin: 16px 10px 0px 0px;
+  background: #111;
+  -webkit-transition: background 0.5s ease-out;
+  -moz-transition: background 0.5s ease-out;
+  -ms-transition: background 0.5s ease-out;
+  -o-transition: background 0.5s ease-out;
+  transition: background 0.5s ease-out;
+}
+.social_arrow:hover {
+  background: #c6060d;
+  -webkit-transition: background 0.5s ease-out;
+  -moz-transition: background 0.5s ease-out;
+  -ms-transition: background 0.5s ease-out;
+  -o-transition: background 0.5s ease-out;
+  transition: background 0.5s ease-out;
+}
+.social_arrow img {
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: 16px;
+}
+
+/**
+ * Preloader
+ */
+.preload_bg {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: #161616;
+}
+
 /**
  * Top Header
  */
@@ -176,8 +251,8 @@ a:hover {
   height: 40px;
   padding: 0px 20px;
   border-bottom: solid 1px #333333;
-  z-index: 9999;
-  background-color: #000;
+  z-index: 9998;
+  background-color: rgba(0, 0, 0, 0.6);
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -221,136 +296,187 @@ a:hover {
   -o-transition: color 1s ease-out;
   transition: color 1s ease-out;
 }
-#topheader .arrow {
+#topheader nav #main_nav li.selected .marker, #topheader nav #main_nav li:hover .marker {
   display: block;
-  position: absolute;
-  width: 78px;
-  height: 35px;
-  top: 39px;
-  left: 46%;
-  border-left: solid 1px #333333;
-  border-right: solid 1px #333333;
-  border-bottom: solid 1px #333333;
-  background: #000;
 }
-#topheader .arrow img {
-  display: block;
-  position: absolute;
-  top: 9px;
-  left: 23px;
-  -webkit-transform-origin: center center;
-  -moz-transform-origin: center center;
-  -ms-transform-origin: center center;
-  -o-transform-origin: center center;
-  transform-origin: center center;
-}
-#topheader #header_content {
-  width: 100%;
-  height: 260px;
-  position: relative;
-  border: solid 1px #333333;
-  margin-top: 8px;
-  padding: 14px 0 14px 14px;
-  overflow: hidden;
-  -webkit-transform-origin: center center;
-  -moz-transform-origin: center center;
-  -ms-transform-origin: center center;
-  -o-transform-origin: center center;
-  transform-origin: center center;
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -ms-transform: scale(0);
-  -o-transform: scale(0);
-  transform: scale(0);
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  background: #000;
-}
-#topheader #header_content .header_arrow {
-  display: block;
-  position: absolute;
-  top: 88px;
-  width: 36px;
-  height: 78px;
-  z-index: 9999;
-}
-#topheader #header_content .left_arrow {
-  left: -37px;
-  border-top: solid 1px #333333;
-  border-right: solid 1px #333333;
-  border-bottom: solid 1px #333333;
-  background: black url(../img/header_left_arrow.png) no-repeat center center;
-}
-#topheader #header_content .right_arrow {
-  right: -37px;
-  border-top: solid 1px #333333;
-  border-left: solid 1px #333333;
-  border-bottom: solid 1px #333333;
-  background: black url(../img/header_right_arrow.png) no-repeat center center;
-}
-#topheader #header_content ul.boxes {
-  position: relative;
-  left: 0px;
-  list-style: none;
-  overflow: hidden;
-  z-index: 9998;
-}
-#topheader #header_content ul.boxes li.box {
-  float: left;
-  position: relative;
-  width: 504px;
-  height: 228px;
-  margin-right: 50px;
-  padding: 37px 20px;
-  border: solid 1px #333333;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-#topheader #header_content ul.boxes li.box img {
-  display: block;
-  float: left;
-  margin-right: 15px;
-  border: solid 1px #333333;
-}
-#topheader #header_content ul.boxes li.box p {
-  color: #CCC;
-  font-family: Helvetica, Arial, san-serif;
-  font-size: 0.8em;
-  margin-top: 20px;
-}
-#topheader #header_content ul.boxes li.box.tweet p {
-  font-size: 1.4em;
-}
-#topheader #header_content ul.boxes li.box.instagram_img {
-  padding: 12px 20px;
-}
-#topheader #header_content ul.boxes li.box.instagram_img p {
-  margin-top: 70px;
-}
-#topheader #header_content ul.boxes li.box .box_title {
-  display: block;
-  position: absolute;
-  bottom: 5px;
-  right: 10px;
-  color: #333;
-  font-size: 1.2em;
-  font-family: "Quicksand", Arial, san-serif;
-}
-#topheader #header_content ul.boxes li.box:last-child .line {
+#topheader nav #main_nav li .marker {
   display: none;
+  height: 3px;
+  background: #303030;
 }
-#topheader #header_content ul.boxes li.box .line {
-  display: block;
-  position: absolute;
-  top: 115px;
-  left: 503px;
-  width: 50px;
-  height: 1px;
-  border-bottom: solid 1px #333333;
+#topheader nav #main_nav li .marker .prog {
+  width: 15%;
+  height: inherit;
+  background: #e3030c;
 }
 
+/**
+ * Social content
+ */
+#social {
+  display: block;
+  position: absolute;
+  top: 32%;
+  left: 100%;
+  width: 100%;
+  height: 320px;
+  border-left: solid 1px black;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+  z-index: 9998;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: black url(../img/social_bg.jpg) repeat;
+}
+#social #open_arrow {
+  display: block;
+  position: absolute;
+  width: 44px;
+  height: 46px;
+  top: 46%;
+  left: -46px;
+  border-left: solid 1px black;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+  background: #181818;
+  -webkit-transition: background 0.5s ease-out;
+  -moz-transition: background 0.5s ease-out;
+  -ms-transition: background 0.5s ease-out;
+  -o-transition: background 0.5s ease-out;
+  transition: background 0.5s ease-out;
+}
+#social #open_arrow:hover {
+  background: #212121;
+  -webkit-transition: background 0.5s ease-out;
+  -moz-transition: background 0.5s ease-out;
+  -ms-transition: background 0.5s ease-out;
+  -o-transition: background 0.5s ease-out;
+  transition: background 0.5s ease-out;
+}
+#social #open_arrow img {
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -ms-transform-origin: center center;
+  -o-transform-origin: center center;
+  transform-origin: center center;
+}
+#social h1 {
+  float: left;
+  text-transform: uppercase;
+  font-size: 2.6em;
+  width: 260px;
+  padding: 10px 0px 0px 30px;
+}
+#social .social_close {
+  display: block;
+  position: absolute;
+  top: -3px;
+  right: 18px;
+  font-size: 2.2em;
+  color: #747474;
+  -webkit-transition: color 0.5s ease-out;
+  -moz-transition: color 0.5s ease-out;
+  -ms-transition: color 0.5s ease-out;
+  -o-transition: color 0.5s ease-out;
+  transition: color 0.5s ease-out;
+}
+#social .social_close:hover {
+  text-decoration: none;
+  color: #e9e6e6;
+  -webkit-transition: color 0.5s ease-out;
+  -moz-transition: color 0.5s ease-out;
+  -ms-transition: color 0.5s ease-out;
+  -o-transition: color 0.5s ease-out;
+  transition: color 0.5s ease-out;
+}
+#social .feed_wrapper {
+  overflow: hidden;
+  position: relative;
+  top: 23px;
+  left: 0px;
+}
+#social .feed_wrapper .social_feed {
+  display: block;
+  position: relative;
+  top: 15px;
+  left: 0px;
+  width: 3000px;
+  list-style: none;
+}
+#social .feed_wrapper .social_feed li {
+  float: left;
+  width: 500px;
+  height: 160px;
+  padding: 0px 0px 0px 30px;
+  border-right: solid 1px black;
+  border-left: solid 1px #272727;
+}
+#social .feed_wrapper .social_feed li:first-child {
+  border-left: none;
+}
+#social .feed_wrapper .social_feed li:last-child {
+  border-right: none;
+}
+#social .feed_wrapper .social_feed li h3 {
+  color: #c8c8c8;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 0px 0px 6px 0px;
+}
+#social .feed_wrapper .social_feed li p {
+  width: 480px;
+  color: #b2b2b2;
+  font-size: 1.2em;
+}
+#social .feed_wrapper .social_feed li .circle {
+  display: block;
+  float: left;
+  margin: -23px 30px 0px 0px;
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  background-color: #161616;
+}
+#social .feed_wrapper .social_feed li .circle:hover .inside .hover {
+  display: block;
+}
+#social .feed_wrapper .social_feed li .circle .inside {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #303030;
+  overflow: hidden;
+  border: solid 4px #303030;
+  margin: 9px 0px 0px 8px;
+}
+#social .feed_wrapper .social_feed li .circle .inside img {
+  display: block;
+  margin: 0px;
+}
+#social .feed_wrapper .social_feed li .circle .inside .hover {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 150px;
+  height: 150px;
+  background: rgba(198, 6, 13, 0.75);
+}
+#social .feed_wrapper .social_feed li .circle .inside .hover img {
+  position: absolute;
+  top: 54px;
+  left: 52px;
+}
+
+/**
+ * Content Area
+ */
 #content {
   position: absolute;
   display: block;
@@ -358,43 +484,402 @@ a:hover {
   bottom: 30px;
   width: 100%;
   color: #FFF;
-  padding: 45px 20px;
   z-index: 9997;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
+/**
+ * Welcome
+ */
 #welcome {
-  display: block;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 900px;
+  height: 200px;
+  margin-top: -100px;
+  margin-left: -450px;
   font-family: "Quicksand", Arial, san-serif;
 }
-#welcome h1, #welcome h3 {
-  font-weight: normal;
+#welcome #work_link {
+  cursor: pointer;
 }
-#welcome h1 {
-  font-size: 3.4em;
-  line-height: 1.2;
+#welcome .circle {
+  display: block;
+  float: left;
+  margin: 0px 30px 0px 0px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #161616;
+  -webkit-box-shadow: 0px 0px 400px 40px rgba(150, 150, 150, 0.04);
+  box-shadow: 0px 0px 400px 40px rgba(150, 150, 150, 0.04);
 }
-#welcome h3 {
-  font-size: 1.6em;
+#welcome .circle .inside {
+  width: 167px;
+  height: 167px;
+  border-radius: 50%;
+  background-color: #303030;
+  overflow: hidden;
+  border: solid 4px #303030;
+  margin: 13px 0px 0px 12px;
 }
-#welcome h3.first {
-  padding-top: 20px;
+#welcome .circle .inside img {
+  display: block;
+  margin: 0px 0px 0px -42px;
+}
+#welcome a:link, #welcome a:active, #welcome a:visited {
+  color: #000;
+  -webkit-transition: color 0.5s ease-out;
+  -moz-transition: color 0.5s ease-out;
+  -ms-transition: color 0.5s ease-out;
+  -o-transition: color 0.5s ease-out;
+  transition: color 0.5s ease-out;
+}
+#welcome a:hover {
+  text-decoration: none;
+  color: #FFF;
+  -webkit-transition: color 0.5s ease-out;
+  -moz-transition: color 0.5s ease-out;
+  -ms-transition: color 0.5s ease-out;
+  -o-transition: color 0.5s ease-out;
+  transition: color 0.5s ease-out;
+}
+#welcome .in_the_top {
+  margin-top: 20px;
 }
 
+/**
+ * Portfolio
+ */
 #portfolio {
   display: none;
 }
 
+/**
+ * Contact
+ */
 #contact {
   display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 750px;
+  height: 430px;
+  margin-top: -215px;
+  margin-left: -375px;
+  font-family: "Quicksand", Arial, san-serif;
 }
-
-#resume {
+#contact .title {
+  text-align: center;
+}
+#contact p {
+  color: #c8c8c8;
+  font-weight: 100;
+  text-align: center;
+}
+#contact #contact_form {
+  display: block;
+  overflow: hidden;
+  margin: 40px 0px 0px 41px;
+}
+#contact #contact_form ul {
+  list-style: none;
+  overflow: hidden;
+}
+#contact #contact_form ul label {
   display: none;
 }
+#contact #contact_form ul li {
+  overflow: hidden;
+}
+#contact #contact_form ul li.text_input {
+  float: left;
+  margin: 0px 0px 30px 30px;
+}
+#contact #contact_form ul li.text_area {
+  clear: both;
+}
+#contact #contact_form ul li input[type="text"], #contact #contact_form ul li input[type="email"] {
+  width: 240px;
+  height: 42px;
+  padding: 0px 20px;
+  color: #555;
+  border: solid 1px #1e1e1e;
+  font-family: "Quicksand", Arial, san-serif;
+  box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.4) inset;
+  background: black url(../img/text_fields_bg.jpg) repeat;
+}
+#contact #contact_form ul li input[type="text"]:focus, #contact #contact_form ul li input[type="text"]::selection, #contact #contact_form ul li input[type="email"]:focus, #contact #contact_form ul li input[type="email"]::selection {
+  background: black url(../img/text_fields_bg.jpg) repeat;
+  outline: solid 1px #393939;
+}
+#contact #contact_form ul li input[type="text"].error, #contact #contact_form ul li input[type="email"].error {
+  border: solid 1px #e3030c;
+}
+#contact #contact_form ul li input[type="submit"] {
+  float: right;
+  margin: 20px 85px 0px 0px;
+}
+#contact #contact_form ul li textarea {
+  display: block;
+  width: 552px;
+  height: 100px;
+  padding: 20px;
+  margin: 0px 0px 0px 30px;
+  color: #555;
+  border: solid 1px #1e1e1e;
+  font-family: "Quicksand", Arial, san-serif;
+  resize: none;
+  box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.4) inset;
+  background: black url(../img/text_fields_bg.jpg) repeat;
+}
+#contact #contact_form ul li textarea:focus, #contact #contact_form ul li textarea::selection {
+  background: black url(../img/text_fields_bg.jpg) repeat;
+  outline: solid 1px #393939;
+}
+#contact #contact_form ul li textarea.error {
+  border: solid 1px #e3030c;
+}
+#contact #contact_form ul li .error_feedback {
+  float: left;
+  color: #e3030c;
+  margin: 28px 0px 0px 31px;
+}
+#contact #success {
+  display: none;
+  width: 700px;
+  margin: 80px 0px 0px 41px;
+}
+#contact #success p {
+  font-size: 2em;
+}
+#contact #success #ok {
+  float: left;
+  margin: 21px 0px 0px 323px;
+}
+#contact #success #ok:hover {
+  text-decoration: none;
+}
 
+/**
+ * Resume
+ */
+#resume {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1000px;
+  height: 575px;
+  margin-top: -287.5px;
+  margin-left: -500px;
+  font-family: "Quicksand", Arial, san-serif;
+}
+#resume p {
+  color: #c8c8c8;
+  font-weight: 100;
+  font-size: 1.2em;
+}
+#resume .social_arrow {
+  position: absolute;
+  float: none;
+  bottom: 0px;
+  margin: 0px;
+}
+#resume .social_arrow.up_arrow {
+  left: 48%;
+}
+#resume .social_arrow.down_arrow {
+  left: 53%;
+}
+#resume .social_arrow img {
+  top: 14px;
+  left: 10px;
+}
+#resume .title {
+  position: relative;
+}
+#resume #overview {
+  display: block;
+  position: absolute;
+  width: 800px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -400px;
+}
+#resume #overview .circle {
+  display: block;
+  float: left;
+  margin: 20px 30px 40px 0px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #161616;
+  -webkit-box-shadow: 0px 0px 400px 40px rgba(150, 150, 150, 0.04);
+  box-shadow: 0px 0px 400px 40px rgba(150, 150, 150, 0.04);
+}
+#resume #overview .circle .inside {
+  width: 167px;
+  height: 167px;
+  border-radius: 50%;
+  background-color: #303030;
+  overflow: hidden;
+  border: solid 4px #303030;
+  margin: 13px 0px 0px 12px;
+}
+#resume #overview .circle .inside img {
+  display: block;
+  margin: 0px 0px 0px -42px;
+}
+#resume #overview p {
+  margin-bottom: 15px;
+}
+#resume #specialties {
+  display: none;
+  position: absolute;
+  width: 900px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  margin-top: -250px;
+  margin-left: -450px;
+}
+#resume #specialties .title, #resume #specialties p {
+  text-align: center;
+}
+#resume #specialties .special_slogan {
+  position: relative;
+}
+#resume #specialties h3 {
+  position: relative;
+  color: #c8c8c8;
+  text-align: center;
+  font-weight: 100;
+  font-size: 1.7em;
+  margin: 15px 0px 30px 0px;
+}
+#resume #specialties .skills_row1 {
+  padding: 0px 0px 0px 136px;
+  height: 125px;
+}
+#resume #specialties .skills_row2 {
+  height: 125px;
+  padding: 0px 0px 0px 204px;
+}
+#resume #specialties .circle {
+  display: block;
+  float: left;
+  margin: 0px 30px 0px 0px;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background-color: #161616;
+}
+#resume #specialties .circle .subcircle {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background-color: #313131;
+  margin: 7px 0px 0px 7px;
+}
+#resume #specialties .circle .subcircle .progress_circle {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 96px;
+  height: 96px;
+}
+#resume #specialties .circle .subcircle .front_circle {
+  position: absolute;
+  top: 9px;
+  left: 8px;
+  width: 71px;
+  height: 71px;
+  border-radius: 50%;
+  background-color: #161616;
+  border: solid 4px #393939;
+  margin: 0px 0px 0px 0px;
+}
+#resume #specialties .circle .subcircle .front_circle .skill {
+  color: #636363;
+  width: 72px;
+  font-size: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 23px;
+}
+#resume #experience {
+  display: none;
+  position: absolute;
+  width: 900px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  margin-top: -250px;
+  margin-left: -450px;
+}
+#resume #experience .title, #resume #experience p {
+  text-align: center;
+}
+#resume #experience .experience_slogan {
+  position: relative;
+}
+#resume #experience .past_job {
+  float: left;
+  width: 280px;
+  height: 280px;
+  margin: 50px 0px 0px 120px;
+}
+#resume #experience .past_job h4 {
+  position: relative;
+  font-size: 1.4em;
+  text-align: center;
+}
+#resume #experience .past_job .position {
+  position: relative;
+  font-size: 1em;
+  color: #ff000a;
+}
+#resume #experience .past_job .timeframe {
+  position: relative;
+  font-size: 1em;
+}
+#resume #experience .circle {
+  display: block;
+  position: relative;
+  float: left;
+  margin: 0px 30px 15px 50px;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background-color: #161616;
+  -webkit-box-shadow: 0px 0px 400px 40px rgba(150, 150, 150, 0.04);
+  box-shadow: 0px 0px 400px 40px rgba(150, 150, 150, 0.04);
+}
+#resume #experience .circle .inside {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: #303030;
+  overflow: hidden;
+  border: solid 4px #303030;
+  margin: 11px 0px 0px 10px;
+}
+#resume #experience .circle .inside img {
+  display: block;
+  margin: -6px 0px 0px -6px;
+}
+
+/**
+ * Footer
+ */
 #pagefooter {
   display: block;
   position: fixed;
@@ -418,15 +903,16 @@ a:hover {
 }
 #pagefooter .social_icons {
   float: right;
-  margin-top: -4px;
+  margin-top: -3px;
 }
 #pagefooter .social_icons li {
   float: left;
+  font-size: 1.1em;
   margin-left: 10px;
   list-style: none;
 }
 #pagefooter .social_icons li a, #pagefooter .social_icons li a:active, #pagefooter .social_icons li a:visited, #pagefooter .social_icons li a:link {
-  opacity: 0.2;
+  opacity: 0.6;
   -webkit-transition: opacity 0.5s ease-out;
   -moz-transition: opacity 0.5s ease-out;
   -ms-transition: opacity 0.5s ease-out;
@@ -434,7 +920,8 @@ a:hover {
   transition: opacity 0.5s ease-out;
 }
 #pagefooter .social_icons li a:hover, #pagefooter .social_icons li a:active:hover, #pagefooter .social_icons li a:visited:hover, #pagefooter .social_icons li a:link:hover {
-  opacity: 0.8;
+  text-decoration: none;
+  opacity: 1;
   -webkit-transition: opacity 0.5s ease-out;
   -moz-transition: opacity 0.5s ease-out;
   -ms-transition: opacity 0.5s ease-out;
