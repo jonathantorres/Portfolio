@@ -14,6 +14,7 @@ $size11px: 0.6em;
 $size12px: 0.7em;
 $size14px: 0.8em;
 $size16px: 1em;
+$size17px: 1.1em;
 $size18px: 1.2em;
 $size20px: 1.4em;
 $size22px: 1.6em;
@@ -725,17 +726,23 @@ a:hover { text-decoration: underline; }
 
 	.social_icons {
 		float: right;
-		margin-top: -4px;
+		margin-top: -3px;
 
 		li {
 			float: left;
+			font-size: $size17px;
 			margin-left: 10px;
 			list-style: none;
 
-			a, a:active, a:visited, a:link { 
-				opacity: 0.2;
+			a, a:active, a:visited, a:link {
+				opacity: 0.6;
 				@include transition (opacity 0.5s ease-out);
-				&:hover { opacity: 0.8; @include transition (opacity 0.5s ease-out); }
+				
+				&:hover {
+					text-decoration: none;
+					opacity: 1; 
+					@include transition (opacity 0.5s ease-out); 
+				}
 			}
 		}
 	}

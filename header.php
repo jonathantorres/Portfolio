@@ -77,6 +77,7 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/raphaelicons.css">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Quicksand:300,400,700" type="text/css">
         <script src="libs/modernizr-2.6.2.min.js"></script>
     </head>
