@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Quicksand:300,400,700" type="text/css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="bower_components/modernizr/modernizr.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
