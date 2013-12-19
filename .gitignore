@@ -1,8 +1,7 @@
-# Weird Files
+# Files
 .DS_Store
 
-# Weird Folders
+# Folders
 .sass-cache/
-
-# Node Modules
 node_modules/
+bower_components/
