@@ -9,14 +9,13 @@
             </ul>
         </footer><!-- footer -->
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="libs/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="libs/jquery-migrate-1.1.1.min.js"></script>
-        <script src="libs/plugins.js"></script>
-        <script src="libs/greensock/TweenMax.min.js"></script>
-        <script src="libs/signals.min.js"></script>
-        <script src="libs/hasher.min.js"></script>
-        <script src="libs/raphael-min.js"></script>
+        <script src="bower_components/jquery/jquery.min.js"></script>
+        <script src="bower_components/jquery/jquery-migrate.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="bower_components/greensock/src/minified/TweenMax.min.js"></script>
+        <script src="bower_components/js-signals/dist/signals.min.js"></script>
+        <script src="bower_components/hasher/dist/js/hasher.min.js"></script>
+        <script src="bower_components/raphael/raphael-min.js"></script>
 
         <script src="js/Utils.js"></script>
         <script src="js/Resume.js"></script>

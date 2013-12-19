@@ -2,7 +2,7 @@
 
     /**
      * Get my tweets
-     */ 
+     */
     session_start();
     require_once('php/twitteroauth/twitteroauth.php');
 
@@ -16,7 +16,7 @@
 
     /**
      * Get instagram feed
-     */ 
+     */
     require_once('php/instagram.class.php');
 
     $client_id = '83d59a4dc78042ce8594c0109cdeee74';
@@ -32,14 +32,14 @@
 
     /**
      * Merge and Shuffle Twitter/Instagram data.
-     */ 
+     */
     $all_media = array_merge($tweets, $instagrams->data);
     shuffle($all_media);
 
     /**
      * Wrap @mentions and #hastags in a <span>
      * Find urls and wraps them in a <a>
-     */ 
+     */
     function format_text($text) {
         $text = preg_replace('#@([\\d\\w]+)#', '<span class="johnred">$0</span>', $text); // @mentions
         $text = preg_replace('/#([\\d\\w]+)/', '<span class="johnred">$0</span>', $text); // #hashtags
@@ -73,13 +73,11 @@
         <meta name="robots" content="all" />
         <meta name="viewport" content="width=device-width">
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/raphaelicons.css">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Quicksand:300,400,700" type="text/css">
-        <script src="libs/modernizr-2.6.2.min.js"></script>
+        <script src="bower_components/modernizr/modernizr.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -90,7 +88,7 @@
         <div class="preload_bg">
             <h3 class="load_text">Loading...</h3>
         </div>
-        
+
         <!-- Site Header -->
         <header id="topheader">
             <a id="logo" class="jonathan" href="welcome" alt="Jonathan Torres">Jonathan <span class="johnred">Torres</span></a>
@@ -125,7 +123,7 @@
                 </ul>
             </nav>
         </header><!-- #topheader -->
-        
+
         <!-- Social Slide -->
         <div id="social">
             <!-- Opening Arrow -->
@@ -134,13 +132,13 @@
             </a>
 
             <a href="#" class="social_close">x</a>
-            
+
             <div class="title_area clearfix">
                 <h1>Social Me</h1>
                 <a href="#" class="social_arrow left_arrow"><img src="img/social_left_arrow.png"></a>
                 <a href="#" class="social_arrow right_arrow"><img src="img/social_right_arrow.png"></a>
             </div>
-            
+
             <div class="feed_wrapper">
                 <ul class="social_feed clearfix">
                     <?php foreach ($all_media as $media) : ?>
