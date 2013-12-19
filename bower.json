@@ -1,0 +1,29 @@
+{
+  "name": "Jonathan-Torres-Portfolio",
+  "version": "0.0.1",
+  "authors": [
+    "Jonathan Torres <jonathantorres41@gmail.com>"
+  ],
+  "description": "Jonathan Torres Portfolio",
+  "keywords": [
+    "html5",
+    "website",
+    "portfolio",
+    "developer"
+  ],
+  "homepage": "www.jonathantorres.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.0.3",
+    "greensock": "~1.11.2",
+    "hasher": "~1.2.0",
+    "modernizr": "~2.7.1",
+    "raphael": "~2.1.2"
+  }
+}
