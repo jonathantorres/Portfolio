@@ -48,7 +48,7 @@
 		}
 
 		// Move items to the left
-		if (parseInt(socialFeed.css('left'), 10) > -parseInt(socialFeed.css('width'), 10) + singleItemWidth + 40) {
+		if (parseInt(socialFeed.css('left'), 10) > -(parseInt(socialFeed.css('width'), 10) - (singleItemWidth + 50))) {
 			TweenMax.to(socialFeed, 0.5, { left : '-=' + singleItemWidth, ease : Expo.easeOut } );
 		}
 
