@@ -9,7 +9,10 @@
     "js",
     "html5"
   ],
-  "author": "Jonathan Torres",
+  "author": {
+    "name": "Jonathan Torres",
+    "email": "jonathantorres41@gmail.com"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-sass": "~0.3.0",
