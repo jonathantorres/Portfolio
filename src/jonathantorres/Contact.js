@@ -1,61 +1,61 @@
 (function(window) {
 
-	var $contact,
-		$title,
-		$summary,
-		$success,
+	var contact,
+		title,
+		summary,
+		success,
 		timeline;
 
-	var $contactForm,
-		$usernameField,
-		$emailField,
-		$messageField,
-		$errorFeedback,
-		$okButton,
-		$sendButton;
+	var contactForm,
+		usernameField,
+		emailField,
+		messageField,
+		errorFeedback,
+		okButton,
+		sendButton;
 
 	function Contact() { }
 
 	Contact.prototype.init = function() {
 		cacheSelectors();
-		$contact.addClass('viewedSection');
+		contact.addClass('viewedSection');
 
 		// display form by default
-		$contactForm.css( { 'display' : 'block'} );
-		$success.css( { 'display' : 'none'} );
+		contactForm.css( { 'display' : 'block'} );
+		success.css( { 'display' : 'none'} );
 
 		// remove any error classes
-		$errorFeedback.text('');
-		$usernameField.removeClass('error');
-		$emailField.removeClass('error');
-		$messageField.removeClass('error');
+		errorFeedback.text('');
+		usernameField.removeClass('error');
+		emailField.removeClass('error');
+		messageField.removeClass('error');
 
 		resetValues();
 
 		// animate!
 		timeline = new TimelineMax();
-		timeline.from($title, 1, { opacity : 0, ease : Expo.easeOut });
-		timeline.from($summary, 1, { opacity : 0, marginLeft : '-60px', ease : Expo.easeOut }, '-=0.8');
-		timeline.from($contactForm, 1, { opacity : 0, ease : Expo.easeOut }, '-=0.8');
+		timeline.from(title, 1, { opacity : 0, ease : Expo.easeOut });
+		timeline.from(summary, 1, { opacity : 0, marginLeft : '-60px', ease : Expo.easeOut }, '-=0.8');
+		timeline.from(contactForm, 1, { opacity : 0, ease : Expo.easeOut }, '-=0.8');
 
-		$usernameField.on('blur', function() {
+		usernameField.on('blur', function() {
 			validateField($(this), false);
 		});
 
-		$messageField.on('blur', function() {
+		messageField.on('blur', function() {
 			validateField($(this), false);
 		});
 
-		$emailField.on('blur', function() {
+		emailField.on('blur', function() {
 			validateField($(this), true);
 		});
 
-		$emailField.on('keypress', function() {
+		emailField.on('keypress', function() {
 			validateField($(this), true);
 		});
 
 		// send button
-		$sendButton.on('click', function(e) {
+		sendButton.on('click', function(e) {
 			e.preventDefault();
 			validateForm();
 		});
@@ -68,12 +68,12 @@
 		});
 
 		// go back to form
-		$okButton.on('click', function(e) {
+		okButton.on('click', function(e) {
 			e.preventDefault();
 
-			$success.fadeOut('normal', function() {
+			success.fadeOut('normal', function() {
 				resetValues();
-				$contactForm.fadeIn();
+				contactForm.fadeIn();
 			});
 		});
 	};
@@ -81,12 +81,12 @@
 	/**
 	 * Validate a single field
 	 */
-	var validateField = function($field, isEmail) {
-		var fieldValue = $field.val();
+	var validateField = function(field, isEmail) {
+		var fieldValue = field.val();
 
 		if (fieldValue === '') {
-			$errorFeedback.text('All fields are required.');
-			$field.addClass('error');
+			errorFeedback.text('All fields are required.');
+			field.addClass('error');
 
 			return false;
 		}
@@ -95,18 +95,18 @@
 			var emailRegex = /^([a-zA-Z0-9])(([a-zA-Z0-9])*([\._\+-])*([a-zA-Z0-9]))*@(([a-zA-Z0-9\-])+(\.))+([a-zA-Z]{2,4})+$/;
 
 			if (fieldValue.search(emailRegex) === -1) {
-				$errorFeedback.text('Invalid email.');
-				$field.addClass('error');
+				errorFeedback.text('Invalid email.');
+				field.addClass('error');
 
 				return false;
 			}
 		}
 
-		if ($usernameField.hasClass('error') === false && $emailField.hasClass('error') === false && $messageField.hasClass('error') === false) {
-			$errorFeedback.text('');
+		if (usernameField.hasClass('error') === false && emailField.hasClass('error') === false && messageField.hasClass('error') === false) {
+			errorFeedback.text('');
 		}
 
-		$field.removeClass('error');
+		field.removeClass('error');
 
 		return true;
 	};
@@ -115,36 +115,36 @@
 	 * Check if all fields are OK
 	 */
 	var validateForm = function() {
-		var usernameValidation = validateField($usernameField, false),
-			emailValidation = validateField($emailField, true),
-			messageValidation = validateField($messageField, false);
+		var usernameValidation = validateField(usernameField, false),
+			emailValidation = validateField(emailField, true),
+			messageValidation = validateField(messageField, false);
 
 		if (usernameValidation === false || messageValidation === false) {
-			$errorFeedback.text('All fields are required.');
+			errorFeedback.text('All fields are required.');
 			return false;
 		}
 
 		if (emailValidation === false) {
-			$errorFeedback.text('Invalid email.');
+			errorFeedback.text('Invalid email.');
 			return false;
 		}
 
-		$errorFeedback.text('');
-		$usernameField.removeClass('error');
-		$emailField.removeClass('error');
-		$messageField.removeClass('error');
+		errorFeedback.text('');
+		usernameField.removeClass('error');
+		emailField.removeClass('error');
+		messageField.removeClass('error');
 
-		var username = $usernameField.val(),
-			useremail = $emailField.val(),
-			usermessage = $messageField.val();
+		var username = usernameField.val(),
+			useremail = emailField.val(),
+			usermessage = messageField.val();
 
 		$.ajax({
 			type : 'POST',
 			url : 'php/submit_contact_form.php',
-			data : { un : username, ue : useremail, um : usermessage }, 
+			data : { un : username, ue : useremail, um : usermessage },
 			success : function() {
-				$contactForm.fadeOut('normal', function() {
-					$success.fadeIn();
+				contactForm.fadeOut('normal', function() {
+					success.fadeIn();
 				});
 			},
 			error : function() {
@@ -157,29 +157,29 @@
 	 * Reset field values
 	 */
 	var resetValues = function() {
-		$usernameField.val('');
-		$emailField.val('');
-		$messageField.val('');
+		usernameField.val('');
+		emailField.val('');
+		messageField.val('');
 	};
 
 	/**
 	 * Selectors
 	 */
 	var cacheSelectors = function() {
-		$contact = $('#contact');
-		$title = $('.title');
-		$summary = $('.summary');
-		$success = $('#success');
+		contact = $('#contact');
+		title = $('.title');
+		summary = $('.summary');
+		success = $('#success');
 
-		$contactForm = $('#contact_form');
-		$usernameField = $('#username');
-		$emailField = $('#email');
-		$messageField = $('#message');
-		$errorFeedback = $('.error_feedback');
-		$sendButton = $('#send');
-		$okButton = $('#ok');
+		contactForm = $('#contact_form');
+		usernameField = $('#username');
+		emailField = $('#email');
+		messageField = $('#message');
+		errorFeedback = $('.error_feedback');
+		sendButton = $('#send');
+		okButton = $('#ok');
 	};
 
 	window.Contact = Contact;
-	
+
 }(window));

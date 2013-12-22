@@ -1,8 +1,8 @@
 (function(window) {
 
 	var site,
-		$preloadText,
-		$preloadBg;
+		preloadText,
+		preloadBg;
 
 	function Preloader() {}
 
@@ -10,12 +10,12 @@
 		cacheSelectors();
 
 		// Fadeout "Loading..."
-		TweenMax.to($preloadText, 1, { opacity : 0, onComplete : loadAnimationComplete } );
+		TweenMax.to(preloadText, 1, { opacity : 0, onComplete : loadAnimationComplete } );
 	};
 
 	var cacheSelectors = function() {
-		$preloadText = $('.load_text');
-		$preloadBg = $('.preload_bg');
+		preloadText = $('.load_text');
+		preloadBg = $('.preload_bg');
 	};
 
 	/**
@@ -23,7 +23,7 @@
 	 * Init site!
 	 */
 	function bgAnimationComplete() {
-		$preloadBg.hide();
+		preloadBg.hide();
 
 		site = new Site();
 		site.init();
@@ -33,10 +33,10 @@
 	 * "Loading..." has faded out. Hide it.
 	 */
 	function loadAnimationComplete() {
-		$preloadText.hide();
+		preloadText.hide();
 
 		// Fade out the black background
-		TweenMax.to($preloadBg, 0.3, { opacity : 0, onComplete : bgAnimationComplete } );
+		TweenMax.to(preloadBg, 0.3, { opacity : 0, onComplete : bgAnimationComplete } );
 	}
 
 	window.Preloader = Preloader;
