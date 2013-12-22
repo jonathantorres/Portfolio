@@ -57,29 +57,29 @@ module.exports = function(grunt) {
                 eqnull: true,
                 browser: true,
                 globals: {
-                  // jQuery
-                  $: true,
-                  jQuery: true,
-                  console: true,
+                    // jQuery
+                    $: true,
+                    jQuery: true,
+                    console: true,
 
-                  // greensock
-                  TweenMax: true,
-                  TimelineMax: true,
-                  Expo: true,
-                  Power1: true,
-                  Sine: true,
-                  Raphael: true,
+                    // greensock
+                    TweenMax: true,
+                    TimelineMax: true,
+                    Expo: true,
+                    Power1: true,
+                    Sine: true,
+                    Raphael: true,
 
-                  // site
-                  Utils: true,
-                  Social: true,
-                  Contact: true,
-                  Welcome: true,
-                  Portfolio: true,
-                  Resume: true,
-                  Site: true,
-                  Preloader: true,
-                  hasher: true
+                    // site
+                    Utils: true,
+                    Social: true,
+                    Contact: true,
+                    Welcome: true,
+                    Portfolio: true,
+                    Resume: true,
+                    Site: true,
+                    Preloader: true,
+                    hasher: true
                 }
             },
 
