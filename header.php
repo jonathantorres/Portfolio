@@ -59,6 +59,8 @@
         <!-- @author Jonathan Torres -->
         <!-- www.jonathantorres.com -->
         <!-- info@jonathantorres.com -->
+        <!-- Developed by Jonathan Torres <info@jonathantorres.com> -->
+        <!-- Designed by Juan Carlos Garcia <www.jcagarcia.com> -->
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">

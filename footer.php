@@ -1,7 +1,7 @@
         </div><!-- content -->
 
         <footer id="pagefooter">
-            <p>&copy; 2013 | Jonathan Torres | Designed by: <a href="http://www.juancarlosangustia.com/" target="_blank">JCa.García</a> and Developed by: Jonathan Torres</p>
+            <p>&copy; 2013 | Jonathan Torres | All rights reserved</p>
             <ul class="social_icons">
                 <li><a href="https://www.twitter.com/torres_jonathan" target="_blank"><span class="icon">^</span></a></li>
                 <li><a href="https://github.com/jonathantorres" target="_blank"><span class="icon">U</span></a></li>
