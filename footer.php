@@ -11,23 +11,20 @@
 
         <script src="bower_components/jquery/jquery.min.js"></script>
         <script src="bower_components/jquery/jquery-migrate.min.js"></script>
-        <script src="js/plugins.js"></script>
         <script src="bower_components/greensock/src/minified/TweenMax.min.js"></script>
         <script src="bower_components/js-signals/dist/signals.min.js"></script>
         <script src="bower_components/hasher/dist/js/hasher.min.js"></script>
         <script src="bower_components/raphael/raphael-min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/jonathantorres.js"></script>
 
-        <script src="js/Utils.js"></script>
-        <script src="js/Resume.js"></script>
-        <script src="js/Portfolio.js"></script>
-        <script src="js/Contact.js"></script>
-        <script src="js/Welcome.js"></script>
-        <script src="js/Social.js"></script>
-        <script src="js/Site.js"></script>
-        <script src="js/Preloader.js"></script>
-        <script src="js/main.js"></script>
-
-        <!-- <script src="js/jonathantorres.min.js"></script> -->
+        <!-- Start site! -->
+        <script>
+            $(window).on('load', function() {
+                var preloader = new Preloader();
+                preloader.init();
+            });
+        </script>
 
         <!-- Google Analytics: -->
         <script type="text/javascript">
