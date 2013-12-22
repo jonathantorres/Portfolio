@@ -142,7 +142,7 @@
             <div class="feed_wrapper">
                 <ul class="social_feed clearfix">
                     <?php foreach ($all_media as $media) : ?>
-                        <?php if ($media->type) : // Instagram posts ?>
+                        <?php if (property_exists($media, 'type')) : // Instagram posts ?>
                             <li class="instagram">
                                 <a href="<?php echo $media->link; ?>" target="_blank" class="circle">
                                     <div class="circle inside">
