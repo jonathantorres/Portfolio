@@ -1,16 +1,14 @@
 (function(window) {
 
-	var portfolio;
+    var portfolio;
 
-	function Portfolio() {
+    function Portfolio() { }
 
-	}
+    Portfolio.prototype.init = function() {
+        portfolio = $('#portfolio');
+        portfolio.addClass('viewedSection');
+    };
 
-	Portfolio.prototype.init = function() {
-		portfolio = $('#portfolio');
-		portfolio.addClass('viewedSection');
-	};
-
-	window.Portfolio = Portfolio;
+    window.Portfolio = Portfolio;
 
 }(window));
