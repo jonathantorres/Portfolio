@@ -45,6 +45,26 @@
 
 			<div class="circle">
 				<div class="subcircle">
+					<div id="php_circle" class="progress_circle"></div>
+					<div class="front_circle">
+						<p class="skill">PHP</p>
+					</div>
+				</div>
+			</div><!-- .circle -->
+		</div><!-- .skills_row1 -->
+
+		<div class="skills_row2">
+			<div class="circle">
+				<div class="subcircle">
+					<div id="mysql_circle" class="progress_circle"></div>
+					<div class="front_circle">
+						<p class="skill">MySQL</p>
+					</div>
+				</div>
+			</div><!-- .circle -->
+
+			<div class="circle">
+				<div class="subcircle">
 					<div id="as3_circle" class="progress_circle"></div>
 					<div class="front_circle">
 						<p class="skill">AS3</p>
@@ -57,44 +77,6 @@
 					<div id="fl_circle" class="progress_circle"></div>
 					<div class="front_circle">
 						<p class="skill">Fl</p>
-					</div>
-				</div>
-			</div><!-- .circle -->
-		</div><!-- .skills_row1 -->
-
-		<div class="skills_row2">
-			<div class="circle">
-				<div class="subcircle">
-					<div id="php_circle" class="progress_circle"></div>
-					<div class="front_circle">
-						<p class="skill">PHP</p>
-					</div>
-				</div>
-			</div><!-- .circle -->
-
-			<div class="circle">
-				<div class="subcircle">
-					<div id="mysql_circle" class="progress_circle"></div>
-					<div class="front_circle">
-						<p class="skill">MySQL</p>
-					</div>
-				</div>
-			</div><!-- .circle -->
-
-			<div class="circle">
-				<div class="subcircle">
-					<div id="ps_circle" class="progress_circle"></div>
-					<div class="front_circle">
-						<p class="skill">PS</p>
-					</div>
-				</div>
-			</div><!-- .circle -->
-
-			<div class="circle">
-				<div class="subcircle">
-					<div id="ae_circle" class="progress_circle"></div>
-					<div class="front_circle">
-						<p class="skill">AE</p>
 					</div>
 				</div>
 			</div><!-- .circle -->
@@ -114,7 +96,7 @@
 			<p class="position">Developer</p>
 			<p class="timeframe">May 2011 – Present</p>
 		</div>
-		
+
 		<div class="past_job past_experience2">
 			<div class="circle">
 				<div class="circle inside">

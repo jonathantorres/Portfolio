@@ -304,6 +304,11 @@
 
             if (circle.startPercent >= circle.endPercent) {
                 circle.startPercent = circle.endPercent;
+
+                // once finished, create the whole circle.
+                circle.paper.clear();
+                var fullCircle = circle.paper.circle(48, 48, 48);
+                fullCircle.attr({ fill : circle.color, 'stroke-width' : 0 });
             } else {
                 circle.startPercent += speed;
                 circle.paper.clear();

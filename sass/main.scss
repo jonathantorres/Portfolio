@@ -54,16 +54,16 @@ a:hover { text-decoration: underline; }
  * Useful classes
  */
 .johnred { color: $johnRed; }
-.title { 
+.title {
 	font-size: $size36px;
 	font-weight: 100;
 	text-transform: uppercase;
 	color: #c8c8c8;
 }
 .johnsquared {
-	color: #000; 
-	text-decoration: none; 
-	background-color: $johnRed; 
+	color: #000;
+	text-decoration: none;
+	background-color: $johnRed;
 	@include transition (color 0.5s ease-out);
 }
 .johnsquared:hover { color: #FFF; @include transition (color 0.5s ease-out); }
@@ -124,7 +124,7 @@ a:hover { text-decoration: underline; }
 	background: #161616;
 
 	.load_text {
-		
+
 	}
 }
 
@@ -144,7 +144,7 @@ a:hover { text-decoration: underline; }
 	@include box-sizing(border-box);
 
 	a, a:link, a:active, a:visited {
-		font-family: $quicksandFont; 
+		font-family: $quicksandFont;
 		font-weight: normal;
 		text-decoration: none;
 	}
@@ -182,7 +182,7 @@ a:hover { text-decoration: underline; }
 					display: none;
 					height: 3px;
 					background: #303030;
-					
+
 					.prog {
 						width: 15%;
 						height: inherit;
@@ -254,7 +254,7 @@ a:hover { text-decoration: underline; }
 
 		&:hover { text-decoration: none; color: #e9e6e6; @include transition (color 0.5s ease-out); }
 	}
-	
+
 	.feed_wrapper {
 		overflow: hidden;
 		position: relative;
@@ -276,7 +276,7 @@ a:hover { text-decoration: underline; }
 				padding: 0px 0px 0px 30px;
 				border-right: solid 1px #000;
 				border-left: solid 1px #272727;
-				
+
 				&:first-child { border-left: none; }
 				&:last-child { border-right: none; }
 
@@ -383,7 +383,7 @@ a:hover { text-decoration: underline; }
 			img { display: block; margin: 0px 0px 0px -42px; }
 		}
 	}
-	
+
 	a:link, a:active, a:visited { color: #000; @include transition (color 0.5s ease-out); }
 	a:hover { text-decoration: none; color: #FFF; @include transition (color 0.5s ease-out); }
 	.in_the_top { margin-top: 20px; }
@@ -594,13 +594,14 @@ a:hover { text-decoration: underline; }
 		}
 
 		.skills_row1 {
-			padding: 0px 0px 0px 136px;
+			padding: 0px 0px 0px 184px;
 			height: 125px;
 		}
 
-		.skills_row2 { 
+		.skills_row2 {
+			width: 500px;
 			height: 125px;
-			padding: 0px 0px 0px 204px;
+			padding: 0px 0px 0px 252px;
 		}
 
 		.circle {
@@ -737,11 +738,11 @@ a:hover { text-decoration: underline; }
 			a, a:active, a:visited, a:link {
 				opacity: 0.6;
 				@include transition (opacity 0.5s ease-out);
-				
+
 				&:hover {
 					text-decoration: none;
-					opacity: 1; 
-					@include transition (opacity 0.5s ease-out); 
+					opacity: 1;
+					@include transition (opacity 0.5s ease-out);
 				}
 			}
 		}
