@@ -3,9 +3,9 @@
         <footer id="pagefooter">
             <p>&copy; 2013 | Jonathan Torres | All rights reserved</p>
             <ul class="social_icons">
-                <li><a href="https://www.twitter.com/torres_jonathan" target="_blank"><span class="icon">^</span></a></li>
-                <li><a href="https://github.com/jonathantorres" target="_blank"><span class="icon">U</span></a></li>
-                <li><a href="http://www.linkedin.com/in/torresjonathan" target="_blank"><span class="icon">T</span></a></li>
+                <li><a href="https://www.twitter.com/torres_jonathan" target="_blank"><i class="icon-twitter"></i></a></li>
+                <li><a href="https://github.com/jonathantorres" target="_blank"><i class="icon-github"></i></a></li>
+                <li><a href="http://www.linkedin.com/in/torresjonathan" target="_blank"><i class="icon-linkedin"></i></a></li>
             </ul>
         </footer><!-- footer -->
 

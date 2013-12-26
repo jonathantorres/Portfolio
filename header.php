@@ -77,7 +77,7 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/raphaelicons.css">
+        <link rel="stylesheet" href="css/iconmoon.css">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Quicksand:300,400,700" type="text/css">
         <script src="bower_components/modernizr/modernizr.js"></script>
     </head>
@@ -130,15 +130,15 @@
         <div id="social">
             <!-- Opening Arrow -->
             <a href="#" id="open_arrow">
-                <img src="img/header_arrow.png">
+                <i class="icon-arrow-left"></i>
             </a>
 
             <a href="#" class="social_close">x</a>
 
             <div class="title_area clearfix">
                 <h1>Social Me</h1>
-                <a href="#" class="social_arrow left_arrow"><img src="img/social_left_arrow.png"></a>
-                <a href="#" class="social_arrow right_arrow"><img src="img/social_right_arrow.png"></a>
+                <a href="#" class="social_arrow left_arrow"><i class="icon-arrow-left"></i></a>
+                <a href="#" class="social_arrow right_arrow"><i class="icon-arrow-right"></i></a>
             </div>
 
             <div class="feed_wrapper">

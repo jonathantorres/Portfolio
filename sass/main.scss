@@ -100,13 +100,23 @@ a:hover { text-decoration: underline; }
 	background: #111;
 	@include transition (background 0.5s ease-out);
 
-	&:hover { background: #c6060d; @include transition (background 0.5s ease-out); }
+	&:hover {
+		background: #c6060d;
+		@include transition (background 0.5s ease-out);
 
-	img {
+		i {
+			color: #FFF;
+			@include transition (color 0.5s ease-out);
+		}
+	}
+
+	i {
 		display: block;
 		position: absolute;
 		top: 12px;
-		left: 16px;
+		left: 12px;
+		color: #747474;
+		font-size: $size20px;
 	}
 }
 
@@ -226,11 +236,13 @@ a:hover { text-decoration: underline; }
 
 		&:hover { background: #212121; @include transition (background 0.5s ease-out); }
 
-		img {
+		i {
 			display: block;
 			position: absolute;
-			top: 10px;
-			left: 14px;
+			top: 12px;
+			left: 11px;
+			color: #747474;
+			font-size: $size20px;
 			@include transform-origin(center center);
 		}
 	}
@@ -732,7 +744,7 @@ a:hover { text-decoration: underline; }
 		li {
 			float: left;
 			font-size: $size17px;
-			margin-left: 10px;
+			margin-left: 13px;
 			list-style: none;
 
 			a, a:active, a:visited, a:link {
