@@ -1,0 +1,159 @@
+{
+    "works" : [
+        {
+            "id" : "1",
+            "name" : "The Cure",
+            "thumbnail" : "img/crush_1.jpg",
+            "project_image" : "img/project_sample_img.jpg",
+            "tech" : "html5/js/css3",
+            "description" : "This is the project description my man.",
+            "url" : "http://www.google.com",
+            "agencies" : {
+                "agency" : "Nobox"
+            }
+        },
+
+        {
+            "id" : "2",
+            "name" : "Soul Society",
+            "thumbnail" : "img/crush_2.jpg",
+            "project_image" : "img/project_sample_img.jpg",
+            "tech" : "PHP",
+            "description" : "This is the project description my man.",
+            "url" : "http://www.google.com",
+            "agencies" : {
+                "agency" : "Nobox"
+            }
+        },
+
+        {
+            "id" : "3",
+            "name" : "Kamelot site",
+            "thumbnail" : "img/crush_1.jpg",
+            "project_image" : "img/project_sample_img.jpg",
+            "tech" : "html5/js/css3",
+            "description" : "This is the project description my man.",
+            "url" : "http://www.google.com",
+            "agencies" : {
+                "agency" : "Nobox"
+            }
+        },
+
+        {
+            "id" : "4",
+            "name" : "The Medication",
+            "thumbnail" : "img/crush_1.jpg",
+            "project_image" : "img/project_sample_img.jpg",
+            "tech" : "html5/canvas",
+            "description" : "This is the project description my man.",
+            "url" : "http://www.google.com",
+            "agencies" : {
+                "agency" : "Nobox"
+            }
+        },
+
+        {
+            "id" : "5",
+            "name" : "Rambo man",
+            "thumbnail" : "img/crush_2.jpg",
+            "project_image" : "img/project_sample_img.jpg",
+            "tech" : "html5/js/css3",
+            "description" : "This is the project description my man.",
+            "url" : "http://www.google.com",
+            "agencies" : {
+                "agency" : "Nobox"
+            }
+        },
+
+        {
+            "id" : "6",
+            "name" : "The Amazing thing",
+            "thumbnail" : "img/crush_2.jpg",
+            "project_image" : "img/project_sample_img.jpg",
+            "tech" : "html5/js/css3",
+            "description" : "This is the project description my man.",
+            "url" : "http://www.google.com",
+            "agencies" : {
+                "agency" : "Nobox"
+            }
+        },
+
+        {
+            "id" : "7",
+            "name" : "The Motherfucker",
+            "thumbnail" : "img/crush_1.jpg",
+            "project_image" : "img/project_sample_img.jpg",
+            "tech" : "html5/js/css3",
+            "description" : "This is the project description my man.",
+            "url" : "http://www.google.com",
+            "agencies" : {
+                "agency" : "Nobox"
+            }
+        },
+
+        {
+            "id" : "8",
+            "name" : "Spaceship madness",
+            "thumbnail" : "img/crush_2.jpg",
+            "project_image" : "img/project_sample_img.jpg",
+            "tech" : "JS",
+            "description" : "This is the project description my man.",
+            "url" : "http://www.google.com",
+            "agencies" : {
+                "agency" : "Nobox"
+            }
+        },
+
+        {
+            "id" : "9",
+            "name" : "The iPhone",
+            "thumbnail" : "img/crush_1.jpg",
+            "project_image" : "img/project_sample_img.jpg",
+            "tech" : "html5/js/css3",
+            "description" : "This is the project description my man.",
+            "url" : "http://www.google.com",
+            "agencies" : {
+                "agency" : "Nobox"
+            }
+        },
+
+        {
+            "id" : "10",
+            "name" : "Huting not helping",
+            "thumbnail" : "img/crush_1.jpg",
+            "project_image" : "img/project_sample_img.jpg",
+            "tech" : "css3",
+            "description" : "This is the project description my man.",
+            "url" : "http://www.google.com",
+            "agencies" : {
+                "agency" : "Nobox"
+            }
+        },
+
+        {
+            "id" : "11",
+            "name" : "Hulkmania",
+            "thumbnail" : "img/crush_2.jpg",
+            "project_image" : "img/project_sample_img.jpg",
+            "tech" : "html5/js/css3",
+            "description" : "This is the project description my man.",
+            "url" : "http://www.google.com",
+            "agencies" : {
+                "agency" : "Nobox"
+            }
+        },
+
+        {
+            "id" : "12",
+            "name" : "Final Conflict",
+            "thumbnail" : "img/crush_1.jpg",
+            "project_image" : "img/project_sample_img.jpg",
+            "tech" : "html5/js/css3",
+            "description" : "This is the project description my man.",
+            "url" : "http://www.google.com",
+            "agencies" : {
+                "agency" : "Nobox"
+            }
+        }
+    ]
+}
