@@ -15,7 +15,9 @@
             </li>
         <?php endforeach; ?>
     </ul>
+
     <div class="lightbox"></div>
+
     <div class="project-view">
         <a href="#" class="close-project">x</a>
         <img src="img/project_sample_img.png" alt="" class="project-img">
