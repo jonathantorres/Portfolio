@@ -18,14 +18,6 @@
         <script src="js/plugins.js"></script>
         <script src="js/jonathantorres.js"></script>
 
-        <!-- Start site! -->
-        <script>
-            $(window).on('load', function() {
-                var preloader = new Preloader();
-                preloader.init();
-            });
-        </script>
-
         <!-- Google Analytics: -->
         <script type="text/javascript">
             var _gaq = _gaq || [];
