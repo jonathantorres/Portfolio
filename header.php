@@ -43,7 +43,7 @@
     function format_text($text) {
         $text = preg_replace('#@([\\d\\w]+)#', '<span class="johnred">$0</span>', $text); // @mentions
         $text = preg_replace('/#([\\d\\w]+)/', '<span class="johnred">$0</span>', $text); // #hashtags
-        $text = preg_replace('!(http)(s)?:\/\/[a-zA-Z0-9.?&_/]+!', '<a href="$0" target="blank">$0</a>', $text); // urls
+        $text = preg_replace('!(http)(s)?:\/\/[a-zA-Z0-9.?&_/]+!', '<a href="$0" target="blank" class="social-link">$0</a>', $text); // urls
 
         return $text;
     }
@@ -146,7 +146,7 @@
                     <?php foreach ($all_media as $media) : ?>
                         <?php if (property_exists($media, 'type')) : // Instagram posts ?>
                             <li class="instagram">
-                                <a href="<?php echo $media->link; ?>" target="_blank" class="circle">
+                                <a href="<?php echo $media->link; ?>" target="_blank" class="circle social-link">
                                     <div class="circle inside">
                                         <div class="hover">
                                             <img src="img/instagram_hover_icon.png" alt="Instagram">

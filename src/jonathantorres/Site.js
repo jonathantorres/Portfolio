@@ -50,9 +50,11 @@
             mainNavigation.find('a').first().click();
         });
 
-        // footer links
-        pageFooter.find('a[href^="http"]').on('click', function() {
-            window.open($(this).attr('href'), '_blank');
+        // all around links, this can't happen on the social feed
+        $('a[href^="http"]').on('click', function() {
+            if (!$(this).hasClass('social-link')) {
+                window.open($(this).attr('href'), '_blank');
+            }
         });
     };
 
