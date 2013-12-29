@@ -30,6 +30,7 @@
             return 0.5 - Math.random();
         });
 
+        // JSON data for works
         getJSONData();
 
         // animate thumbs
@@ -95,9 +96,10 @@
         projectInfo.text(work.description);
         projectLink.attr('href', work.url);
 
-        // show the necessary items first
+        // reset positions and show the necessary items first
         lightbox.show();
         project.show();
+        resetPositions();
 
         // project name
         var projectHeadingChild = projectHeading.children().remove();
@@ -117,7 +119,7 @@
         workTimeline.from(projectImage, 1, { opacity : 0, ease : Expo.easeOut }, '-=1.0');
         workTimeline.staggerFrom(projectHeading.find('span.a'), 0.3, { opacity : 0, ease : Expo.easeOut }, 0.05, '-=0.6');
         workTimeline.staggerFrom(projectInfo.find('span.a'), 0.3, { opacity : 0, ease : Expo.easeOut }, 0.01, '-=0.4');
-        workTimeline.from(projectLink, 1, { opacity : 0, ease : Expo.easeOut, onComplete : workTimelineFinished }, '-=0.2');
+        workTimeline.from(projectLink, 1, { opacity : 0, ease : Expo.easeOut }, '-=0.2');
 
         // close project
         closeProject.on('click', closeWork);
@@ -132,33 +134,28 @@
     var closeWork = function(e) {
         e.preventDefault();
 
-        var projectElements = [projectLink, projectInfo, projectHeading, projectImage, closeProject];
+        if (project.is(':visible')) {
+            var projectElements = [projectLink, projectInfo, projectHeading, projectImage, closeProject];
 
-        closeTimeline = new TimelineMax();
-        closeTimeline.to(projectElements, 1, { opacity : 0, ease : Expo.easeOut });
-        closeTimeline.to(project, 1, { height : '0%', ease : Expo.easeOut }, '-=0.6');
-        closeTimeline.to(lightbox, 1, { opacity : 0, ease : Expo.easeOut, onComplete : closeLightbox }, '-=0.6');
+            closeTimeline = new TimelineMax();
+            closeTimeline.to(projectElements, 1, { opacity : 0, ease : Expo.easeOut });
+            closeTimeline.to(project, 1, { height : '0%', ease : Expo.easeOut }, '-=0.6');
+            closeTimeline.to(lightbox, 1, { opacity : 0, ease : Expo.easeOut, onComplete : closeTimelineFinished }, '-=0.6');
+        }
     };
 
     /**
-     * Kill the project animation timeline,
-     * So that it could be animated again easily
+     * Hide lightbox when the closing work animation finishes
      */
-    var workTimelineFinished = function() {
-        workTimeline.kill();
-    };
-
-    /**
-     * Closes the lightbox
-     * Kills closing animation so it could be animated again easily
-     * Reset project items back to position to be animated again.
-     */
-    var closeLightbox = function() {
-        closeTimeline.kill();
-
+    var closeTimelineFinished = function() {
         lightbox.hide();
         project.hide();
+    };
 
+    /**
+     * Reset project items back to position to be animated again.
+     */
+    var resetPositions = function() {
         lightbox.css({ opacity : 1 });
         project.css({ height : '100%' });
         closeProject.css({ opacity : 1 });
