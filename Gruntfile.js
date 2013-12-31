@@ -79,7 +79,8 @@ module.exports = function(grunt) {
                     Resume: true,
                     Site: true,
                     Preloader: true,
-                    hasher: true
+                    hasher: true,
+                    crossroads: true
                 }
             },
 
