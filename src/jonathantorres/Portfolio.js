@@ -1,10 +1,10 @@
 (function(window) {
 
-    var portfolio,
+    var _this,
+        portfolio,
         works,
         orderedWorks,
-        shuffledWorks,
-        worksData;
+        shuffledWorks;
 
     var lightbox,
         project,
@@ -21,6 +21,7 @@
     function Portfolio() { }
 
     Portfolio.prototype.init = function() {
+        _this = this;
         cacheSelectors();
         portfolio.addClass('viewedSection');
 
@@ -29,9 +30,6 @@
         shuffledWorks = orderedWorks.sort(function() {
             return 0.5 - Math.random();
         });
-
-        // JSON data for works
-        getJSONData();
 
         // animate thumbs
         TweenMax.staggerFrom(shuffledWorks, 2, { opacity : 0, ease : Expo.easeOut }, 0.2);
@@ -47,24 +45,26 @@
         e.preventDefault();
 
         var target = $(e.currentTarget);
-        var id = target.parent().data('id');
-        var workData = getWorkData(id);
+        var id = parseInt(target.parent().data('id'), 10);
+        var workData = _this.getWorkData(id);
 
-        showWork(workData);
+        // set deeplink
+        hasher.setHash('portfolio/' + Utils.slug(workData.name));
     };
 
     /**
      * Get data for a portfolio work
+     * You can get the data by it's id or the slug
      */
-    var getWorkData = function(id) {
+    Portfolio.prototype.getWorkData = function(id) {
         var selectedWork,
             workID;
 
-        for (var i = 0; i < worksData.length; i++) {
-            workID = parseInt(worksData[i].id, 10);
+        for (var i = 0; i < this.worksData.length; i++) {
+            workID = (typeof id === 'number') ? parseInt(this.worksData[i].id, 10) : Utils.slug(this.worksData[i].name);
 
             if (id === workID) {
-                selectedWork = worksData[i];
+                selectedWork = this.worksData[i];
             }
         }
 
@@ -72,23 +72,9 @@
     };
 
     /**
-     * Get JSON data for portfolio
-     */
-    var getJSONData = function() {
-        $.ajax({
-            url : 'php/portfolio.json',
-            dataType : 'JSON',
-            method : 'GET',
-            success : function(data) {
-                worksData = data.works;
-            }
-        });
-    };
-
-    /**
      * Animates and shows the selected work
      */
-    var showWork = function(data) {
+    Portfolio.prototype.showWork = function(data) {
         // fill data
         var work = data;
         projectImage.attr('src', work.project_image);
@@ -141,6 +127,10 @@
             closeTimeline.to(projectElements, 1, { opacity : 0, ease : Expo.easeOut });
             closeTimeline.to(project, 1, { height : '0%', ease : Expo.easeOut }, '-=0.6');
             closeTimeline.to(lightbox, 1, { opacity : 0, ease : Expo.easeOut, onComplete : closeTimelineFinished }, '-=0.6');
+
+            hasher.changed.active = false;
+            hasher.setHash('portfolio');
+            hasher.changed.active = true;
         }
     };
 

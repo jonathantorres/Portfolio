@@ -1,16 +1,29 @@
 (function(window) {
 
-    var content,
+    var _this,
+        content,
         topHeader,
         logo,
         mainNavigation,
         pageFooter,
-        social;
+        social,
+        welcome,
+        portfolio,
+        contact,
+        resume;
 
     function Site() {}
 
     Site.prototype.init = function() {
+        _this = this;
         cacheSelectors();
+
+        // set up routes
+        crossroads.addRoute('welcome');
+        crossroads.addRoute('portfolio');
+        crossroads.addRoute('portfolio/{slug}', this.portfolioRoute);
+        crossroads.addRoute('contact');
+        crossroads.addRoute('resume');
 
         // set up Hasher
         hasher.changed.add(handleHasher);
@@ -77,6 +90,8 @@
      * Handle page deep links
      */
     var handleHasher = function(newHash) {
+        crossroads.parse(newHash);
+
         switch(newHash) {
             case '' :
             case 'welcome' :
@@ -99,6 +114,20 @@
                 updateNavigation('resume');
                 break;
         }
+    };
+
+    /**
+     * Deep links on portfolio section
+     * If you go to a work route directly, call the portfolio section manually
+     */
+    Site.prototype.portfolioRoute = function(id) {
+        if (!$('#portfolio').hasClass('viewedSection')) {
+            loadSection('portfolio');
+            updateNavigation('portfolio');
+        }
+
+        var workData = portfolio.getWorkData(id);
+        portfolio.showWork(workData);
     };
 
     /**
@@ -134,22 +163,22 @@
 
         switch (section) {
             case 'welcome' :
-                var welcome = new Welcome();
+                welcome = new Welcome();
                 welcome.init();
                 break;
 
             case 'portfolio' :
-                var portfolio = new Portfolio();
+                portfolio = new Portfolio();
                 portfolio.init();
                 break;
 
             case 'contact' :
-                var contact = new Contact();
+                contact = new Contact();
                 contact.init();
                 break;
 
             case 'resume' :
-                var resume = new Resume();
+                resume = new Resume();
                 resume.init();
                 break;
         }

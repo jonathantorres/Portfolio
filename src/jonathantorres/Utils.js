@@ -17,6 +17,32 @@
         element.empty().append(markup);
     };
 
+    /**
+     * Create an url friendly string
+     * Ex. Hey Jonathan -> hey-jonathan
+     */
+    Utils.slug = function(string) {
+        var text = string.toLowerCase()
+                   .replace(/[^\w ]+/g, '')
+                   .replace(/ +/g, '-');
+
+        return text;
+    };
+
+    /**
+     * Get JSON data for portfolio
+     */
+    Utils.getJSONData = function() {
+        $.ajax({
+            url : 'php/portfolio.json',
+            dataType : 'JSON',
+            method : 'GET',
+            success : function(data) {
+                Portfolio.prototype.worksData = data.works;
+            }
+        });
+    };
+
     window.Utils = Utils;
 
 }(window));
