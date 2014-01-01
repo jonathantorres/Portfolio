@@ -113,6 +113,12 @@
                 switchSection('resume');
                 updateNavigation('resume');
                 break;
+
+            default :
+                if (newHash.indexOf('portfolio') === -1) {
+                    switchSection('welcome');
+                    updateNavigation('welcome');
+                }
         }
     };
 
@@ -127,7 +133,10 @@
         }
 
         var workData = portfolio.getWorkData(id);
-        portfolio.showWork(workData);
+
+        if (workData !== undefined) {
+            portfolio.showWork(workData);
+        }
     };
 
     /**
