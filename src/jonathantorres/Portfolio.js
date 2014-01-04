@@ -31,6 +31,12 @@
             return 0.5 - Math.random();
         });
 
+        // close any previously opened project
+        if (project.is(':visible')) {
+            closeTimelineFinished();
+            resetPositions();
+        }
+
         // animate thumbs
         TweenMax.staggerFrom(shuffledWorks, 2, { opacity : 0, ease : Expo.easeOut }, 0.2);
 
@@ -115,7 +121,7 @@
     };
 
     /**
-     * Closes the project being viewed
+     * Animates back and closes the project being viewed
      */
     var closeWork = function(e) {
         e.preventDefault();
@@ -128,10 +134,14 @@
             closeTimeline.to(project, 1, { height : '0%', ease : Expo.easeOut }, '-=0.6');
             closeTimeline.to(lightbox, 1, { opacity : 0, ease : Expo.easeOut, onComplete : closeTimelineFinished }, '-=0.6');
 
-            hasher.changed.active = false;
             hasher.setHash('portfolio');
-            hasher.changed.active = true;
         }
+
+        // remove events
+        closeProject.off('click', closeWork);
+        lightbox.off('click', closeWork);
+        header.off('click', closeWork);
+        footer.off('click', closeWork);
     };
 
     /**

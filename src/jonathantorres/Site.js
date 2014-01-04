@@ -21,7 +21,7 @@
         // set up routes
         crossroads.addRoute('welcome');
         crossroads.addRoute('portfolio');
-        crossroads.addRoute('portfolio/{slug}', this.portfolioRoute);
+        crossroads.addRoute('portfolio/{slug}', portfolioRoute);
         crossroads.addRoute('contact');
         crossroads.addRoute('resume');
 
@@ -41,6 +41,7 @@
         // Click on main nav items
         mainNavigation.find('a').on('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
             var path = $(this).attr('href');
             hasher.setHash(path);
         });
@@ -60,6 +61,7 @@
         // Click on logo. Same as "Home" click
         logo.on('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
             mainNavigation.find('a').first().click();
         });
 
@@ -88,6 +90,8 @@
 
     /**
      * Handle page deep links
+     * Portfolio case: hide a work (if shown) if you hit the "back" button
+     * Default case: send me to the welcome page if it's not a portfolio/portfolio work
      */
     var handleHasher = function(newHash) {
         crossroads.parse(newHash);
@@ -95,21 +99,30 @@
         switch(newHash) {
             case '' :
             case 'welcome' :
+            case 'welcome/' :
                 switchSection('welcome');
                 updateNavigation('welcome');
                 break;
 
             case 'portfolio' :
-                switchSection('portfolio');
-                updateNavigation('portfolio');
+            case 'portfolio/' :
+                if (!$('#portfolio').hasClass('viewedSection')) {
+                    switchSection('portfolio');
+                    updateNavigation('portfolio');
+                } else {
+                    topHeader.click();
+                }
+
                 break;
 
             case 'contact' :
+            case 'contact/' :
                 switchSection('contact');
                 updateNavigation('contact');
                 break;
 
             case 'resume' :
+            case 'resume/' :
                 switchSection('resume');
                 updateNavigation('resume');
                 break;
@@ -118,6 +131,11 @@
                 if (newHash.indexOf('portfolio') === -1) {
                     switchSection('welcome');
                     updateNavigation('welcome');
+                } else {
+                    if (!/portfolio\/./.test(newHash)) {
+                        switchSection('welcome');
+                        updateNavigation('welcome');
+                    }
                 }
         }
     };
@@ -126,7 +144,7 @@
      * Deep links on portfolio section
      * If you go to a work route directly, call the portfolio section manually
      */
-    Site.prototype.portfolioRoute = function(id) {
+    var portfolioRoute = function(id) {
         if (!$('#portfolio').hasClass('viewedSection')) {
             loadSection('portfolio');
             updateNavigation('portfolio');
