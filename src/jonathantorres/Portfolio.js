@@ -48,8 +48,7 @@
         var id = parseInt(target.parent().data('id'), 10);
         var workData = _this.getWorkData(id);
 
-        // set deeplink
-        hasher.setHash('portfolio/' + Utils.slug(workData.name));
+        History.pushState(workData, 'Jonathan Torres Portfolio', Utils.slug(workData.name));
     };
 
     /**
@@ -127,10 +126,6 @@
             closeTimeline.to(projectElements, 1, { opacity : 0, ease : Expo.easeOut });
             closeTimeline.to(project, 1, { height : '0%', ease : Expo.easeOut }, '-=0.6');
             closeTimeline.to(lightbox, 1, { opacity : 0, ease : Expo.easeOut, onComplete : closeTimelineFinished }, '-=0.6');
-
-            hasher.changed.active = false;
-            hasher.setHash('portfolio');
-            hasher.changed.active = true;
         }
     };
 

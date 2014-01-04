@@ -12,9 +12,7 @@
         <script src="bower_components/jquery/jquery.min.js"></script>
         <script src="bower_components/jquery/jquery-migrate.min.js"></script>
         <script src="bower_components/greensock/src/minified/TweenMax.min.js"></script>
-        <script src="bower_components/js-signals/dist/signals.min.js"></script>
-        <script src="bower_components/hasher/dist/js/hasher.min.js"></script>
-        <script src="bower_components/crossroads/dist/crossroads.min.js"></script>
+        <script src="bower_components/history.js/scripts/bundled/html4+html5/native.history.js"></script>
         <script src="bower_components/raphael/raphael-min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/jonathantorres.js"></script>

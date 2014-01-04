@@ -12,23 +12,21 @@
         contact,
         resume;
 
+    var currentState;
+
     function Site() {}
 
     Site.prototype.init = function() {
         _this = this;
         cacheSelectors();
 
-        // set up routes
-        crossroads.addRoute('welcome');
-        crossroads.addRoute('portfolio');
-        crossroads.addRoute('portfolio/{slug}', this.portfolioRoute);
-        crossroads.addRoute('contact');
-        crossroads.addRoute('resume');
+        // detect state changes
+        History.Adapter.bind(window, 'statechange', onStateChange);
 
-        // set up Hasher
-        hasher.changed.add(handleHasher);
-        hasher.initialized.add(handleHasher);
-        hasher.init();
+        // set initial state
+        currentState = History.getState();
+        setState();
+        History.log('inital state', currentState.data, currentState.title, currentState.url);
 
         // Animate in header and footer
         TweenMax.to(topHeader, 0.5, { top : '0px', ease : Power1.easeOut } );
@@ -42,7 +40,7 @@
         mainNavigation.find('a').on('click', function(e) {
             e.preventDefault();
             var path = $(this).attr('href');
-            hasher.setHash(path);
+            History.pushState(null, 'Jonathan Torres Portfolio', path);
         });
 
         // mouse enter on main nav items
@@ -72,6 +70,63 @@
     };
 
     /**
+     * Change to a section of the page depending on history state
+     */
+    var setState = function() {
+        var url = window.location.protocol + '//' + window.location.host,
+            data = currentState.data;
+
+        // root pages access
+        switch(currentState.url) {
+            case url + '/' :
+            case url + '/welcome' :
+                switchSection('welcome');
+                updateNavigation('welcome');
+                break;
+
+            case url + '/portfolio' :
+                switchSection('portfolio');
+                updateNavigation('portfolio');
+                break;
+
+            case url + '/contact' :
+                switchSection('contact');
+                updateNavigation('contact');
+                break;
+
+            case url + '/resume' :
+                switchSection('resume');
+                updateNavigation('resume');
+                break;
+
+            default :
+                switchSection('welcome');
+                updateNavigation('welcome');
+                break;
+        }
+
+        // Access to a portfolio work
+        if (data.id) {
+            // first time accesing the work?
+            if (!$('#portfolio').hasClass('viewedSection')) {
+                loadSection('portfolio');
+                updateNavigation('portfolio');
+            }
+
+            portfolio.showWork(data);
+        }
+    };
+
+    /**
+     * When a new state is pushed
+     */
+    var onStateChange = function() {
+        currentState = History.getState();
+        setState();
+        History.log('pushed state', currentState.data, currentState.title, currentState.url);
+    };
+
+    /**
      * Add "selected" class to requested nav item
      */
     var updateNavigation = function(section) {
@@ -84,42 +139,6 @@
                 $(this).parent().addClass('selected');
             }
         });
-    };
-
-    /**
-     * Handle page deep links
-     */
-    var handleHasher = function(newHash) {
-        crossroads.parse(newHash);
-
-        switch(newHash) {
-            case '' :
-            case 'welcome' :
-                switchSection('welcome');
-                updateNavigation('welcome');
-                break;
-
-            case 'portfolio' :
-                switchSection('portfolio');
-                updateNavigation('portfolio');
-                break;
-
-            case 'contact' :
-                switchSection('contact');
-                updateNavigation('contact');
-                break;
-
-            case 'resume' :
-                switchSection('resume');
-                updateNavigation('resume');
-                break;
-
-            default :
-                if (newHash.indexOf('portfolio') === -1) {
-                    switchSection('welcome');
-                    updateNavigation('welcome');
-                }
-        }
     };
 
     /**
