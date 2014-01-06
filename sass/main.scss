@@ -144,8 +144,44 @@ a:hover { text-decoration: underline; }
     z-index: 9999;
     background: #161616;
 
-    .load_text {
+    .circle {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -75px 0px 0px -75px;
+        @include circle(150px, 150px, #161616);
 
+        .subcircle {
+            position: relative;
+            @include circle(136px, 136px, #313131);
+            margin: 7px 0px 0px 7px;
+
+            .progress_circle {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 136px;
+                height: 136px;
+            }
+
+            .front_circle {
+                position: absolute;
+                top: 9px;
+                left: 8px;
+                @include circle(111px, 111px, #161616);
+                border: solid 4px #393939;
+                margin: 0px 0px 0px 0px;
+
+                .skill {
+                    color: #636363;
+                    font-size: 1em;
+                    text-align: center;
+                    text-transform: uppercase;
+                    margin-top: 45px;
+                }
+            }
+        }
     }
 }
 

@@ -88,7 +88,14 @@
 
         <!-- Preloader -->
         <div class="preload_bg">
-            <h3 class="load_text">Loading...</h3>
+            <div class="circle">
+                <div class="subcircle">
+                    <div id="preload_circle" class="progress_circle"></div>
+                    <div class="front_circle">
+                        <p class="skill">Loading</p>
+                    </div>
+                </div>
+            </div><!-- .circle -->
         </div>
 
         <!-- Site Header -->
