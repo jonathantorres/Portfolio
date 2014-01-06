@@ -71,7 +71,7 @@
         <meta name="author" content="Jonathan Torres" />
         <meta name="country" content="Puerto Rico" />
         <meta name="distribution" content="Global" />
-        <meta name="copyright" content="© 2013 Jonathan Torres" />
+        <meta name="copyright" content="© 2014 Jonathan Torres" />
         <meta name="robots" content="all" />
         <meta name="viewport" content="width=device-width">
 
@@ -143,7 +143,7 @@
             <a href="#" class="social_close">x</a>
 
             <div class="title_area clearfix">
-                <h1>Social Me</h1>
+                <h1>Social Feed</h1>
                 <a href="#" class="social_arrow left_arrow"><i class="icon-arrow-left"></i></a>
                 <a href="#" class="social_arrow right_arrow"><i class="icon-arrow-right"></i></a>
             </div>

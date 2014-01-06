@@ -8,12 +8,12 @@
 
 		<h1 class="title">Overview</h1>
 		<p>Developer that enjoys creating interactive experiences and animation.</p>
-		<p>4 years of experience working on web technologies such as HTML, CSS, ActionScript 3.0, JavaScript, PHP and MySQL.</p>
+		<p>4 years of experience working on web technologies such as HTML, CSS, JavaScript, PHP, MySQL and ActionScript 3.0.</p>
     </div><!-- #overview -->
 
     <div id="specialties">
     	<h1 class="title">Specialties</h1>
-		<p class="special_slogan">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+		<p class="special_slogan">Some of the technologies that I work with on a daily basis.</p>
 		<h3>Languages - Technologies</h3>
 		<div class="skills_row1">
 			<div class="circle">
@@ -85,7 +85,7 @@
 
     <div id="experience">
     	<h1 class="title">Experience</h1>
-		<p class="experience_slogan">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+		<p class="experience_slogan">People that (and still) allow me to grow professionally.</p>
 		<div class="past_job past_experience1">
 			<div class="circle">
 				<div class="circle inside">

@@ -1,6 +1,6 @@
 <section id="contact">
     <h1 class="title">Contact Me</h1>
-    <p class="summary">Contact me here dude!! :P</p>
+    <p class="summary">Drop me a line here.</p>
     <form id="contact_form">
         <ul>
             <li class="text_input">

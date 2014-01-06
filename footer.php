@@ -1,7 +1,7 @@
         </div><!-- content -->
 
         <footer id="pagefooter">
-            <p>&copy; 2013 | Jonathan Torres | All rights reserved</p>
+            <p>&copy; 2014 | Jonathan Torres | All rights reserved</p>
             <ul class="social_icons">
                 <li><a href="https://www.twitter.com/torres_jonathan" target="_blank"><i class="icon-twitter"></i></a></li>
                 <li><a href="https://github.com/jonathantorres" target="_blank"><i class="icon-github"></i></a></li>
