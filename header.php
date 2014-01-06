@@ -171,22 +171,6 @@
                             </li>
                         <?php endif; ?>
                     <?php endforeach; ?>
-                    <!-- <li class="twitter">
-                        <h3>Twitter</h3>
-                        <p>I can write random stuff and think I’m like a poet. When actually I’m writing something meaningless. <span class="johnred">#8ReasonsWhyImOnTwitter</span></p>
-                    </li>
-                    <li class="instagram">
-                        <a href="#" class="circle">
-                            <div class="circle inside">
-                                <div class="hover">
-                                    <img src="img/instagram_hover_icon.png" alt="Instagram">
-                                </div>
-                                <img src="img/thats_me.jpg" alt="me">
-                            </div>
-                        </a>
-                        <h3>Instagram</h3>
-                        <p>The time goes on and on. <span class="johnred">#Time</span> <span class="johnred">#Shoes</span> <span class="johnred">#Again</span></p>
-                    </li> -->
                 </ul>
             </div>
         </div>
