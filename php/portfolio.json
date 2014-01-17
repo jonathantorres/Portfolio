@@ -2,158 +2,122 @@
     "works" : [
         {
             "id" : "1",
-            "name" : "The Cure",
-            "thumbnail" : "img/crush_1.jpg",
-            "project_image" : "img/project_sample_img.png",
-            "tech" : "html5/js/css3",
-            "description" : "This is the project description my man.",
-            "url" : "http://www.google.com",
-            "agencies" : {
-                "agency" : "Nobox"
-            }
+            "name" : "CSS Keyboard",
+            "thumbnail" : "img/css_thumb.jpg",
+            "project_image" : "img/css_work.jpg",
+            "tech" : "js/css3",
+            "description" : "CSS Keyboard made with CSS and JavaScript.",
+            "url" : "http://jonathantorres.com/csskeyboard/"
         },
 
         {
             "id" : "2",
-            "name" : "Soul Society",
-            "thumbnail" : "img/crush_2.jpg",
-            "project_image" : "img/project_sample_img.png",
-            "tech" : "PHP",
-            "description" : "This is the project description my man.",
-            "url" : "http://www.google.com",
-            "agencies" : {
-                "agency" : "Nobox"
-            }
+            "name" : "Herbal Proms",
+            "thumbnail" : "img/herbal_thumb.jpg",
+            "project_image" : "img/herbal_work.jpg",
+            "tech" : "js/css3",
+            "description" : "Herbal Essences \"Graduation & Prom Looks\" Facebook tab. Agency: Nobox",
+            "url" : "https://www.facebook.com/HerbalEssencesPR/app_371472639635472"
         },
 
         {
             "id" : "3",
-            "name" : "Kamelot site",
-            "thumbnail" : "img/crush_1.jpg",
-            "project_image" : "img/project_sample_img.png",
-            "tech" : "html5/js/css3",
-            "description" : "This is the project description my man.",
-            "url" : "http://www.google.com",
-            "agencies" : {
-                "agency" : "Nobox"
-            }
+            "name" : "Ace Pods",
+            "thumbnail" : "img/ace_thumb.jpg",
+            "project_image" : "img/pods_work.jpg",
+            "tech" : "js/css3",
+            "description" : "Q&A Facebook tab for Ace's new product \"Ace Pods\". Agency: Nobox",
+            "url" : "https://www.facebook.com/DetergenteAce/app_282605035195423"
         },
 
         {
             "id" : "4",
-            "name" : "The Medication",
-            "thumbnail" : "img/crush_1.jpg",
-            "project_image" : "img/project_sample_img.png",
-            "tech" : "html5/canvas",
-            "description" : "This is the project description my man.",
-            "url" : "http://www.google.com",
-            "agencies" : {
-                "agency" : "Nobox"
-            }
+            "name" : "JC Angustia",
+            "thumbnail" : "img/jc_thumb.jpg",
+            "project_image" : "img/jc_work.jpg",
+            "tech" : "wordpress",
+            "description" : "Portfolio page for Web/UX Designer Juan Carlos Angustia.",
+            "url" : "http://juancarlosangustia.com/"
         },
 
         {
             "id" : "5",
-            "name" : "Rambo man",
-            "thumbnail" : "img/crush_2.jpg",
-            "project_image" : "img/project_sample_img.png",
-            "tech" : "html5/js/css3",
-            "description" : "This is the project description my man.",
-            "url" : "http://www.google.com",
-            "agencies" : {
-                "agency" : "Nobox"
-            }
+            "name" : "DG Mobile",
+            "thumbnail" : "img/dg_thumb.jpg",
+            "project_image" : "img/dg_work.jpg",
+            "tech" : "php/jquery",
+            "description" : "Mobile version for Copa's \"Destinations Guide\" website. Agency: Nobox",
+            "url" : "http://destinationsguide.copaair.com/es/mobile/"
         },
 
         {
             "id" : "6",
-            "name" : "The Amazing thing",
-            "thumbnail" : "img/crush_2.jpg",
-            "project_image" : "img/project_sample_img.png",
-            "tech" : "html5/js/css3",
-            "description" : "This is the project description my man.",
-            "url" : "http://www.google.com",
-            "agencies" : {
-                "agency" : "Nobox"
-            }
+            "name" : "YouTube API",
+            "thumbnail" : "img/youtube_thumb.jpg",
+            "project_image" : "img/youtube_work.jpg",
+            "tech" : "jquery",
+            "description" : "An example of using the YouTube API with jQuery.",
+            "url" : "http://jonathantorres.com/examples/youtubeapi-hybrid/"
         },
 
         {
             "id" : "7",
-            "name" : "The Motherfucker",
-            "thumbnail" : "img/crush_1.jpg",
-            "project_image" : "img/project_sample_img.png",
-            "tech" : "html5/js/css3",
-            "description" : "This is the project description my man.",
-            "url" : "http://www.google.com",
-            "agencies" : {
-                "agency" : "Nobox"
-            }
+            "name" : "Recetas Tab",
+            "thumbnail" : "img/recetas_thumb.jpg",
+            "project_image" : "img/recetas_work.jpg",
+            "tech" : "jquery",
+            "description" : "Facebook tab for recipes made with PanPepin. Agency: Nobox",
+            "url" : "https://www.facebook.com/panpepin/app_395875913825516"
         },
 
         {
             "id" : "8",
-            "name" : "Spaceship madness",
-            "thumbnail" : "img/crush_2.jpg",
-            "project_image" : "img/project_sample_img.png",
-            "tech" : "JS",
-            "description" : "This is the project description my man.",
-            "url" : "http://www.google.com",
-            "agencies" : {
-                "agency" : "Nobox"
-            }
+            "name" : "Duck Dynasty",
+            "thumbnail" : "img/duck_thumb.jpg",
+            "project_image" : "img/dynasty_work.jpg",
+            "tech" : "jquery",
+            "description" : "Facebook tab for A&E's Duck Dynasty to download wallpapers and other media. Agency: Nobox",
+            "url" : "https://www.facebook.com/duckdynastylatinoamerica/app_463984170342531"
         },
 
         {
             "id" : "9",
-            "name" : "The iPhone",
-            "thumbnail" : "img/crush_1.jpg",
-            "project_image" : "img/project_sample_img.png",
-            "tech" : "html5/js/css3",
-            "description" : "This is the project description my man.",
-            "url" : "http://www.google.com",
-            "agencies" : {
-                "agency" : "Nobox"
-            }
+            "name" : "Firefox Yahoo Login",
+            "thumbnail" : "img/firefox_thumb.jpg",
+            "project_image" : "img/firefox_work.jpg",
+            "tech" : "CSS3",
+            "description" : "Yahoo login splash page for Firefox. Agency: Nobox",
+            "url" : "http://jonathantorres.com/firefoxlogin/"
         },
 
         {
             "id" : "10",
-            "name" : "Huting not helping",
-            "thumbnail" : "img/crush_1.jpg",
-            "project_image" : "img/project_sample_img.png",
-            "tech" : "css3",
-            "description" : "This is the project description my man.",
-            "url" : "http://www.google.com",
-            "agencies" : {
-                "agency" : "Nobox"
-            }
+            "name" : "Guia Constanza",
+            "thumbnail" : "img/gc_thumb.jpg",
+            "project_image" : "img/gc_work.jpg",
+            "tech" : "wordpress",
+            "description" : "A complete ecotouristic guide to Constanza, considered the city with the coldest climate in the Dominican Republic and the Caribbean.",
+            "url" : "http://guiaconstanza.com/"
         },
 
         {
             "id" : "11",
-            "name" : "Hulkmania",
-            "thumbnail" : "img/crush_2.jpg",
-            "project_image" : "img/project_sample_img.png",
-            "tech" : "html5/js/css3",
-            "description" : "This is the project description my man.",
-            "url" : "http://www.google.com",
-            "agencies" : {
-                "agency" : "Nobox"
-            }
+            "name" : "CCPSD Home Page",
+            "thumbnail" : "img/ccpsd_thumb.jpg",
+            "project_image" : "img/ccpsd_work.jpg",
+            "tech" : "wordpress",
+            "description" : "New home page for La Camara de Comercio de Santo Domingo. Agency: Nobox",
+            "url" : "http://www.camarasantodomingo.org.do/"
         },
 
         {
             "id" : "12",
-            "name" : "Final Conflict",
-            "thumbnail" : "img/crush_1.jpg",
-            "project_image" : "img/project_sample_img.png",
-            "tech" : "html5/js/css3",
-            "description" : "This is the project description my man.",
-            "url" : "http://www.google.com",
-            "agencies" : {
-                "agency" : "Nobox"
-            }
+            "name" : "Space Command",
+            "thumbnail" : "img/space_thumb.jpg",
+            "project_image" : "img/space_work.jpg",
+            "tech" : "AS3",
+            "description" : "Space shooting game done with the Starling framework. I'm currently working on a HTML5 port with PIXI.js.",
+            "url" : "http://jonathantorres.com/spacecommand/"
         }
     ]
 }
