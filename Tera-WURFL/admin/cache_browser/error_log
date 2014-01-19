@@ -1,0 +1,1 @@
+[12-Jan-2011 17:00:12] PHP Fatal error:  Call to a member function fetch_row() on a non-object in /home/torresj/public_html/Tera-WURFL/DatabaseConnectors/TeraWurflDatabase_MySQL5.php on line 589
