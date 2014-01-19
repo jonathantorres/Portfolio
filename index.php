@@ -9,7 +9,7 @@
 					</div>
 				    <h3>Hi, my name is <span class="johnsquared">Jonathan Torres</span></h3>
 				    <h3>I’m a Developer <span class="johnsquared">@Nobox</span></h3>
-				    <h3>My Portfolio is under <span class="johnsquared">construction</span></h3>
+				    <h3>Mobile portfolio is under <span class="johnsquared">construction</span></h3>
 				</div><!-- .myinfo -->
 
 				<div class="reachme">
