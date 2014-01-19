@@ -57,7 +57,7 @@
             "project_image" : "img/youtube_work.jpg",
             "tech" : "jquery",
             "description" : "An example of using the YouTube API with jQuery.",
-            "url" : "http://jonathantorres.com/examples/youtubeapi-hybrid/"
+            "url" : "http://jonathantorres.com/youtubeapi/"
         },
 
         {
