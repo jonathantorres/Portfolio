@@ -1,21 +1,6 @@
 <?php
 
     /**
-     * Mobile redirection
-     */
-    require_once('Tera-WURFL/TeraWurfl.php');
-
-    $wurfl = new TeraWurfl();
-    $iswireless = $wurfl->getDeviceCapability('is_wireless_device');
-
-    if ($iswireless) {
-        // if the wireless device is a smart phone, go to http://m.jonathantorres.com (Mobile Site) :)
-        if (!$wurfl->getDeviceCapability('is_tablet')) {
-            header('Location: http://m.jonathantorres.com');
-        }
-    }
-
-    /**
      * Get my tweets
      */
     session_start();
@@ -63,7 +48,6 @@
         return $text;
     }
 ?>
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
