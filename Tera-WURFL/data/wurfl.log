@@ -1,9 +1,0 @@
-Wed, 12 Jan 2011 17:48:11 -0600 [gator452.hostgator.com 8568][Tera-WURFL] WARNING: Loading patch: custom_web_patch.xml
-Wed, 12 Jan 2011 17:48:11 -0600 [gator452.hostgator.com 8568][Tera-WURFL] WARNING: Loading patch: web_browsers_patch.xml
-Wed, 12 Jan 2011 17:48:18 -0600 [gator452.hostgator.com 8568][Tera-WURFL] WARNING: Finished loading WURFL www.wurflpro.com - 2010-09-17 15:50:54 (Fri Sep 17 15:56:32 -0500 2010) in 7.43 seconds
-Wed, 12 Jan 2011 17:50:10 -0600 [gator452.hostgator.com 10761][rebuildCacheTable] WARNING: Rebuilt cache table, existing table was empty - this is very unusual.
-Wed, 12 Jan 2011 17:54:01 -0600 [gator452.hostgator.com 15098][Tera-WURFL] WARNING: I could not find the requested capability (is_tablet), returning NULL
-Wed, 12 Jan 2011 17:54:15 -0600 [gator452.hostgator.com 15344][Tera-WURFL] WARNING: I could not find the requested capability (is_tablet), returning NULL
-Wed, 12 Jan 2011 18:00:52 -0600 [gator452.hostgator.com 22740][Tera-WURFL] WARNING: I could not find the requested capability (is_tablet), returning NULL
-Wed, 12 Jan 2011 18:01:09 -0600 [gator452.hostgator.com 23154][Tera-WURFL] WARNING: I could not find the requested capability (is_tablet), returning NULL
-Wed, 12 Jan 2011 18:01:21 -0600 [gator452.hostgator.com 23403][Tera-WURFL] WARNING: I could not find the requested capability (is_tablet), returning NULL
