@@ -17,7 +17,7 @@
         <script src="bower_components/crossroads/dist/crossroads.min.js"></script>
         <script src="bower_components/raphael/raphael-min.js"></script>
         <script src="js/plugins.js"></script>
-        <script src="js/jonathantorres.js"></script>
+        <script src="js/jonathantorres.min.js"></script>
 
         <!-- Google Analytics: -->
         <script type="text/javascript">
