@@ -132,7 +132,4 @@
             </nav>
         </header><!-- #topheader -->
 
-        <!-- Social Slide -->
-        <?php require_once("social.php"); ?>
-
         <div id="content">
